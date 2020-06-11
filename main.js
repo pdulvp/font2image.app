@@ -64,7 +64,6 @@ function totototo(event) {
 	} else {
 		addClass(event.target, "active");
 	}
-	
 	console.log(Array.from(document.getElementsByClassName("active")).map(x => x.id));
 }
 
@@ -581,8 +580,17 @@ window.onresize = updateWindow;
 
 function keyListener(e) {
 	if ("Escape" == e.code || "Space" == e.code || "Enter" == e.code) {
-		hideModal();
-		event.preventDefault();
+		if (Array.from(document.getElementsByClassName("modal")).filter(x => x.getAttribute("class").indexOf("modal-hide")==-1).length > 0) {
+			hideModal();
+			event.preventDefault();
+		}
+	}
+	if ("Escape" == e.code) {
+		let items = Array.from(document.getElementsByClassName("active"));
+		if (items.length > 0) {
+			items.forEach(x => removeClass(x, "active"));
+			event.preventDefault();
+		}
 	}
 }
 document.addEventListener('keydown', keyListener);
