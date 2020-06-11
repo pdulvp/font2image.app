@@ -1,0 +1,136 @@
+﻿<!-- 
+ This Code is published under the terms and conditions of the CC-BY-NC-ND-4.0
+ (https://creativecommons.org/licenses/by-nc-nd/4.0)
+ 
+ Please contribute to the current project.
+ 
+ SPDX-License-Identifier: CC-BY-NC-ND-4.0
+ @author: pdulvp@laposte.net
+-->
+<html lang="en">
+
+  <head>
+    <title>Colors</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="referrer" content="never">
+	<meta name="author" lang="fr" content="pdulvp@laposte.net">
+	
+	<link rel="stylesheet" type="text/css" href="main.css">
+  </head>
+
+  <body class="bg-light">
+	<div class="container-overlay">
+	<div class="header">
+		<div class="fixed">IconFont2PNG</div>
+		<div class="spacing"></div>
+		<div id="link-about" modal="modal-about" class="fixed link">about</div>
+		<div class="spacing"></div>
+		<div id="link-license" modal="modal-license" class="fixed link">license</div>
+		<div class="spacing"></div>
+		<div id="link-sponsor" modal="modal-sponsor" class="fixed link">sponsor</div><!-- <a href="http://patreon.com/pdulvp">sponsor</a> -->
+		<div class="spacing"></div>
+		<div class="fixed"><input type="button" value="download" id="download"/></div>
+	</div>
+
+	  <div class="container-preview">
+		<div class="row">
+			<div class="canvases-row">
+				<canvas class="canvases-preview" id="canvases-preview"></canvas>
+			</div>
+			<div class="toolbar">
+				<div class="row-wrapper-1">
+					<div class="row3"><div class="div-label">Fonts</div>
+						<div id="font-chooser" class="font-chooser"></div>
+					</div>
+					<div class="row3"><div class="div-label">Size</div><input id="imageSize" title="width/height of icon file" type="range" min="0" step="2" max="512" value="24" class="slider slider-white"/></div>
+					<div class="row3"><div class="div-label">Padding</div><input id="padding" title="space surrounding icon" type="range" min="0" step="1" max="10" value="2" class="slider slider-white"/></div>
+				</div>
+				<div class="row-wrapper-2">
+					<div class="row2"><input title="hue" type="range" min="1" max="100" value="20" class="slider sliderHue" id="hue"/></div>
+					<div class="row2"><input title="saturation" type="range" min="1" max="100" value="20" class="slider sliderSaturation" id="saturation"/></div>
+					<div class="row2"><input title="luminance" type="range" min="1" max="100" value="20" class="slider sliderLuminance" id="luminance"/></div>
+					<div class="row2"><input title="alpha" type="range" min="1" max="100" value="20" class="slider sliderAlpha" id="alpha"/></div>
+				</div>
+			</div>
+		</div>
+	  </div>
+	</div>
+
+		  <div id="okok">
+		  </div>
+		  <div id="modal-back" class="modal-back modal-hide">
+		  </div>
+
+		  <div id="modal-font" class="modal modal-hide">
+			  <div id="font-chooser-adder" class="font-chooser-adder"></div>
+		  </div>
+		  <div id="modal-about" class="modal modal-window modal-hide" style="width: 40%">
+			<p>Goal of this website is to ease use and deployment of open source fonts
+			on programs that can't use woff, ttf or svg files but are using rasterized
+			images like PNG or GIF icons. Generate such images from SVG or fonts is quite
+			complicated to do manually and can be easily done now.
+			</p>
+
+
+			<h2>Website hosting</h2>
+			<p>
+				<i>OVH</i><br/>
+				SAS au capital de 10 069 020 €<br/>
+				RCS Lille Métropole 424 761 419 00045<br/>
+				Code APE 2620Z<br/>
+				N° TVA : FR 22 424 761 419<br/>
+				Siège social : 2 rue Kellermann - 59100 Roubaix - France<br/>
+			</p>
+			<h2>Site</h2>
+			<p>Site non professionnel d'une personne physique</p>
+			<h2>Source code</h2>
+			<p><a href="https://github.com/pdulvp">https://github.com/pdulvp</a></p>
+			
+			<h3>FAQ</h3>
+			<p><ul>
+				<li>Why this site is so ugly ?</li>
+				<li>Is it?</li>
+				
+			</ul>
+			</p>
+
+		  </div>
+		  <div id="modal-license" class="modal modal-window modal-hide" style="width: 40%">
+			<h2>Icons and Fonts</h2>
+			All licenses of Icons and Fonts used within this site are defined by original fonts authors. 
+			Licenses are shown on the right from font name.
+			
+			<h2>Derivative images</h2>
+			Derivative images generated within the site using fonts and icons are published under the same license than the originating fonts and icons.
+			If mentionned by the fonts and icons license, please add references to author(s), website, and license of the originating fonts and icons when you use such images.
+			
+			<h2>Website</h2>
+			This website and its source code is published under the terms and conditions of the CC-BY-NC-ND-4.0 (https://creativecommons.org/licenses/by-nc-nd/4.0)<br/><br/>
+ 			
+		  </div>
+		  <div id="modal-sponsor" class="modal modal-window modal-hide" style="width: 40%">
+			You can support this website by several way:
+			<ul>
+			<li><p>Help up to develop this website</p>
+				<p>Hosting, Development, Coffee</p>
+				<p><img src="https://img.shields.io/badge/patreon-pdulvp-red?logo=patreon&logocolor=white"/></p>
+				
+			</li>
+			<li><p>Fund and support development of open sources and free to deploy fonts</p></li>
+			</ul>
+		  </div>
+
+	<script src="/external/filesaver-2.0.4.min.js"></script>
+	<script src="/external/jszip-3.4.0.min.js"></script>
+
+	<script src="/node_modules/@pdulvp/require/require.js"></script>
+	<script src="/node_modules/@pdulvp/httpquery/httpquery.js"></script>
+	<script src="/node_modules/@pdulvp/colors/colors.js"></script>
+
+    <script src="main.js"></script>
+	
+  </body>
+  
+</html>
