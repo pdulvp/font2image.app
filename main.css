@@ -33,6 +33,7 @@
   flex-shrink: 0;
 }
 .header .link {
+  user-select: none;
   font-size: small;
 }
 .header .spacing {
@@ -92,6 +93,7 @@
 }
 .row3 .div-label {
   flex-grow: 0;
+  user-select: none;
   flex-shrink: 0;    
   margin-right: 4px;
   width: 60px;
@@ -304,6 +306,7 @@ width:100%;
 .modal-window  {
   padding: 10px;
   margin: 20px;
+  border: solid 1px darkgray;
 }
 
 
