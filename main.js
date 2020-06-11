@@ -579,6 +579,15 @@ function updateWindow(event) {
 window.addEventListener('scroll', updateWindow);
 window.onresize = updateWindow;
 
+function keyListener(e) {
+	if ("Escape" == e.code || "Space" == e.code || "Enter" == e.code) {
+		hideModal();
+		event.preventDefault();
+	}
+}
+document.addEventListener('keydown', keyListener);
+
+
 function drawVisibleCanvas() {
 	let toDraw = Array.from(document.getElementsByTagName("canvas")).filter(x => hasClass(x, "canvases") && x.getAttribute("dirty") == "true");
 	
