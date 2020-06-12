@@ -178,6 +178,11 @@ width:100%;
 }
 .canvases-separator > div:first-child {
   margin-right: 60px;
+  text-decoration: dashed underline;
+}
+.canvases-separator > div:first-child:hover {
+  cursor: pointer;
+  color: var(--link-color-hover);
 }
 .separator-metas {
   display: flex;          display: -webkit-flex;
@@ -308,7 +313,6 @@ width:100%;
   margin: 20px;
   border: solid 1px darkgray;
 }
-
 
 .modal-hide {
   display: none;
