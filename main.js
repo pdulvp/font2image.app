@@ -8,19 +8,21 @@
  @author: pdulvp@laposte.net
 */
 
+
+
 var colors = require("@pdulvp/colors");
 
 var fonts = [ 
-	{ name: "font-awesome-regular", visible: true, host: "http://localhost:8082", url: "webfonts/fontawesome.css", fontUrl: "webfonts/fa-regular-400.woff2", weight: 400, family: "aaaa", style: "normal", 
+	{ name: "font-awesome-regular", visible: true, host: document.location.origin, url: "webfonts/fontawesome.css", fontUrl: "webfonts/fa-regular-400.woff2", weight: 400, family: "aaaa", style: "normal", 
 		meta: { version: "5.13.0", licenseLink: "https://fontawesome.com/license/free", license: "icons(CC-BY-4.0) font(SIL-OFL-1.1)", mainPage: "fontawesome.com", mainPageLink: "https://fontawesome.com", author: "by @fontawesome", authorLink: "https://fontawesome.com"  }
 	}, 
-	{ name: "font-awesome-solid", visible: true, host: "http://localhost:8082", url: "webfonts/fontawesome.css", fontUrl: "webfonts/fa-solid-900.woff2", weight: 900, family: "bbbb", style: "normal", 
+	{ name: "font-awesome-solid", visible: true, host: document.location.origin, url: "webfonts/fontawesome.css", fontUrl: "webfonts/fa-solid-900.woff2", weight: 900, family: "bbbb", style: "normal", 
 		meta: { version: "5.13.0", licenseLink: "https://fontawesome.com/license/free", license: "icons(CC-BY-4.0) font(SIL-OFL-1.1)", mainPage: "fontawesome.com", mainPageLink: "https://fontawesome.com", author: "by @fontawesome", authorLink: "https://fontawesome.com"  }
 	}, 
-	{ name: "font-awesome-brands", visible: false, host: "http://localhost:8082", url: "webfonts/fontawesome.css", fontUrl: "webfonts/fa-brands-400.woff2", weight: 400, family: "cccc", style: "normal",
+	{ name: "font-awesome-brands", visible: false, host: document.location.origin, url: "webfonts/fontawesome.css", fontUrl: "webfonts/fa-brands-400.woff2", weight: 400, family: "cccc", style: "normal",
 		meta: { version: "5.13.0", licenseLink: "https://fontawesome.com/license/free", license: "icons(CC-BY-4.0) font(SIL-OFL-1.1)", mainPage: "fontawesome.com", mainPageLink: "https://fontawesome.com", author: "by @fontawesome", authorLink: "https://fontawesome.com"  }
 	},
-	{ name: "fontelico", visible: false, host: "http://localhost:8082", url: "webfonts/fontelico-codes.css", fontUrl: "webfonts/fontelico.woff2", weight: "normal", family: "dddd", style: "normal",
+	{ name: "fontelico", visible: false, host: document.location.origin, url: "webfonts/fontelico-codes.css", fontUrl: "webfonts/fontelico.woff2", weight: "normal", family: "dddd", style: "normal",
 		meta: { licenseLink: "https://github.com/fontello/fontelico.font#license", license: "icons(CC-BY-3.0) font(SIL-OFL-1.1)", mainPage: "github.com/fontello/fontelico.font", mainPageLink: "https://github.com/fontello/fontelico.font", author: "by Crowdsourced, for Fontello project", authorLink: "https://github.com/fontello/fontelico.font#contributors" }
 	} ];
 
@@ -192,8 +194,6 @@ function addFontAdd() {
 	let root = document.createElement("div");
 	addClass(root, "font-chooser-item");
 	let text = document.createElement("div");
-	text.textContent = name;
-	root.setAttribute("font-name", name);
 	root.appendChild(text);
 	let button = document.createElement("div");
 	addClass(button, "font-chooser-item-add");
@@ -259,7 +259,6 @@ function updateSize() {
 	let canvas = document.getElementById("canvases-preview");
 	canvas.width = window.getComputedStyle(canvas).width.replace("px", "");
 	canvas.height = window.getComputedStyle(canvas).width.replace("px", "");
-	document.title = fontSize + " "+ padding;
 
 	let color = getHslColor();
 
