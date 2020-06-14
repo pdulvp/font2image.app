@@ -193,6 +193,7 @@ function updateChoosableFonts() {
 function addFontAdd() {
 	let root = document.createElement("div");
 	addClass(root, "font-chooser-item");
+	addClass(root, "font-chooser-item-button");
 	let text = document.createElement("div");
 	root.appendChild(text);
 	let button = document.createElement("div");
