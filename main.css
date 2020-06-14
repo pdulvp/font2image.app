@@ -15,6 +15,11 @@
   --link-color-hover: rgba(50, 150, 150, 0.8);
 }
 
+.header > div:first-child a {
+  user-select: none;
+  text-decoration: none;
+  color: black;
+}
 .header {
   background-color: hsl(60, 90%, 80%);
   font-family: 'Courier New', Courier, monospace;
