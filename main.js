@@ -166,7 +166,7 @@ document.getElementById("canvases-preview").ondblclick = function(event) {
 function updateFonts() {
 	let fontsUi = document.getElementById("font-chooser");
 	fontsUi.innerHTML = "";
-	fonts.filter(f => f.visible).forEach(f => fontsUi.appendChild(addFont(f, "font-chooser-item-close", 
+	fonts.filter(f => f.visible).forEach(f => fontsUi.appendChild(addFont(f, "font-chooser-item-close", "Remove",
 		function(e) {
 			fonts.filter(f => f.name == e.target.parentNode.getAttribute("font-name")).forEach(f => f.visible = false);
 			drawAnimationProut();
@@ -181,7 +181,7 @@ function updateFonts() {
 function updateChoosableFonts() {
 	let fontsUi = document.getElementById("modal-font");
 	fontsUi.innerHTML = "";
-	fonts.filter(f => !f.visible).forEach(f => fontsUi.appendChild(addFont(f, "font-chooser-item-add", 
+	fonts.filter(f => !f.visible).forEach(f => fontsUi.appendChild(addFont(f, "font-chooser-item-add", "Add",
 		function(e) {
 			fonts.filter(f => f.name == e.target.parentNode.getAttribute("font-name")).forEach(f => f.visible = true);
 			updateFonts();
@@ -197,6 +197,7 @@ function addFontAdd() {
 	root.appendChild(text);
 	let button = document.createElement("div");
 	addClass(button, "font-chooser-item-add");
+	button.setAttribute("aria-label", "Add");
 	button.onclick = (function(e) {
 		drawCookieBox(fonts.filter(f => !f.visible).length);
 		removeClass(document.getElementById("modal-back"), "modal-hide");
@@ -224,7 +225,7 @@ document.getElementById("modal-back").onclick = function(e) {
 	clearAnimation();
 }
 
-function addFont(font, classButton, onclick) {
+function addFont(font, classButton, ariaLabel, onclick) {
 	let root = document.createElement("div");
 	addClass(root, "font-chooser-item");
 	let text = document.createElement("div");
@@ -232,6 +233,7 @@ function addFont(font, classButton, onclick) {
 	root.setAttribute("font-name", font.name);
 	root.appendChild(text);
 	let button = document.createElement("div");
+	button.setAttribute("aria-label", ariaLabel);
 	addClass(button, classButton);
 	button.onclick = onclick;
 	root.appendChild(button);
