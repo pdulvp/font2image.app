@@ -5,7 +5,7 @@
   "main": "main.js",
   "dependencies": {
     "@pdulvp/colors": "^1.0.1",
-    "@pdulvp/httpquery": "^1.0.1",
+    "@pdulvp/httpquery": "^1.0.3",
     "@pdulvp/require": "^1.0.0"
   },
   "devDependencies": {},

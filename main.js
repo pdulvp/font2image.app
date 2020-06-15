@@ -366,9 +366,9 @@ function updateAlpha() {
 
 function getCssGet(css) {
 	let cssId = css.url;
-	var httpquery = require("@pdulvp/httpquery");
+	let httpquery = require("@pdulvp/httpquery");
 	return httpquery.get(css.host, css.url).then(e => {
-		var doc = document.implementation.createHTMLDocument(""),
+		let doc = document.implementation.createHTMLDocument(""),
 		styleElement = document.createElement("style");
 		styleElement.textContent = e;
 		// the style will only be parsed once it is added to a document
