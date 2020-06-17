@@ -2,6 +2,8 @@
 
 Convert icon fonts to rasterized PNG images. Choose icons, color, padding and images are created.
 
+https://rasterize-font.org
+
 ![](images/rasterize.png)
 
 ### Image preview
