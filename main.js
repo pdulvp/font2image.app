@@ -8,26 +8,7 @@
  @author: pdulvp@laposte.net
 */
 
-var fonts = [ 
-	{ name: "font-awesome-regular", host: document.location.origin, url: "webfonts/fontawesome.css", fontUrl: "webfonts/fa-regular-400.woff2", weight: 400, style: "normal", 
-		meta: { version: "5.13.0", licenseLink: "https://fontawesome.com/license/free", license: "icons(CC-BY-4.0) font(SIL-OFL-1.1)", mainPage: "fontawesome.com", mainPageLink: "https://fontawesome.com", author: "by @fontawesome", authorLink: "https://fontawesome.com"  }
-	}, 
-	{ name: "font-awesome-solid", host: document.location.origin, url: "webfonts/fontawesome.css", fontUrl: "webfonts/fa-solid-900.woff2", weight: 900, style: "normal", 
-		meta: { version: "5.13.0", licenseLink: "https://fontawesome.com/license/free", license: "icons(CC-BY-4.0) font(SIL-OFL-1.1)", mainPage: "fontawesome.com", mainPageLink: "https://fontawesome.com", author: "by @fontawesome", authorLink: "https://fontawesome.com"  }
-	}, 
-	{ name: "font-awesome-brands", host: document.location.origin, url: "webfonts/fontawesome.css", fontUrl: "webfonts/fa-brands-400.woff2", weight: 400, style: "normal",
-		meta: { version: "5.13.0", licenseLink: "https://fontawesome.com/license/free", license: "icons(CC-BY-4.0) font(SIL-OFL-1.1)", mainPage: "fontawesome.com", mainPageLink: "https://fontawesome.com", author: "by @fontawesome", authorLink: "https://fontawesome.com"  }
-	},
-	{ name: "fontelico", host: document.location.origin, url: "webfonts/fontelico-codes.css", fontUrl: "webfonts/fontelico.woff2", weight: "normal", style: "normal",
-		meta: { licenseLink: "https://github.com/fontello/fontelico.font#license", license: "icons(CC-BY-3.0) font(SIL-OFL-1.1)", mainPage: "github.com/fontello/fontelico.font", mainPageLink: "https://github.com/fontello/fontelico.font", author: "by Crowdsourced, for Fontello project", authorLink: "https://github.com/fontello/fontelico.font#contributors" }
-	},
-	{ name: "ionicons", host: document.location.origin, url: "webfonts/ionicons.css", fontUrl: "webfonts/ionicons.woff2", weight: "normal", style: "normal",
-		meta: { licenseLink: "https://github.com/ionic-team/ionicons/blob/master/LICENSE", license: "MIT", mainPage: "ionicons.com", mainPageLink: "https://ionicons.com", author: "by Ionic Framework team", authorLink: "https://ionicframework.com" }
-	} ];
-
-fonts.forEach(f => f.family = f.name.replace(/ /g, ""));
-fonts.forEach(f => f.visible = false);
-random(0, fonts.length - 1, 2).forEach(x => fonts[x].visible = true);
+var fonts = undefined;
 
 function random(min, max, count) {
 	count = Math.min(count, max - min);
@@ -178,19 +159,43 @@ document.getElementById("canvases-preview").ondblclick = function(event) {
 	updateSize();
 }
 
-function updateFonts() {
-	let fontsUi = document.getElementById("font-chooser");
-	fontsUi.innerHTML = "";
-	fonts.filter(f => f.visible).forEach(f => fontsUi.appendChild(addFont(f, "font-chooser-item-close", "Remove",
-		function(e) {
-			fonts.filter(f => f.name == e.target.parentNode.getAttribute("font-name")).forEach(f => f.visible = false);
-			drawAnimationProut();
-			updateFonts();
-		})));
-	if (fonts.filter(f => f.visible == false).length > 0) {
-		fontsUi.appendChild(addFontAdd());
+
+function getFonts() {
+	if (fonts != undefined) {
+		return new Promise((resolve, reject) => {
+			resolve(fonts);
+		});
+	} else {
+		let httpquery = require("@pdulvp/httpquery");
+		return httpquery.get(document.location.origin, "fonts.json").then(e => {
+			fonts = JSON.parse(e);
+			fonts.forEach(f => f.family = f.name.replace(/ /g, ""));
+			fonts.forEach(f => f.visible = false);
+			fonts.filter(f => f.host == "document.location.origin").forEach(f => f.host=document.location.origin);
+			random(0, fonts.length - 1, 2).forEach(x => fonts[x].visible = true);
+			console.log(fonts);
+			Promise.resolve();
+		});
 	}
-	updateImages(false);
+}
+
+function updateFonts() {
+	getFonts().then(e => {
+		
+		
+		let fontsUi = document.getElementById("font-chooser");
+		fontsUi.innerHTML = "";
+		fonts.filter(f => f.visible).forEach(f => fontsUi.appendChild(addFont(f, "font-chooser-item-close", "Remove",
+			function(e) {
+				fonts.filter(f => f.name == e.target.parentNode.getAttribute("font-name")).forEach(f => f.visible = false);
+				drawAnimationProut();
+				updateFonts();
+			})));
+		if (fonts.filter(f => f.visible == false).length > 0) {
+			fontsUi.appendChild(addFontAdd());
+		}
+		updateImages(false);
+	});
 }
 
 function updateChoosableFonts() {
@@ -903,7 +908,7 @@ function createsImage(element, color, font, rootContainer) {
 	let temporary = document.createElement("canvas");
 	temporary.width = fontSize;
 	temporary.height = fontSize;
-	var tctx = temporary.getContext("2d");
+	let tctx = temporary.getContext("2d");
 	tctx.imageSmoothingEnabled = false;
 	tctx.textBaseline = "middle";
 	tctx.textAlign = 'center';

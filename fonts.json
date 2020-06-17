@@ -1,0 +1,60 @@
+[
+    {   "name" : "font-awesome-regular",
+        "host" : "document.location.origin",
+        "url" : "webfonts/fontawesome.css",
+        "fontUrl" : "webfonts/fa-regular-400.woff2",
+        "weight": 400, "style" : "normal",
+		"meta": {
+            "version" : "5.13.0", 
+            "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)", "licenseLink" : "https://fontawesome.com/license/free",
+            "mainPage" : "fontawesome.com", "mainPageLink" : "https://fontawesome.com",
+            "author" : "by @fontawesome", "authorLink" : "https://fontawesome.com"
+        }
+    },
+    { "name" : "font-awesome-solid",
+        "host" : "document.location.origin",
+        "url" : "webfonts/fontawesome.css",
+        "fontUrl" : "webfonts/fa-solid-900.woff2",
+        "weight": 900, "style" : "normal",
+        "meta": {
+            "version" : "5.13.0", 
+            "licenseLink" : "https://fontawesome.com/license/free", "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)",
+            "mainPage" : "fontawesome.com", "mainPageLink" : "https://fontawesome.com",
+            "author" : "by @fontawesome", "authorLink" : "https://fontawesome.com"
+        }
+	},
+    { "name" : "font-awesome-brands",
+        "host" : "document.location.origin",
+        "url" : "webfonts/fontawesome.css",
+        "fontUrl" : "webfonts/fa-brands-400.woff2",
+        "weight": 400, "style" : "normal",
+        "meta": {
+            "version" : "5.13.0", 
+            "licenseLink" : "https://fontawesome.com/license/free", "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)",
+            "mainPage" : "fontawesome.com", "mainPageLink" : "https://fontawesome.com",
+            "author" : "by @fontawesome", "authorLink" : "https://fontawesome.com"
+        }
+	},
+    { "name" : "fontelico",
+        "host" : "document.location.origin",
+        "url" : "webfonts/fontelico-codes.css",
+        "fontUrl" : "webfonts/fontelico.woff2",
+        "weight" : "normal", "style" : "normal",
+		"meta": {
+            "licenseLink" : "https://github.com/fontello/fontelico.font#license", "license" : "icons(CC-BY-3.0) font(SIL-OFL-1.1)",
+            "mainPage" : "github.com/fontello/fontelico.font", "mainPageLink" : "https://github.com/fontello/fontelico.font",
+            "author" : "by Crowdsourced, for Fontello project", "authorLink" : "https://github.com/fontello/fontelico.font#contributors"
+        }
+	},
+    { "name" : "ionicons",
+        "host" : "document.location.origin",
+        "url" : "webfonts/ionicons.css",
+        "fontUrl" : "webfonts/ionicons.woff2",
+        "weight" : "normal", "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/ionic-team/ionicons/blob/master/LICENSE", "license" : "MIT",
+            "mainPage" : "ionicons.com", "mainPageLink" : "https://ionicons.com",
+            "author" : "by Ionic Framework team", "authorLink" : "https://ionicframework.com"
+        }
+    }
+]
