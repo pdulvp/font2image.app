@@ -24,6 +24,9 @@ var fonts = [
 	},
 	{ name: "fontelico", visible: false, host: document.location.origin, url: "webfonts/fontelico-codes.css", fontUrl: "webfonts/fontelico.woff2", weight: "normal", family: "dddd", style: "normal",
 		meta: { licenseLink: "https://github.com/fontello/fontelico.font#license", license: "icons(CC-BY-3.0) font(SIL-OFL-1.1)", mainPage: "github.com/fontello/fontelico.font", mainPageLink: "https://github.com/fontello/fontelico.font", author: "by Crowdsourced, for Fontello project", authorLink: "https://github.com/fontello/fontelico.font#contributors" }
+	},
+	{ name: "ionicons", visible: false, host: document.location.origin, url: "webfonts/ionicons.css", fontUrl: "webfonts/ionicons.woff2", weight: "normal", family: "ggggg", style: "normal",
+		meta: { licenseLink: "https://github.com/ionic-team/ionicons/blob/master/LICENSE", license: "MIT", mainPage: "ionicons.com", mainPageLink: "https://ionicons.com", author: "by Ionic Framework team", authorLink: "https://ionicframework.com" }
 	} ];
 
 	
@@ -386,7 +389,7 @@ function getCssGet(css) {
 		doc.body.appendChild(styleElement);
 		let result = Array.from(styleElement.sheet.cssRules).filter(x => x.style != undefined && x.style.content != undefined && x.style.content.length > 0);
 		result = result.map((x) => {
-			return { name: x.selectorText.replace("::before", "").substring(1), character: x.style.content.replace("\"", "").replace("\"", "") }
+			return { name: x.selectorText.replace(":before", "").replace(":", "").substring(1), character: x.style.content.replace("\"", "").replace("\"", "") }
 		});
 		result = {css: css, items: result};
 		cacheCss[cssId] = result;
