@@ -8,28 +8,40 @@
  @author: pdulvp@laposte.net
 */
 
-
-
-var colors = require("@pdulvp/colors");
-
 var fonts = [ 
-	{ name: "font-awesome-regular", visible: true, host: document.location.origin, url: "webfonts/fontawesome.css", fontUrl: "webfonts/fa-regular-400.woff2", weight: 400, family: "aaaa", style: "normal", 
+	{ name: "font-awesome-regular", host: document.location.origin, url: "webfonts/fontawesome.css", fontUrl: "webfonts/fa-regular-400.woff2", weight: 400, style: "normal", 
 		meta: { version: "5.13.0", licenseLink: "https://fontawesome.com/license/free", license: "icons(CC-BY-4.0) font(SIL-OFL-1.1)", mainPage: "fontawesome.com", mainPageLink: "https://fontawesome.com", author: "by @fontawesome", authorLink: "https://fontawesome.com"  }
 	}, 
-	{ name: "font-awesome-solid", visible: true, host: document.location.origin, url: "webfonts/fontawesome.css", fontUrl: "webfonts/fa-solid-900.woff2", weight: 900, family: "bbbb", style: "normal", 
+	{ name: "font-awesome-solid", host: document.location.origin, url: "webfonts/fontawesome.css", fontUrl: "webfonts/fa-solid-900.woff2", weight: 900, style: "normal", 
 		meta: { version: "5.13.0", licenseLink: "https://fontawesome.com/license/free", license: "icons(CC-BY-4.0) font(SIL-OFL-1.1)", mainPage: "fontawesome.com", mainPageLink: "https://fontawesome.com", author: "by @fontawesome", authorLink: "https://fontawesome.com"  }
 	}, 
-	{ name: "font-awesome-brands", visible: false, host: document.location.origin, url: "webfonts/fontawesome.css", fontUrl: "webfonts/fa-brands-400.woff2", weight: 400, family: "cccc", style: "normal",
+	{ name: "font-awesome-brands", host: document.location.origin, url: "webfonts/fontawesome.css", fontUrl: "webfonts/fa-brands-400.woff2", weight: 400, style: "normal",
 		meta: { version: "5.13.0", licenseLink: "https://fontawesome.com/license/free", license: "icons(CC-BY-4.0) font(SIL-OFL-1.1)", mainPage: "fontawesome.com", mainPageLink: "https://fontawesome.com", author: "by @fontawesome", authorLink: "https://fontawesome.com"  }
 	},
-	{ name: "fontelico", visible: false, host: document.location.origin, url: "webfonts/fontelico-codes.css", fontUrl: "webfonts/fontelico.woff2", weight: "normal", family: "dddd", style: "normal",
+	{ name: "fontelico", host: document.location.origin, url: "webfonts/fontelico-codes.css", fontUrl: "webfonts/fontelico.woff2", weight: "normal", style: "normal",
 		meta: { licenseLink: "https://github.com/fontello/fontelico.font#license", license: "icons(CC-BY-3.0) font(SIL-OFL-1.1)", mainPage: "github.com/fontello/fontelico.font", mainPageLink: "https://github.com/fontello/fontelico.font", author: "by Crowdsourced, for Fontello project", authorLink: "https://github.com/fontello/fontelico.font#contributors" }
 	},
-	{ name: "ionicons", visible: false, host: document.location.origin, url: "webfonts/ionicons.css", fontUrl: "webfonts/ionicons.woff2", weight: "normal", family: "ggggg", style: "normal",
+	{ name: "ionicons", host: document.location.origin, url: "webfonts/ionicons.css", fontUrl: "webfonts/ionicons.woff2", weight: "normal", style: "normal",
 		meta: { licenseLink: "https://github.com/ionic-team/ionicons/blob/master/LICENSE", license: "MIT", mainPage: "ionicons.com", mainPageLink: "https://ionicons.com", author: "by Ionic Framework team", authorLink: "https://ionicframework.com" }
 	} ];
 
-	
+fonts.forEach(f => f.family = f.name.replace(/ /g, ""));
+fonts.forEach(f => f.visible = false);
+random(0, fonts.length - 1, 2).forEach(x => fonts[x].visible = true);
+
+function random(min, max, count) {
+	count = Math.min(count, max - min);
+	let result = [];
+	while (count > 0) {
+		let int = Math.floor(Math.random()*(max - min + 1))+min;
+		while (result.indexOf(int)>=0) {
+			int = Math.floor(Math.random()*(max - min + 1))+min;
+		}
+		result.push(int);
+		count --;
+	}
+	return result;
+}
 
 function hasClass(item, value) {
 	return item.getAttribute("class") != null && (item.getAttribute("class").includes(value));
