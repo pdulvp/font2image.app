@@ -1,0 +1,16 @@
+.gitignore
+.github/FUNDING.yml
+.vscode/launch.json
+.npmrc
+.publishignore
+images/colors.png
+images/rasterize.png
+images/thumbnail.png
+node.exe.lnk
+package-lock.json
+package.json
+publish-cache.json
+publish-config.json
+publish.ps1
+README.md
+LICENSE.md
