@@ -187,7 +187,7 @@ function updateChoosableFonts() {
 			updateFonts();
 			hideModal();
 			drawAnimationCookie();
-		})));
+		}))); 
 }
 
 function addFontAdd() {
@@ -203,8 +203,9 @@ function addFontAdd() {
 		drawCookieBox(fonts.filter(f => !f.visible).length);
 		removeClass(document.getElementById("modal-back"), "modal-hide");
 		updateChoosableFonts();
+		
 		document.getElementById("modal-font").style.top = e.target.offsetTop + e.target.offsetHeight;
-		document.getElementById("modal-font").style.left = e.target.offsetLeft;
+		document.getElementById("modal-font").style.left = document.getElementById("font-chooser").offsetLeft;
 		removeClass(document.getElementById("modal-font"), "modal-hide");
 	});
 	root.appendChild(button);
@@ -222,6 +223,18 @@ function hideModal() {
 }
 
 document.getElementById("modal-back").onclick = function(e) {
+	hideModal();
+	clearAnimation();
+}
+document.getElementById("modal-about").onclick = function(e) {
+	hideModal();
+	clearAnimation();
+}
+document.getElementById("modal-license").onclick = function(e) {
+	hideModal();
+	clearAnimation();
+}
+document.getElementById("modal-sponsor").onclick = function(e) {
 	hideModal();
 	clearAnimation();
 }
@@ -250,8 +263,6 @@ function showModal(e) {
 
 	removeClass(document.getElementById("modal-back"), "modal-hide");
 	removeClass(view, "modal-hide");
-	view.style.top = (window.innerHeight - view.getBoundingClientRect().height) / 4;
-	view.style.left = (window.innerWidth - view.getBoundingClientRect().width) / 2;
 }
 
 document.getElementById("link-about").onclick = showModal;
