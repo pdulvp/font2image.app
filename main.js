@@ -370,8 +370,8 @@ function updateSize() {
 			ctx.stroke();
 			ctx.closePath();
 		}
-
 }
+
 function updateSaturation() {
 	let hhu = Math.round(hue*355);
 	let uuu = 'linear-gradient(to right, hsl('+hhu+', 0%, 50%) 0%, hsl('+hhu+', 100%, 50%) 100%)';
@@ -451,22 +451,31 @@ function updateImages(clean) {
 		}
 	});
 
-	mainColor = "rgb(220, 220, 220)"; //CCCCCC
-	let mainLuminance = 220/255; //0.82
+	let mainLuminance = 1; //0.82
+	console.log(hue);
+	if (hue < 0) {
+		mainColor = "rgb(0, 0, 0)"; //CCCCCC
+		document.getElementById("filterGrs").setAttribute("values", "1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0");
+		document.getElementById("filterHue").setAttribute("values", "1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0");
 
-	let sp = 0;
-	let rsp = `${0.2126 + 0.7874 * sp} ${0.7152 - 0.7152 * sp} ${0.0722 - 0.0722 * sp} 0 0`;
-	let gsp = `${0.2126 - 0.2126 * sp} ${0.7152 + 0.2848 * sp} ${0.0722 - 0.0722 * sp} 0 0`;
-	let bsp = `${0.2126 - 0.2126 * sp} ${0.7152 - 0.7152 * sp} ${0.0722 + 0.9278 * sp} 0 0`;
-	let asp = `0.000 0.000 0.000 1 0`;
-	document.getElementById("filterGrs").setAttribute("values", `${rsp} ${gsp} ${bsp} ${asp}`);
+	} else {
+		mainColor = "rgb(220, 220, 220)"; //CCCCCC
+		mainLuminance = 220/255; //0.82
+		let sp = 0;
+		let rsp = `${0.2126 + 0.7874 * sp} ${0.7152 - 0.7152 * sp} ${0.0722 - 0.0722 * sp} 0 0`;
+		let gsp = `${0.2126 - 0.2126 * sp} ${0.7152 + 0.2848 * sp} ${0.0722 - 0.0722 * sp} 0 0`;
+		let bsp = `${0.2126 - 0.2126 * sp} ${0.7152 - 0.7152 * sp} ${0.0722 + 0.9278 * sp} 0 0`;
+		let asp = `0.000 0.000 0.000 1 0`;
+		document.getElementById("filterGrs").setAttribute("values", `${rsp} ${gsp} ${bsp} ${asp}`);
 
-	let ch = require("@pdulvp/colors").hslToRgb(hue-0.01, 1, 0.5).map(c => c/255.0);
-	let rh = `${ch[0]} 0 0 0 0`;
-	let gh = `0 ${ch[1]} 0 0 0`;
-	let bh = `0 0 ${ch[2]} 0 0`;
-	let ah = `0 0 0 1 0`;
-	document.getElementById("filterHue").setAttribute("values", `${rh} ${gh} ${bh} ${ah}`);
+		let ch = require("@pdulvp/colors").hslToRgb(hue-0.01, 1, 0.5).map(c => c/255.0);
+		let rh = `${ch[0]} 0 0 0 0`;
+		let gh = `0 ${ch[1]} 0 0 0`;
+		let bh = `0 0 ${ch[2]} 0 0`;
+		let ah = `0 0 0 1 0`;
+		document.getElementById("filterHue").setAttribute("values", `${rh} ${gh} ${bh} ${ah}`);
+
+	}
 
 	let s = saturation;
 	let r7 = `${0.213+0.787*s} ${0.715-0.715*s} ${0.072-0.072*s} 0 0`;
