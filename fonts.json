@@ -56,5 +56,16 @@
             "mainPage" : "ionicons.com", "mainPageLink" : "https://ionicons.com",
             "author" : "by Ionic Framework team", "authorLink" : "https://ionicframework.com"
         }
+    },
+    { "name" : "FxEmojis",
+        "host" : "https://raw.githubusercontent.com",
+        "url" : "mozilla/fxemoji/master/dist/FirefoxEmoji/style.css",
+        "fontUrl" : "mozilla/fxemoji/master/dist/FirefoxEmoji/FirefoxEmoji.ttf",
+        "weight" : "normal", "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/mozilla/fxemoji/blob/master/LICENSE.md", "license" : "icons(CC BY 4.0)",
+            "mainPage" : "mozilla.github.io/fxemoji", "mainPageLink" : "http://mozilla.github.io/fxemoji/dist/FirefoxEmoji/index.html",
+            "author" : "by Mozilla", "authorLink" : "https://mozilla.org"
+        }
     }
 ]
