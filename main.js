@@ -71,7 +71,7 @@ let fontSize = 40;
 let padding = 4;
 let hue = Math.random();
 let saturation = 0.3 + Math.random() / 2.2;
-let luminance = 0.5 + Math.random() / 5;
+let luminance = 0.5 + Math.random() / 10;
 let alpha = 1;
 
 updateSize();
@@ -451,6 +451,42 @@ function updateImages(clean) {
 		}
 	});
 
+	mainColor = "rgb(220, 220, 220)"; //CCCCCC
+	let mainLuminance = 220/255; //0.82
+
+	let sp = 0;
+	let rsp = `${0.2126 + 0.7874 * sp} ${0.7152 - 0.7152 * sp} ${0.0722 - 0.0722 * sp} 0 0`;
+	let gsp = `${0.2126 - 0.2126 * sp} ${0.7152 + 0.2848 * sp} ${0.0722 - 0.0722 * sp} 0 0`;
+	let bsp = `${0.2126 - 0.2126 * sp} ${0.7152 - 0.7152 * sp} ${0.0722 + 0.9278 * sp} 0 0`;
+	let asp = `0.000 0.000 0.000 1 0`;
+	document.getElementById("filterGrs").setAttribute("values", `${rsp} ${gsp} ${bsp} ${asp}`);
+
+	let ch = require("@pdulvp/colors").hslToRgb(hue-0.01, 1, 0.5).map(c => c/255.0);
+	let rh = `${ch[0]} 0 0 0 0`;
+	let gh = `0 ${ch[1]} 0 0 0`;
+	let bh = `0 0 ${ch[2]} 0 0`;
+	let ah = `0 0 0 1 0`;
+	document.getElementById("filterHue").setAttribute("values", `${rh} ${gh} ${bh} ${ah}`);
+
+	let s = saturation;
+	let r7 = `${0.213+0.787*s} ${0.715-0.715*s} ${0.072-0.072*s} 0 0`;
+	let g7 = `${0.213-0.213*s} ${0.715+0.285*s} ${0.072-0.072*s} 0 0`;
+	let b7 = `${0.213-0.213*s} ${0.715-0.715*s} ${0.072+0.928*s} 0 0`;
+	let a7 = `0 0 0 1 0`;
+	document.getElementById("filterSat").setAttribute("values", `${r7} ${g7} ${b7} ${a7}`);
+
+	let r5 = `1 0 0 0 ${((luminance-(1-mainLuminance))*2-1)}`;
+	let g5 = `0 1 0 0 ${((luminance-(1-mainLuminance))*2-1)}`;
+	let b5 = `0 0 1 0 ${((luminance-(1-mainLuminance))*2-1)}`;
+	let a5 = `0 0 0 1 0`;
+	document.getElementById("filterLum").setAttribute("values", `${r5} ${g5} ${b5} ${a5}`);
+
+	let gamma = 1 + (1 - mainLuminance);
+	document.getElementById("filterGammaR").setAttribute("amplitude", gamma);
+	document.getElementById("filterGammaG").setAttribute("amplitude", gamma);
+	document.getElementById("filterGammaB").setAttribute("amplitude", gamma);
+
+	document.getElementById("filterAlpha").setAttribute("slope", `${alpha}`);
 	
 	let vfonts = fonts.filter(x => x.visible);
 	let lfonts = fonts.filter(x => x.visible && x.loaded !== true);
@@ -878,7 +914,7 @@ function keyListener(e) {
 	}
 }
 document.addEventListener('keydown', keyListener);
-
+let mainColor = "";
 
 function drawVisibleCanvas() {
 	let toDraw = Array.from(document.getElementsByTagName("canvas")).filter(x => hasClass(x, "canvases") && x.getAttribute("dirty") == "true");
@@ -890,14 +926,17 @@ function drawVisibleCanvas() {
 		ctx.imageSmoothingEnabled = false;
 		ctx.textAlign = 'center';
 		ctx.font = canvas.getAttribute("font");
-
+		ctx.filter = "url(#filterMatrix)";
+		
 		var x = Math.floor(canvas.width / 2);
 		var y = Math.floor(canvas.height / 2);
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+
 		ctx.beginPath();
-		ctx.clearRect(0, 0, canvas.width, canvas.height); 
-		ctx.fillStyle = canvas.getAttribute("font-color");
+		ctx.fillStyle = mainColor; //sepia canvas.getAttribute("font-color");
 		ctx.fillText(canvas.getAttribute("font-character"), x, y);
 		ctx.closePath();
+
 		canvas.setAttribute("dirty", "false");
 	});
 }

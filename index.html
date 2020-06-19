@@ -10,10 +10,10 @@
 <html lang="en">
 
   <head>
-    <title>rasterize-font.org</title>
+    <title>Rasterize Font</title>
 
     <meta charset="utf-8">
-	<meta name="title" content="rasterize-font.org">
+	<meta name="title" content="Rasterize Font">
 	<meta name="author" content="pdulvp@laposte.net">
 	<meta name='viewport' content='width=device-width, initial-scale=1'/>
 	<meta name="keywords" content="font, png, convert, rasterize, icon, woff, ttf">
@@ -29,6 +29,8 @@
   </head>
 
   <body class="bg-light">
+
+
 	<div class="container-overlay">
 	<div class="header">
 		<div class="fixed"><a href="https://rasterize-font.org" title="Rasterize-Font.org" aria-label="Home">rasterize-font.org</a></div>
@@ -162,6 +164,29 @@
 
     <script src="main.js"></script>
 	
+	<svg xmlns="http://www.w3.org/2000/svg">
+		<defs>
+		<filter id="filterMatrix">
+
+		<feColorMatrix id="filterGrs" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/>
+	 	<feColorMatrix id="filterHue" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/>
+		<feColorMatrix id="filterSat" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/>
+		<feColorMatrix id="filterLum" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0"/>
+
+		<feComponentTransfer>
+			<feFuncR id="filterGammaR" type="gamma" amplitude="1.00" exponent="1.00"/>
+			<feFuncG id="filterGammaG" type="gamma" amplitude="1.00" exponent="1.00"/>
+			<feFuncB id="filterGammaB" type="gamma" amplitude="1.00" exponent="1.00"/>
+		</feComponentTransfer>
+		
+		<feComponentTransfer>
+    		<feFuncA id="filterAlpha" type="linear" slope="1"/>
+		</feComponentTransfer result="alpha">
+
+		</filter>
+		</defs>
+	</svg>
+
   </body>
   
 </html>
