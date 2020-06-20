@@ -9,7 +9,7 @@ $cacheFile = "publish-cache.json"
 $ignoreFile = ".publishignore"
 
 $extensions = ".html"
-$date = Get-Date -Format "yyyy-MM-ddThh:mmK"
+$date = Get-Date -Format "yyyy-MM-ddThh:mm:ssK"
 
 function Relative {
 	process {
@@ -32,7 +32,7 @@ function CreateSiteMap {
         {
         "  <url>"
         "    <loc>$domain/$name</loc>"
-        "    <lastmod>{0:s}Z</lastmod>" -f $date
+        "    <lastmod>{0:s}</lastmod>" -f $date
         "  </url>"
         }
     }
