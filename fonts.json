@@ -36,8 +36,9 @@
         }
 	},
     { "name" : "fontelico",
-        "url" : "webfonts/fontelico-codes.css",
+        "url" : "webfonts/fontelico.css",
         "fontUrl" : "webfonts/fontelico.woff2",
+		"font2css": true,
         "weight" : "normal", "style" : "normal",
 		"meta": {
             "licenseLink" : "https://github.com/fontello/fontelico.font#license", "license" : "icons(CC-BY-3.0) font(SIL-OFL-1.1)",
@@ -47,6 +48,7 @@
 	},
     { "name" : "ionicons",
         "url" : "webfonts/ionicons.css",
+		"font2css": true,
         "fontUrl" : "webfonts/ionicons.woff2",
         "weight" : "normal", "style" : "normal",
         "meta": {

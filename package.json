@@ -8,7 +8,9 @@
     "@pdulvp/httpquery": "^2.0.0",
     "@pdulvp/require": "^1.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@pdulvp/font2css": "^1.0.1"
+  },
   "scripts": {},
   "author": "pdulvp",
   "license": "CC-BY-NC-ND-4.0"
