@@ -1,35 +1,32 @@
 [
     {   "name" : "font-awesome-regular",
-        "url" : "webfonts/fontawesome.css",
-        "font2css": false,
-        "fontUrl" : "webfonts/fa-regular-400.woff2",
+        "url" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/css/all.css",
+        "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/webfonts/fa-regular-400.woff2",
         "weight": 400, "style" : "normal",
 		"meta": {
-            "version" : "5.13.0", 
+            "version" : "5.13.1", 
             "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)", "licenseLink" : "https://fontawesome.com/license/free",
             "mainPage" : "fontawesome.com", "mainPageLink" : "https://fontawesome.com",
             "author" : "by @fontawesome", "authorLink" : "https://fontawesome.com"
         }
     },
     { "name" : "font-awesome-solid",
-        "url" : "webfonts/fontawesome.css",
-        "font2css": false,
-        "fontUrl" : "webfonts/fa-solid-900.woff2",
+        "url" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/css/all.css",
+        "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/webfonts/fa-solid-900.woff2",
         "weight": 900, "style" : "normal",
         "meta": {
-            "version" : "5.13.0", 
+            "version" : "5.13.1", 
             "licenseLink" : "https://fontawesome.com/license/free", "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)",
             "mainPage" : "fontawesome.com", "mainPageLink" : "https://fontawesome.com",
             "author" : "by @fontawesome", "authorLink" : "https://fontawesome.com"
         }
 	},
     { "name" : "font-awesome-brands",
-        "url" : "webfonts/fontawesome.css",
-        "font2css": false,
-        "fontUrl" : "webfonts/fa-brands-400.woff2",
+        "url" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/css/all.css",
+        "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/webfonts/fa-brands-400.woff2",
         "weight": 400, "style" : "normal",
         "meta": {
-            "version" : "5.13.0", 
+            "version" : "5.13.1", 
             "licenseLink" : "https://fontawesome.com/license/free", "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)",
             "mainPage" : "fontawesome.com", "mainPageLink" : "https://fontawesome.com",
             "author" : "by @fontawesome", "authorLink" : "https://fontawesome.com"
