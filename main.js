@@ -167,11 +167,10 @@ function getFonts() {
 		});
 	} else {
 		let httpquery = require("@pdulvp/httpquery");
-		return httpquery.get(document.location.origin, "fonts.json").then(e => {
+		return httpquery.get("fonts.json").then(e => {
 			fonts = JSON.parse(e);
 			fonts.forEach(f => f.family = f.name.replace(/ /g, ""));
 			fonts.forEach(f => f.visible = false);
-			fonts.filter(f => f.host == "document.location.origin").forEach(f => f.host=document.location.origin);
 			random(0, fonts.length - 1, 2).forEach(x => fonts[x].visible = true);
 			console.log(fonts);
 			Promise.resolve();
@@ -398,7 +397,7 @@ function updateAlpha() {
 function getCssGet(css) {
 	let cssId = css.url;
 	let httpquery = require("@pdulvp/httpquery");
-	return httpquery.get(css.host, css.url).then(e => {
+	return httpquery.get(css.url).then(e => {
 		let doc = document.implementation.createHTMLDocument(""),
 		styleElement = document.createElement("style");
 		styleElement.textContent = e;
@@ -494,7 +493,6 @@ function updateImages(clean) {
 	document.getElementById("filterGammaR").setAttribute("amplitude", gamma);
 	document.getElementById("filterGammaG").setAttribute("amplitude", gamma);
 	document.getElementById("filterGammaB").setAttribute("amplitude", gamma);
-
 	document.getElementById("filterAlpha").setAttribute("slope", `${alpha}`);
 	
 	let vfonts = fonts.filter(x => x.visible);
@@ -504,11 +502,11 @@ function updateImages(clean) {
 	var fontUrls = lfonts.map(x => x.fontUrl).filter( onlyUnique ).map(x => { return { font: vfonts.filter(f => f.fontUrl == x)[0], fontUrl: x } } );
 	console.log(fontUrls);
 
-	var cssUrls = vfonts.map(x => x.url).filter( onlyUnique ).map(x => { return { fonts: vfonts.filter(f => f.url == x), url: x, host: vfonts.filter(f => f.url == x)[0].host } } );
+	var cssUrls = vfonts.map(x => x.url).filter( onlyUnique ).map(x => { return { fonts: vfonts.filter(f => f.url == x), url: x } } );
 	console.log(cssUrls);
 	console.log(document.fonts);
 
-	let fonts2 = fontUrls.map(f => new FontFace(f.font.family, 'url('+f.font.host+"/"+f.fontUrl+')', { style: f.font.style, weight: f.font.weight }));
+	let fonts2 = fontUrls.map(f => new FontFace(f.font.family, 'url('+f.fontUrl+')', { style: f.font.style, weight: f.font.weight }));
 	
 	document.fonts.ready.then(e => {
 		if (fonts2.length == 0) {

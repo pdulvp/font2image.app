@@ -1,7 +1,7 @@
 [
     {   "name" : "font-awesome-regular",
-        "host" : "document.location.origin",
         "url" : "webfonts/fontawesome.css",
+        "font2css": false,
         "fontUrl" : "webfonts/fa-regular-400.woff2",
         "weight": 400, "style" : "normal",
 		"meta": {
@@ -12,8 +12,8 @@
         }
     },
     { "name" : "font-awesome-solid",
-        "host" : "document.location.origin",
         "url" : "webfonts/fontawesome.css",
+        "font2css": false,
         "fontUrl" : "webfonts/fa-solid-900.woff2",
         "weight": 900, "style" : "normal",
         "meta": {
@@ -24,8 +24,8 @@
         }
 	},
     { "name" : "font-awesome-brands",
-        "host" : "document.location.origin",
         "url" : "webfonts/fontawesome.css",
+        "font2css": false,
         "fontUrl" : "webfonts/fa-brands-400.woff2",
         "weight": 400, "style" : "normal",
         "meta": {
@@ -36,7 +36,6 @@
         }
 	},
     { "name" : "fontelico",
-        "host" : "document.location.origin",
         "url" : "webfonts/fontelico-codes.css",
         "fontUrl" : "webfonts/fontelico.woff2",
         "weight" : "normal", "style" : "normal",
@@ -47,7 +46,6 @@
         }
 	},
     { "name" : "ionicons",
-        "host" : "document.location.origin",
         "url" : "webfonts/ionicons.css",
         "fontUrl" : "webfonts/ionicons.woff2",
         "weight" : "normal", "style" : "normal",
@@ -58,9 +56,8 @@
         }
     },
     { "name" : "FxEmojis",
-        "host" : "https://raw.githubusercontent.com",
-        "url" : "mozilla/fxemoji/master/dist/FirefoxEmoji/style.css",
-        "fontUrl" : "mozilla/fxemoji/master/dist/FirefoxEmoji/FirefoxEmoji.ttf",
+        "url" : "https://raw.githubusercontent.com/mozilla/fxemoji/master/dist/FirefoxEmoji/style.css",
+        "fontUrl" : "https://raw.githubusercontent.com/mozilla/fxemoji/master/dist/FirefoxEmoji/FirefoxEmoji.ttf",
         "weight" : "normal", "style" : "normal",
         "meta": {
             "licenseLink" : "https://github.com/mozilla/fxemoji/blob/master/LICENSE.md", "license" : "icons(CC BY 4.0)",
