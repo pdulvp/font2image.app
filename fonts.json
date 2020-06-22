@@ -4,7 +4,6 @@
         "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/webfonts/fa-regular-400.woff2",
         "weight": 400, "style" : "normal",
 		"meta": {
-            "version" : "5.13.1", 
             "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)", "licenseLink" : "https://fontawesome.com/license/free",
             "mainPage" : "fontawesome.com", "mainPageLink" : "https://fontawesome.com",
             "author" : "by @fontawesome", "authorLink" : "https://fontawesome.com"
@@ -15,7 +14,6 @@
         "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/webfonts/fa-solid-900.woff2",
         "weight": 900, "style" : "normal",
         "meta": {
-            "version" : "5.13.1", 
             "licenseLink" : "https://fontawesome.com/license/free", "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)",
             "mainPage" : "fontawesome.com", "mainPageLink" : "https://fontawesome.com",
             "author" : "by @fontawesome", "authorLink" : "https://fontawesome.com"
@@ -26,7 +24,6 @@
         "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/webfonts/fa-brands-400.woff2",
         "weight": 400, "style" : "normal",
         "meta": {
-            "version" : "5.13.1", 
             "licenseLink" : "https://fontawesome.com/license/free", "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)",
             "mainPage" : "fontawesome.com", "mainPageLink" : "https://fontawesome.com",
             "author" : "by @fontawesome", "authorLink" : "https://fontawesome.com"
@@ -34,7 +31,7 @@
 	},
     { "name" : "fontelico",
         "url" : "webfonts/fontelico.css",
-        "fontUrl" : "webfonts/fontelico.woff2",
+        "fontUrl" : "https://raw.githubusercontent.com/fontello/fontelico.font/master/font/fontelico.woff",
 		"font2css": true,
         "weight" : "normal", "style" : "normal",
 		"meta": {
@@ -62,6 +59,46 @@
             "licenseLink" : "https://github.com/mozilla/fxemoji/blob/master/LICENSE.md", "license" : "icons(CC BY 4.0)",
             "mainPage" : "mozilla.github.io/fxemoji", "mainPageLink" : "http://mozilla.github.io/fxemoji/dist/FirefoxEmoji/index.html",
             "author" : "by Mozilla", "authorLink" : "https://mozilla.org"
+        }
+    },
+    { "name" : "BoxIcons",
+        "url" : "https://raw.githubusercontent.com/atisawd/boxicons/master/css/boxicons.css",
+        "fontUrl" : "https://raw.githubusercontent.com/atisawd/boxicons/master/fonts/boxicons.woff2",
+        "weight" : "normal", "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/mozilla/fxemoji/blob/master/LICENSE.md", "license" : "icons(CC 4.0) font(SIL-OFL-1.1)",
+            "mainPage" : "boxicons.com", "mainPageLink" : "https://boxicons.com",
+            "author" : "by atisawd", "authorLink" : "https://github.com/atisawd"
+        }
+    },
+    { "name" : "Evaicons-fill",
+        "url" : "/webfonts/eva-icons-fill.css",
+        "fontUrl" : "/webfonts/eva-icons-fill.woff2",
+        "weight" : "normal", "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/akveo/eva-icons/blob/master/LICENSE.txt", "license" : "icons(MIT)",
+            "mainPage" : "https://akveo.github.io/eva-icons", "mainPageLink" : "https://akveo.github.io/eva-icons",
+            "author" : "by akveo", "authorLink" : "https://github.com/akveo"
+        }
+    },
+    { "name" : "Evaicons-outline",
+        "url" : "/webfonts/eva-icons-outline.css",
+        "fontUrl" : "/webfonts/eva-icons-outline.woff2",
+        "weight" : "normal", "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/akveo/eva-icons/blob/master/LICENSE.txt", "license" : "icons(MIT)",
+            "mainPage" : "https://akveo.github.io/eva-icons", "mainPageLink" : "https://akveo.github.io/eva-icons",
+            "author" : "by akveo", "authorLink" : "https://github.com/akveo"
+        }
+    },
+    { "name" : "evil-icons",
+        "url" : "/webfonts/evil-icons.css",
+        "fontUrl" : "/webfonts/evil-icons.woff2",
+        "weight" : "normal", "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/evil-icons/evil-icons/blob/master/LICENSE.txt", "license" : "icons(MIT)",
+            "mainPage" : "evil-icons.io", "mainPageLink" : "https://evil-icons.io",
+            "author" : "by Alexander Madyankin and Roman Shamin.", "authorLink" : "https://github.com/evil-icons/evil-icons"
         }
     }
 ]
