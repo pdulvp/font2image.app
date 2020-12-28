@@ -1,8 +1,8 @@
-## Rasterize-font
+## font2image.app
 
 Convert icon fonts to rasterized PNG images. Choose icons, color, padding and images are created.
 
-![](images/rasterize.png)
+![](images/desktop.png)
 
 ### Image preview
 
