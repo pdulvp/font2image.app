@@ -2,6 +2,7 @@
     {   "name" : "font-awesome-regular",
         "url" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/css/all.css",
         "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/webfonts/fa-regular-400.woff2",
+        "fontType" : "woff2",
         "weight": 400, "style" : "normal",
 		"meta": {
             "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)", "licenseLink" : "https://fontawesome.com/license/free",
@@ -12,6 +13,7 @@
     { "name" : "font-awesome-solid",
         "url" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/css/all.css",
         "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/webfonts/fa-solid-900.woff2",
+        "fontType" : "woff2",
         "weight": 900, "style" : "normal",
         "meta": {
             "licenseLink" : "https://fontawesome.com/license/free", "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)",
@@ -22,6 +24,7 @@
     { "name" : "font-awesome-brands",
         "url" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/css/all.css",
         "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/webfonts/fa-brands-400.woff2",
+        "fontType" : "woff2",
         "weight": 400, "style" : "normal",
         "meta": {
             "licenseLink" : "https://fontawesome.com/license/free", "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)",
@@ -32,6 +35,7 @@
     { "name" : "fontelico",
         "url" : "webfonts/fontelico.css",
         "fontUrl" : "https://raw.githubusercontent.com/fontello/fontelico.font/master/font/fontelico.woff",
+        "fontType" : "woff",
 		"font2css": true,
         "weight" : "normal", "style" : "normal",
 		"meta": {
@@ -44,6 +48,7 @@
         "url" : "webfonts/ionicons.css",
 		"font2css": true,
         "fontUrl" : "webfonts/ionicons.woff2",
+        "fontType" : "woff2",
         "weight" : "normal", "style" : "normal",
         "meta": {
             "licenseLink" : "https://github.com/ionic-team/ionicons/blob/master/LICENSE", "license" : "MIT",
@@ -54,6 +59,7 @@
     { "name" : "FxEmojis",
         "url" : "https://raw.githubusercontent.com/mozilla/fxemoji/master/dist/FirefoxEmoji/style.css",
         "fontUrl" : "https://raw.githubusercontent.com/mozilla/fxemoji/master/dist/FirefoxEmoji/FirefoxEmoji.ttf",
+        "fontType" : "truetype",
         "weight" : "normal", "style" : "normal",
         "meta": {
             "licenseLink" : "https://github.com/mozilla/fxemoji/blob/master/LICENSE.md", "license" : "icons(CC BY 4.0)",
@@ -64,6 +70,7 @@
     { "name" : "BoxIcons",
         "url" : "https://raw.githubusercontent.com/atisawd/boxicons/master/css/boxicons.css",
         "fontUrl" : "https://raw.githubusercontent.com/atisawd/boxicons/master/fonts/boxicons.woff2",
+        "fontType" : "woff2",
         "weight" : "normal", "style" : "normal",
         "meta": {
             "licenseLink" : "https://github.com/mozilla/fxemoji/blob/master/LICENSE.md", "license" : "icons(CC 4.0) font(SIL-OFL-1.1)",
@@ -74,6 +81,7 @@
     { "name" : "Evaicons-fill",
         "url" : "/webfonts/eva-icons-fill.css",
         "fontUrl" : "/webfonts/eva-icons-fill.woff2",
+        "fontType" : "woff2",
         "weight" : "normal", "style" : "normal",
         "meta": {
             "licenseLink" : "https://github.com/akveo/eva-icons/blob/master/LICENSE.txt", "license" : "icons(MIT)",
@@ -84,6 +92,7 @@
     { "name" : "Evaicons-outline",
         "url" : "/webfonts/eva-icons-outline.css",
         "fontUrl" : "/webfonts/eva-icons-outline.woff2",
+        "fontType" : "woff2",
         "weight" : "normal", "style" : "normal",
         "meta": {
             "licenseLink" : "https://github.com/akveo/eva-icons/blob/master/LICENSE.txt", "license" : "icons(MIT)",
@@ -94,6 +103,7 @@
     { "name" : "evil-icons",
         "url" : "/webfonts/evil-icons.css",
         "fontUrl" : "/webfonts/evil-icons.woff2",
+        "fontType" : "woff2",
         "weight" : "normal", "style" : "normal",
         "meta": {
             "licenseLink" : "https://github.com/evil-icons/evil-icons/blob/master/LICENSE.txt", "license" : "icons(MIT)",

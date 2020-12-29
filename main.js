@@ -33,6 +33,9 @@ function removeClass(item, value) {
 		item.setAttribute("class", item.getAttribute("class").replace(value, "").trim());
 	}
 }
+const unique = (value, index, self) => {
+	return self.indexOf(value) === index;
+}
 
 function addClass(item, value) {
     if (!hasClass(item, value)) {
@@ -42,22 +45,107 @@ function addClass(item, value) {
     }
 }
 
+function b64EncodeUnicode(str) {
+    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g,
+        function toSolidBytes(match, p1) {
+            return String.fromCharCode('0x' + p1);
+    }));
+}
+
 function download() {
 	var zip = new JSZip();
 	var img = zip.folder("images");
 	
 	let value = document.getElementById("download-type").value;
-	let types = { "gif": "image/gif", "jpg": "image/jpeg", "png": "image/png" };
+	let types = { "gif": "image/gif", "jpg": "image/jpeg", "png": "image/png", "svg": "image/svg+xml" };
 	let type = types[value] == undefined ? "image/png": types[value];
 	let ext = types[value] == undefined ? "png": value;
 
-	Array.from(document.getElementsByClassName("active")).forEach(e => {
-		let url2 = e.toDataURL(type);
-		img.file(e.getAttribute("title")+"."+ext, url2.split(",")[1], {base64: true});
+	let activeCases = Array.from(document.getElementsByClassName("active"));
+	console.log(fonts);
+	let activeFonts = activeCases.map(x => x.getAttribute("font-name")).filter(unique).map(f => {
+		return fonts.filter(x => x.name == f)[0];
 	});
+	//let httpquery = require("@pdulvp/httpquery");
 
-	zip.generateAsync({type: "blob"})
-	.then(function(content) {
+	
+	let promises = activeFonts.map(x => {
+		return new Promise((resolve, reject) => {
+			var request = new XMLHttpRequest();
+			request.open('GET', x.fontUrl, true);
+			request.responseType = 'blob';
+			request.onload = function() {
+				var reader = new FileReader();
+				reader.readAsDataURL(request.response);
+				reader.addEventListener("load", function () {
+					let mime = {
+						"truetype": "font/ttf",
+						"otf": "font/otf",
+						"woff": "font/woff",
+						"woff2": "font/woff2"
+					}
+					resolve({ font: x, base64: reader.result.replace("application/octet-stream", mime[x.fontType]) });
+				}, false);
+			};
+			request.send();
+		});
+	});
+	Promise.all(promises).then(fonts2 => {
+		//httpquery.get(x.fontUrl))).then(fonts => {
+		let fontByNames = {};
+		activeFonts.forEach(e => fontByNames[e.name] = fonts2[activeFonts.indexOf(e)]);
+		return Promise.resolve(fontByNames);
+  
+	}).then(fontByNames => {
+
+		activeCases.map(e => {
+			if (value == "svg") {
+				var wrap = document.createElement('div');
+				let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+				let defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+				let style = document.createElementNS("http://www.w3.org/2000/svg", "style");
+				svg.appendChild(defs);
+				defs.appendChild(style);
+				style.setAttribute("type", "text/css");
+				let selectedFont = fontByNames[e.getAttribute("font-name")];
+				let family = e.getAttribute("font-family");
+				let base64 = selectedFont.base64;
+				style.textContent = `@font-face { font-family: '${family}'; src: url('${base64}') format('woff2'); font-style: normal; font-weight: ${e.getAttribute("font-weight")} }`;
+	
+				svg.appendChild(document.getElementById("filterMatrix").cloneNode(true));
+				wrap.appendChild(svg);
+				svg.setAttribute("width", e.width);
+				svg.setAttribute("height", e.height);
+	
+				let text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+				let x = Math.floor(e.width / 2);
+				let y = Math.floor(e.height / 2);
+				text.setAttribute("x", x);
+				text.setAttribute("y", y);
+				text.setAttribute("dy", ".18em"); //magic centering number 
+				text.setAttribute("font-family", e.getAttribute("font-family"));
+				text.setAttribute("font-weight", e.getAttribute("font-weight"));
+				text.setAttribute("font-size", e.getAttribute("font-size"));
+				text.setAttribute("text-anchor", "middle");
+				text.setAttribute("dominant-baseline", "middle");
+				text.setAttribute("fill", mainColor);
+				text.setAttribute("filter", "url(#filterMatrix)");
+				text.textContent = e.getAttribute("font-character");
+				svg.appendChild(text);
+
+				let res = b64EncodeUnicode(new XMLSerializer().serializeToString(svg));
+				img.file(e.getAttribute("title") + "." + ext, (res), { base64: true });
+				
+			} else {
+				let url2 = e.toDataURL(type);
+				img.file(e.getAttribute("title") + "." + ext, url2.split(",")[1], { base64: true });
+			}
+		});
+		return Promise.resolve(true);
+	}).then(e => {
+		return zip.generateAsync( {type: "blob"} );
+
+	}).then(function(content) {
 		saveAs(content, "images.zip");
 	});
 }
@@ -1019,6 +1107,10 @@ function createsImage(element, color, font, rootContainer) {
 	}
 	if (canvas.getAttribute("font") != tctx.font) {
 		canvas.setAttribute("font", tctx.font);
+		canvas.setAttribute("font-weight", font.weight);
+		canvas.setAttribute("font-size", fontS);
+		canvas.setAttribute("font-family", font.family);
+		canvas.setAttribute("font-name", font.name);
 		dirty = true;
 	}
 	if (canvas.width != fontSize) {

@@ -15,8 +15,8 @@
     <meta charset="utf-8">
 	<meta name="title" content="font2image.app">
 	<meta name='viewport' content='width=device-width, initial-scale=1'/>
-	<meta name="keywords" content="font, png, convert, rasterize, icon, woff, ttf">
-	<meta name="description" content="Convert icon fonts to rasterized PNG images. Choose icons, color, padding and images are created.">
+	<meta name="keywords" content="font, png, svg, gif, jpg, convert, rasterize, icon, woff, ttf">
+	<meta name="description" content="Convert icon fonts to rasterized PNG GIF JPG or SVG images. Choose icons, color, padding and images are created.">
 	<meta name="target" content="all"/>
 	<meta name="audience" content="all"/>
 	<meta name="coverage" content="Worldwide"/>
@@ -47,6 +47,7 @@
 				<option>png</option>
 				<option>gif</option>
 				<option>jpg</option>
+				<option>svg</option>
 			</select>
 		</div>
 	</div>
@@ -186,7 +187,7 @@
 		
 		<feComponentTransfer>
     		<feFuncA id="filterAlpha" type="linear" slope="1"/>
-		</feComponentTransfer result="alpha">
+		</feComponentTransfer>
 
 		</filter>
 		</defs>
