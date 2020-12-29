@@ -43,18 +43,22 @@ function addClass(item, value) {
 }
 
 function download() {
-
 	var zip = new JSZip();
 	var img = zip.folder("images");
 	
+	let value = document.getElementById("download-type").value;
+	let types = { "gif": "image/gif", "jpg": "image/jpeg", "png": "image/png" };
+	let type = types[value] == undefined ? "image/png": types[value];
+	let ext = types[value] == undefined ? "png": value;
+
 	Array.from(document.getElementsByClassName("active")).forEach(e => {
-		let url2 = e.toDataURL("image/png");
-		img.file(e.getAttribute("title")+".png", url2.split(",")[1], {base64: true});
+		let url2 = e.toDataURL(type);
+		img.file(e.getAttribute("title")+"."+ext, url2.split(",")[1], {base64: true});
 	});
 
 	zip.generateAsync({type: "blob"})
 	.then(function(content) {
-		saveAs(content, "example.zip");
+		saveAs(content, "images.zip");
 	});
 }
 
@@ -92,6 +96,12 @@ function triggerUpdate(delay) {
 		updateImages(false);
 	}, delay == undefined ? 100 : delay);
 }
+
+let translucentBackground = document.getElementById("download-type").value == "png";
+document.getElementById("download-type").onchange=function(event) {
+	translucentBackground = event.target.value == "png";
+	triggerUpdate();
+};
 
 document.getElementById("imageSize").value = fontSize;
 document.getElementById("imageSize").oninput=function(event) {
@@ -153,7 +163,6 @@ document.getElementById("alpha").onchange=function(event) {
 document.getElementById("download").onclick=function(event) {
 	download();
 };
-
 document.getElementById("canvases-preview").ondblclick = function(event) {
 	easter = !easter;
 	updateSize();
@@ -180,7 +189,6 @@ function getFonts() {
 
 function updateFonts() {
 	getFonts().then(e => {
-		
 		
 		let fontsUi = document.getElementById("font-chooser");
 		fontsUi.innerHTML = "";
@@ -933,13 +941,21 @@ function drawVisibleCanvas() {
 		ctx.imageSmoothingEnabled = false;
 		ctx.textAlign = 'center';
 		ctx.font = canvas.getAttribute("font");
-		ctx.filter = "url(#filterMatrix)";
-		
+
 		var x = Math.floor(canvas.width / 2);
 		var y = Math.floor(canvas.height / 2);
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+		if (!translucentBackground) {
+			ctx.beginPath();
+			ctx.filter = "none";
+			ctx.fillStyle = "rgb(255, 255, 255)";
+			ctx.fillRect(0, 0, canvas.width, canvas.height);
+			ctx.closePath();
+		}
+
 		ctx.beginPath();
+		ctx.filter = "url(#filterMatrix)";
 		ctx.fillStyle = mainColor; //sepia canvas.getAttribute("font-color");
 		ctx.fillText(canvas.getAttribute("font-character"), x, y);
 		ctx.closePath();
@@ -987,6 +1003,10 @@ function createsImage(element, color, font, rootContainer) {
 		rootContainer.appendChild(container);
 		container.appendChild(canvas);
 		canvas.onclick = totototo;
+		dirty = true;
+	}
+	if (canvas.getAttribute("translucent-background") !== translucentBackground) {
+		canvas.setAttribute("translucent-background", translucentBackground);
 		dirty = true;
 	}
 	if (canvas.getAttribute("font-color") != color) {
