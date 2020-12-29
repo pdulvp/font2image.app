@@ -44,18 +44,6 @@
             "author" : "by Crowdsourced, for Fontello project", "authorLink" : "https://github.com/fontello/fontelico.font#contributors"
         }
 	},
-    { "name" : "ionicons",
-        "url" : "webfonts/ionicons.css",
-		"font2css": true,
-        "fontUrl" : "webfonts/ionicons.woff2",
-        "fontType" : "woff2",
-        "weight" : "normal", "style" : "normal",
-        "meta": {
-            "licenseLink" : "https://github.com/ionic-team/ionicons/blob/master/LICENSE", "license" : "MIT",
-            "mainPage" : "ionicons.com", "mainPageLink" : "https://ionicons.com",
-            "author" : "by Ionic Framework team", "authorLink" : "https://ionicframework.com"
-        }
-    },
     { "name" : "FxEmojis",
         "url" : "https://raw.githubusercontent.com/mozilla/fxemoji/master/dist/FirefoxEmoji/style.css",
         "fontUrl" : "https://raw.githubusercontent.com/mozilla/fxemoji/master/dist/FirefoxEmoji/FirefoxEmoji.ttf",
@@ -76,28 +64,6 @@
             "licenseLink" : "https://github.com/mozilla/fxemoji/blob/master/LICENSE.md", "license" : "icons(CC 4.0) font(SIL-OFL-1.1)",
             "mainPage" : "boxicons.com", "mainPageLink" : "https://boxicons.com",
             "author" : "by atisawd", "authorLink" : "https://github.com/atisawd"
-        }
-    },
-    { "name" : "Evaicons-fill",
-        "url" : "/webfonts/eva-icons-fill.css",
-        "fontUrl" : "/webfonts/eva-icons-fill.woff2",
-        "fontType" : "woff2",
-        "weight" : "normal", "style" : "normal",
-        "meta": {
-            "licenseLink" : "https://github.com/akveo/eva-icons/blob/master/LICENSE.txt", "license" : "icons(MIT)",
-            "mainPage" : "https://akveo.github.io/eva-icons", "mainPageLink" : "https://akveo.github.io/eva-icons",
-            "author" : "by akveo", "authorLink" : "https://github.com/akveo"
-        }
-    },
-    { "name" : "Evaicons-outline",
-        "url" : "/webfonts/eva-icons-outline.css",
-        "fontUrl" : "/webfonts/eva-icons-outline.woff2",
-        "fontType" : "woff2",
-        "weight" : "normal", "style" : "normal",
-        "meta": {
-            "licenseLink" : "https://github.com/akveo/eva-icons/blob/master/LICENSE.txt", "license" : "icons(MIT)",
-            "mainPage" : "https://akveo.github.io/eva-icons", "mainPageLink" : "https://akveo.github.io/eva-icons",
-            "author" : "by akveo", "authorLink" : "https://github.com/akveo"
         }
     },
     { "name" : "evil-icons",
