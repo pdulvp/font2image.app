@@ -361,6 +361,9 @@ function addFont(font, classButton, ariaLabel, onclick) {
 	text.textContent = font.name;
 	root.setAttribute("font-name", font.name);
 	root.appendChild(text);
+	if (font.color) {
+		text.textContent += " (color)";
+	}
 	let button = document.createElement("div");
 	button.setAttribute("aria-label", ariaLabel);
 	addClass(button, classButton);

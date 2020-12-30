@@ -44,9 +44,21 @@
             "author" : "by Crowdsourced, for Fontello project", "authorLink" : "https://github.com/fontello/fontelico.font#contributors"
         }
 	},
+    { "name" : "ionicons",
+        "url" : "https://raw.githubusercontent.com/ionic-team/ionicons/master/docs/css/ionicons.min.css",
+        "fontUrl" : "https://raw.githubusercontent.com/ionic-team/ionicons/master/docs/fonts/ionicons.woff2",
+        "fontType" : "woff2",
+        "weight" : 400, "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/ionic-team/ionicons/blob/master/LICENSE", "license" : "MIT",
+            "mainPage" : "ionicons.com", "mainPageLink" : "https://ionicons.com",
+            "author" : "by Ionic Framework team", "authorLink" : "https://ionicframework.com"
+        }
+    },
     { "name" : "FxEmojis",
         "url" : "https://raw.githubusercontent.com/mozilla/fxemoji/master/dist/FirefoxEmoji/style.css",
         "fontUrl" : "https://raw.githubusercontent.com/mozilla/fxemoji/master/dist/FirefoxEmoji/FirefoxEmoji.ttf",
+        "color" : true,
         "fontType" : "truetype",
         "weight" : "normal", "style" : "normal",
         "meta": {
@@ -66,6 +78,20 @@
             "author" : "by atisawd", "authorLink" : "https://github.com/atisawd"
         }
     },
+
+    { "name" : "noto-emoji",
+        "url" : "webfonts/noto-emoji.css",
+        "fontUrl" : "https://raw.githubusercontent.com/googlefonts/noto-emoji/master/fonts/NotoColorEmoji.ttf",
+        "color" : true,
+        "fontType" : "ttf",
+        "weight" : "normal", "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/Remix-Design/RemixIcon/blob/master/License", "license" : "Apache License 2.0",
+            "mainPage" : "https://remixicon.com/", "mainPageLink" : "https://remixicon.com/",
+            "author" : "by Remix Design.", "authorLink" : "https://github.com/Remix-Design"
+        }
+    },
+
     { "name" : "evil-icons",
         "url" : "/webfonts/evil-icons.css",
         "fontUrl" : "/webfonts/evil-icons.woff2",
@@ -75,6 +101,139 @@
             "licenseLink" : "https://github.com/evil-icons/evil-icons/blob/master/LICENSE.txt", "license" : "icons(MIT)",
             "mainPage" : "evil-icons.io", "mainPageLink" : "https://evil-icons.io",
             "author" : "by Alexander Madyankin and Roman Shamin.", "authorLink" : "https://github.com/evil-icons/evil-icons"
+        }
+    },
+
+    { "name" : "microns-icons",
+        "url" : "https://raw.githubusercontent.com/stephenhutchings/microns/master/fonts/microns.css",
+        "fontUrl" : "https://raw.githubusercontent.com/stephenhutchings/microns/master/fonts/microns.woff2",
+        "fontType" : "woff2",
+        "weight" : "normal", "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/stephenhutchings/microns/blob/master/LICENCE.md", "license" : "icons(CC BY-SA-3.0) font(SIL-OFL-1.1)",
+            "mainPage" : "stephenhutchings/microns", "mainPageLink" : "https://github.com/stephenhutchings/microns",
+            "author" : "by Stephen Hutchings.", "authorLink" : "https://github.com/stephenhutchings"
+        }
+    }, 
+
+    { "name" : "material-design-iconic-font",
+        "url" : "https://raw.githubusercontent.com/zavoloklom/material-design-iconic-font/master/dist/css/material-design-iconic-font.css",
+        "fontUrl" : "https://raw.githubusercontent.com/zavoloklom/material-design-iconic-font/master/dist/fonts/Material-Design-Iconic-Font.woff2",
+        "font2css" : true,
+        "fontType" : "ttf",
+        "weight" : "normal", "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/zavoloklom/material-design-iconic-font/blob/master/License.md", "license" : "CC BY-SA 4.0",
+            "mainPage" : "zavoloklom.github.io/material-design-iconic-font", "mainPageLink" : "http://zavoloklom.github.io/material-design-iconic-font/",
+            "author" : "by Sergey Kupletsky / MDI Community.", "authorLink" : "https://github.com/zavoloklom/material-design-iconic-font"
+        }
+    },
+
+    { "name" : "devicon",
+        "url" : "https://raw.githubusercontent.com/devicons/devicon/master/devicon.css",
+        "fontUrl" : "https://raw.githubusercontent.com/devicons/devicon/master/fonts/devicon.woff",
+        "fontType" : "woff",
+        "weight" : "normal", "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/devicons/devicon/blob/master/LICENSE", "license" : "icons(MIT) font(SIL-OFL-1.1)",
+            "mainPage" : "devicon.dev", "mainPageLink" : "https://devicon.dev",
+            "author" : "by Julien Monty.", "authorLink" : "https://github.com/konpa"
+        }
+    },
+
+    { "name" : "weather-icons",
+        "url" : "https://raw.githubusercontent.com/erikflowers/weather-icons/master/css/weather-icons.min.css",
+        "fontUrl" : "https://raw.githubusercontent.com/erikflowers/weather-icons/master/font/weathericons-regular-webfont.woff2",
+        "fontType" : "woff2",
+        "weight" : "normal", "style" : "normal",
+        "meta": {
+            "licenseLink" : "http://scripts.sil.org/OFL", "license" : "font(SIL-OFL-1.1)",
+            "mainPage" : "erikflowers.github.io/weather-icons", "mainPageLink" : "https://erikflowers.github.io/weather-icons/",
+            "author" : "by Erik.", "authorLink" : "https://github.com/erikflowers"
+        }
+    },
+
+    { "name" : "RemixIcon",
+        "url" : "https://raw.githubusercontent.com/Remix-Design/RemixIcon/master/fonts/remixicon.css",
+        "fontUrl" : "https://raw.githubusercontent.com/Remix-Design/RemixIcon/master/fonts/remixicon.woff2",
+        "fontType" : "woff2",
+        "weight" : "normal", "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/Remix-Design/RemixIcon/blob/master/License", "license" : "Apache License 2.0",
+            "mainPage" : "remixicon.com", "mainPageLink" : "https://remixicon.com/",
+            "author" : "by Remix Design.", "authorLink" : "https://github.com/Remix-Design"
+        }
+    },
+
+    { "name" : " line-awesome-regular",
+        "url" : "https://raw.githubusercontent.com/icons8/line-awesome/master/dist/line-awesome/css/line-awesome.css",
+        "fontUrl" : "https://raw.githubusercontent.com/icons8/line-awesome/master/dist/line-awesome/fonts/la-regular-400.woff2",
+        "fontType" : "woff2",
+        "weight" : 400, "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/icons8/line-awesome/blob/master/LICENSE.md", "license" : "MIT / Good Old Boy",
+            "mainPage" : "icons8.com/line-awesome", "mainPageLink" : "https://icons8.com/line-awesome",
+            "author" : "by icons8.", "authorLink" : "https://icons8.com"
+        }
+    },
+
+    { "name" : " line-awesome-brands",
+        "url" : "https://raw.githubusercontent.com/icons8/line-awesome/master/dist/line-awesome/css/line-awesome.css",
+        "fontUrl" : "https://raw.githubusercontent.com/icons8/line-awesome/master/dist/line-awesome/fonts/la-brands-400.woff2",
+        "fontType" : "woff2",
+        "weight" : 400, "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/icons8/line-awesome/blob/master/LICENSE.md", "license" : "MIT / Good Old Boy",
+            "mainPage" : "icons8.com/line-awesome", "mainPageLink" : "https://icons8.com/line-awesome",
+            "author" : "by icons8.", "authorLink" : "https://icons8.com"
+        }
+    },
+
+    { "name" : "line-awesome-solid",
+        "url" : "https://raw.githubusercontent.com/icons8/line-awesome/master/dist/line-awesome/css/line-awesome.css",
+        "fontUrl" : "https://raw.githubusercontent.com/icons8/line-awesome/master/dist/line-awesome/fonts/la-solid-900.woff2",
+        "fontType" : "woff2",
+        "weight" : 900, "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/icons8/line-awesome/blob/master/LICENSE.md", "license" : "MIT / Good Old Boy",
+            "mainPage" : "icons8.com/line-awesome", "mainPageLink" : "https://icons8.com/line-awesome",
+            "author" : "by icons8.", "authorLink" : "https://icons8.com"
+        }
+    },
+
+    { "name" : "Bootstrap Icons",
+        "url" : "https://raw.githubusercontent.com/twbs/icons/main/font/bootstrap-icons.css",
+        "fontUrl" : "https://raw.githubusercontent.com/twbs/icons/main/font/fonts/bootstrap-icons.woff2",
+        "fontType" : "woff2",
+        "weight" : "normal", "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/icons8/line-awesome/blob/master/LICENSE.md", "license" : "MIT",
+            "mainPage" : "icons.getbootstrap.com/", "mainPageLink" : "https://icons.getbootstrap.com",
+            "author" : "by The Bootstrap Authors.", "authorLink" : "https://getbootstrap.com"
+        }
+    },
+
+    { "name" : "Vaadin Icons",
+        "url" : "/webfonts/vaadin.css",
+        "fontUrl" : "https://raw.githubusercontent.com/vaadin/vaadin-icons/master/assets/fonts/Vaadin-Icons.woff",
+        "fontType" : "woff",
+        "weight" : "normal", "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/vaadin/vaadin-icons/blob/master/LICENSE", "license" : "Apache License 2.0",
+            "mainPage" : "vaadin.com/vaadin-icons", "mainPageLink" : "https://vaadin.com/components/vaadin-icons",
+            "author" : "by vaadin", "authorLink" : "https://vaadin.com"
+        }
+    },
+
+    { "name" : "phosphor-icons",
+        "url" : "https://raw.githubusercontent.com/phosphor-icons/phosphor-icons/master/src/css/phosphor.css",
+        "fontUrl" : "https://raw.githubusercontent.com/phosphor-icons/phosphor-icons/master/src/font/phosphor.woff?raw=true",
+        "fontType" : "woff",
+        "weight" : "normal", "style" : "normal",
+        "meta": {
+            "licenseLink" : "https://github.com/phosphor-icons/phosphor-icons/blob/master/LICENSE", "license" : "MIT",
+            "mainPage" : "phosphoricons.com", "mainPageLink" : "https://phosphoricons.com",
+            "author" : "by Phosphor Icons", "authorLink" : "https://phosphoricons.com"
         }
     }
 ]
