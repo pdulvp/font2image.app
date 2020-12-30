@@ -283,7 +283,6 @@ function updateFonts() {
 		fonts.filter(f => f.visible).forEach(f => fontsUi.appendChild(addFont(f, "font-chooser-item-close", "Remove",
 			function(e) {
 				fonts.filter(f => f.name == e.target.parentNode.getAttribute("font-name")).forEach(f => f.visible = false);
-				drawAnimationProut();
 				updateFonts();
 			})));
 		if (fonts.filter(f => f.visible == false).length > 0) {
@@ -300,8 +299,6 @@ function updateChoosableFonts() {
 		function(e) {
 			fonts.filter(f => f.name == e.target.parentNode.getAttribute("font-name")).forEach(f => f.visible = true);
 			updateFonts();
-			hideModal();
-			drawAnimationCookie();
 		}))); 
 }
 
@@ -315,7 +312,6 @@ function addFontAdd() {
 	addClass(button, "font-chooser-item-add");
 	button.setAttribute("aria-label", "Add");
 	button.onclick = (function(e) {
-		drawCookieBox(fonts.filter(f => !f.visible).length);
 		removeClass(document.getElementById("modal-back"), "modal-hide");
 		updateChoosableFonts();
 		
@@ -817,41 +813,6 @@ function drawAbout() {
 	img22.src = "svg/about-light.svg";
 }
 
-function drawCookieBox(nbCookies) {
-
-	let canvas = document.getElementById("canvases-preview");
-	let ctx = canvas.getContext("2d");
-	images = ["svg/cookie-box-5.svg", "svg/cookie-box-4.svg", "svg/cookie-box-3.svg", "svg/cookie-box-2.svg", "svg/cookie-box-1.svg"]; 
-	images = images.slice(0, Math.min(nbCookies, images.length));
-	let Img = [];
-	
-	let i = 0;
-	let drawImages = function() {
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		Img.forEach(i => {
-			ctx.drawImage(i, 30, 30, 100, 100);
-		})
-	};
-
-	let loadImage = function(i) {
-		let img22 = new Image();
-		if (i < images.length) {
-			img22.onload = function(e) {
-				loadImage(i + 1);
-			}
-			img22.src = images[i];
-		} else {
-			img22.onload = function(e) {
-				drawImages();
-			}
-			img22.src = "svg/cookie-box.svg";
-		}
-		Img.push(img22);
-	};
-
-	loadImage(0);
-}
-
 function drawSponsor() {
 	if (raf != null) {
 		window.cancelAnimationFrame(raf);
@@ -933,75 +894,6 @@ function clearAnimation() {
 	raf = setTimeout(updateSize, 200);
 }
 
-function drawAnimationCookie() {
-	if (raf != null) {
-		window.cancelAnimationFrame(raf);
-		clearTimeout(raf);
-		raf = null;
-	}
-	let img22 = new Image();
-	let img23 = new Image();
-	let canvas = document.getElementById("canvases-preview");
-	let ctx = canvas.getContext("2d");
-	
-	function drawCookie() {
-		ctx.globalAlpha = 1;
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		ctx.drawImage(img23, 30, 30, 100, 100);
-		raf = setTimeout(clearAnimation, 500);
-	}
-
-	img22.onload = function(e) {
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		ctx.drawImage(img22, 30, 30, 100, 100);
-		img23.onload = function(e) {
-			raf = setTimeout(drawCookie, 300);
-		}
-		img23.src = "svg/cookie-eat.svg";
-	}
-	img22.src = "svg/cookie.svg";
-}
-
-function drawAnimationProut() {
-	if (raf != null) {
-		window.cancelAnimationFrame(raf);
-		clearTimeout(raf);
-		raf = null;
-	}
-	
-	let img22 = new Image();
-	let img23 = new Image();
-	let canvas = document.getElementById("canvases-preview");
-	let ctx = canvas.getContext("2d");
-	let yy = 20;
-	
-	function drawProut() {
-		yy += 8;
-		if (yy == 28) {
-			ctx.globalAlpha = 1;
-			ctx.drawImage(img23, 30, 30, 100, 100);
-			raf = window.requestAnimationFrame(drawProut);
-			
-		} else if (yy < 308) {
-			ctx.globalAlpha = 0.0094;
-			ctx.drawImage(img23, 20, 30-yy*2, 100+yy*2, 100+yy*4);
-			raf = window.requestAnimationFrame(drawProut);
-
-		} else {
-			clearAnimation();
-		}
-	}
-
-	img22.onload = function(e) {
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		ctx.drawImage(img22, 30, 30, 100, 100);
-		img23.onload = function(e) {
-			raf = setTimeout(drawProut, 300);
-		}
-		img23.src = "svg/prout.svg";
-	}
-	img22.src = "svg/prout-bar.svg";
-}
 function keyListener(e) {
 	if ("Escape" == e.code || "Space" == e.code || "Enter" == e.code) {
 		if (Array.from(document.getElementsByClassName("modal")).filter(x => x.getAttribute("class").indexOf("modal-hide")==-1).length > 0) {
@@ -1014,7 +906,6 @@ function keyListener(e) {
 		let items = Array.from(document.getElementsByClassName("active"));
 		if (items.length > 0) {
 			items.forEach(x => removeClass(x, "active"));
-			drawAnimationProut();
 			event.preventDefault();
 		}
 	}
