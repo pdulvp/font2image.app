@@ -100,38 +100,41 @@ function download() {
 
 		activeCases.map(e => {
 			if (value == "svg") {
-				var wrap = document.createElement('div');
-				let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-				let defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
-				let style = document.createElementNS("http://www.w3.org/2000/svg", "style");
-				svg.appendChild(defs);
-				defs.appendChild(style);
-				style.setAttribute("type", "text/css");
-				let selectedFont = fontByNames[e.getAttribute("font-name")];
-				let family = e.getAttribute("font-family");
-				let base64 = selectedFont.base64;
-				style.textContent = `@font-face { font-family: '${family}'; src: url('${base64}') format('woff2'); font-style: normal; font-weight: ${e.getAttribute("font-weight")} }`;
-	
-				svg.appendChild(document.getElementById("filterMatrix").cloneNode(true));
-				wrap.appendChild(svg);
-				svg.setAttribute("width", e.width);
-				svg.setAttribute("height", e.height);
-	
-				let text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-				let x = Math.floor(e.width / 2);
-				let y = Math.floor(e.height / 2);
-				text.setAttribute("x", x);
-				text.setAttribute("y", y);
-				text.setAttribute("dy", ".18em"); //magic centering number 
-				text.setAttribute("font-family", e.getAttribute("font-family"));
-				text.setAttribute("font-weight", e.getAttribute("font-weight"));
-				text.setAttribute("font-size", e.getAttribute("font-size"));
-				text.setAttribute("text-anchor", "middle");
-				text.setAttribute("dominant-baseline", "middle");
-				text.setAttribute("fill", mainColor);
-				text.setAttribute("filter", "url(#filterMatrix)");
-				text.textContent = e.getAttribute("font-character");
-				svg.appendChild(text);
+				let svg = (e.getElementsByTagName("svg").length == 1) ? e.getElementsByTagName("svg")[0] : null;
+				if (svg == null) {
+					var wrap = document.createElement('div');
+					svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+					let defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+					let style = document.createElementNS("http://www.w3.org/2000/svg", "style");
+					svg.appendChild(defs);
+					defs.appendChild(style);
+					style.setAttribute("type", "text/css");
+					let selectedFont = fontByNames[e.getAttribute("font-name")];
+					let family = e.getAttribute("font-family");
+					let base64 = selectedFont.base64;
+					style.textContent = `@font-face { font-family: '${family}'; src: url('${base64}') format('woff2'); font-style: normal; font-weight: ${e.getAttribute("font-weight")} }`;
+		
+					svg.appendChild(document.getElementById("filterMatrix").cloneNode(true));
+					wrap.appendChild(svg);
+					svg.setAttribute("width", e.width);
+					svg.setAttribute("height", e.height);
+		
+					let text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+					let x = Math.floor(e.width / 2);
+					let y = Math.floor(e.height / 2);
+					text.setAttribute("x", x);
+					text.setAttribute("y", y);
+					text.setAttribute("dy", ".18em"); //magic centering number 
+					text.setAttribute("font-family", e.getAttribute("font-family"));
+					text.setAttribute("font-weight", e.getAttribute("font-weight"));
+					text.setAttribute("font-size", e.getAttribute("font-size"));
+					text.setAttribute("text-anchor", "middle");
+					text.setAttribute("dominant-baseline", "middle");
+					text.setAttribute("fill", mainColor);
+					text.setAttribute("filter", "url(#filterMatrix)");
+					text.textContent = e.getAttribute("font-character");
+					svg.appendChild(text);
+				}
 
 				let res = b64EncodeUnicode(new XMLSerializer().serializeToString(svg));
 				img.file(e.getAttribute("title") + "." + ext, (res), { base64: true });
@@ -170,6 +173,7 @@ updateSize();
 updateSaturation();
 
 let cacheCss = {};
+let cacheJson = {};
 
 var easter = false;
 
@@ -185,9 +189,9 @@ function triggerUpdate(delay) {
 	}, delay == undefined ? 100 : delay);
 }
 
-let translucentBackground = document.getElementById("download-type").value == "png";
+let translucentBackground = document.getElementById("download-type").value == "png" || document.getElementById("download-type").value == "svg";
 document.getElementById("download-type").onchange=function(event) {
-	translucentBackground = event.target.value == "png";
+	translucentBackground = event.target.value == "png" || event.target.value == "svg";
 	triggerUpdate();
 };
 
@@ -270,6 +274,7 @@ function getFonts() {
 			fonts.forEach(f => f.visible = false);
 			random(0, fonts.length - 1, 2).forEach(x => fonts[x].visible = true);
 			console.log(fonts);
+			//fonts = fonts.filter(x => x.fontType == "svg");
 			Promise.resolve();
 		});
 	}
@@ -489,35 +494,49 @@ function updateAlpha() {
 	document.getElementById("alpha").style.background=uuu ;
 }
 
-function getCssGet(css) {
-	let cssId = css.url;
+function registerCss(url, css) {
+	let doc = document.implementation.createHTMLDocument("");
+	let styleElement = document.createElement("style");
+	styleElement.textContent = css;
+	// the style will only be parsed once it is added to a document
+	doc.body.appendChild(styleElement);
+	let result = Array.from(styleElement.sheet.cssRules).filter(x => x.style != undefined && x.style.content != undefined && x.style.content.length > 0);
+	result = result.map((x) => {
+		return { name: x.selectorText.replace(":before", "").replace(":", "").substring(1), character: x.style.content.replace("\"", "").replace("\"", "") }
+	});
+	result = { url: url, items: result};
+	cacheCss[url] = result;
+	return Promise.resolve(result);
+}
+
+function getCss(url) {
+	if (url == undefined) {
+		return Promise.resolve({css: undefined, url: url, items: []});
+	} 
+	if (cacheCss[url] != undefined) {
+		return Promise.resolve(cacheCss[url]);
+	}
+
 	let httpquery = require("@pdulvp/httpquery");
-	return httpquery.get(css.url).then(e => {
-		let doc = document.implementation.createHTMLDocument(""),
-		styleElement = document.createElement("style");
-		styleElement.textContent = e;
-		// the style will only be parsed once it is added to a document
-		doc.body.appendChild(styleElement);
-		let result = Array.from(styleElement.sheet.cssRules).filter(x => x.style != undefined && x.style.content != undefined && x.style.content.length > 0);
-		result = result.map((x) => {
-			return { name: x.selectorText.replace(":before", "").replace(":", "").substring(1), character: x.style.content.replace("\"", "").replace("\"", "") }
-		});
-		result = {css: css, items: result};
-		cacheCss[cssId] = result;
-		return result;
+	return httpquery.get(url).then(e => {
+		return registerCss(url, e);
 	});
 }
-function getCss(css) {
-	let cssId = css.url;
-	if (cacheCss[cssId] != undefined) {
-		return new Promise((resolve, reject) => {
-			cacheCss[cssId].css = css;
-			console.log("css retrieved from cache");
-			resolve(cacheCss[cssId]);
-		});
-	} else {
-		return getCssGet(css);
+
+function getJson(url) {
+	if (url == undefined) {
+		return Promise.resolve({css: undefined, url: url, items: []});
+	} 
+	if (cacheJson[url] != undefined) {
+		return Promise.resolve(cacheJson[url]);
 	}
+
+	let httpquery = require("@pdulvp/httpquery");
+	return httpquery.get(url).then(e => {
+		let data = JSON.parse(e);
+		cacheJson[url] = data;
+		return Promise.resolve(data);
+	});
 }
 
 function getHslColor() {
@@ -590,64 +609,35 @@ function updateImages(clean) {
 	document.getElementById("filterGammaB").setAttribute("amplitude", gamma);
 	document.getElementById("filterAlpha").setAttribute("slope", `${alpha}`);
 	
-	let vfonts = fonts.filter(x => x.visible);
-	let lfonts = fonts.filter(x => x.visible && x.loaded !== true);
-	console.log(vfonts);
+	let visibleFonts = fonts.filter(x => x.visible);
+	let toLoadFonts = fonts.filter(x => x.visible && x.loaded !== true);
+	console.log(visibleFonts);
 
-	var fontUrls = lfonts.map(x => x.fontUrl).filter( onlyUnique ).map(x => { return { font: vfonts.filter(f => f.fontUrl == x)[0], fontUrl: x } } );
-	console.log(fontUrls);
-
-	var cssUrls = vfonts.map(x => x.url).filter( onlyUnique ).map(x => { return { fonts: vfonts.filter(f => f.url == x), url: x } } );
-	console.log(cssUrls);
-	console.log(document.fonts);
-
-	let fonts2 = fontUrls.map(f => new FontFace(f.font.family, 'url('+f.fontUrl+')', { style: f.font.style, weight: f.font.weight }));
-	
 	document.fonts.ready.then(e => {
-		if (fonts2.length == 0) {
-			return Promise.resolve([]);
-		}
-		return Promise.allSettled(fonts2.map(f => f.load()));
-
-	}).then(ee => {
-		ee.forEach(e => {
-			if (e.status == "fulfilled") {
-				fonts.filter(x => x.family == e.value.family).forEach(f => f.loaded = true);
-				document.fonts.add(e.value);
+		let promises = toLoadFonts.map(x => {
+			if (x.fontType == "svg") {
+				return loadSVGFont(x);
 			} else {
-				console.log("Font not registered:"+e);
+				return loadFontFace(x);
 			}
 		});
-		return Promise.resolve();
 
-	}).then(e => {
-		return document.fonts.ready;
-		
-	}).then(e => {
-		if (fonts2.length != 0) {
-			console.log("Fonts registered");
+		if (promises.length == 0) {
+			return Promise.resolve([]);
 		}
-		return Promise.allSettled(cssUrls.map(c => getCss(c)));
+		return Promise.allSettled(promises);
 
 	}).then(e => {
-		console.log("Css retrieved");
-		let res = e.filter(p => p.status == "fulfilled").map(p => p.value).map(result => {
-			console.log(result.css.fonts);
-			let allFonts = result.css.fonts.map(f => {
-				return new Promise((resolve, reject) => {
-					createsSeparator(f);
-					let container = createContainer(f.name);
-					let color = getHslColor();
-					result.items.forEach(item => {
-						createsImage(item, color, f, container);
-					});
-					resolve("ok:"+result.items.length);
-				});
-			}).flat();
-			return allFonts;
-		}).flat();
-
-		return Promise.allSettled(res);
+		let visibleFonts = fonts.filter(x => x.visible);
+		return Promise.all(visibleFonts.map(f => {
+			createsSeparator(f);
+			let container = createContainer(f.name);
+			let color = getHslColor();
+			f.items.forEach(item => {
+				createsImage(item, color, f, container);
+			});
+			return Promise.resolve("ok:"+f.items.length);
+		}));
 
 	}).then(e => {
 		console.log("Fonts created");
@@ -658,15 +648,82 @@ function updateImages(clean) {
 		console.log(error);
 	});
 
-	/*
-	createsImage({name: ".fa-500px", character: "\uFFFF"}, "black");
-	createsImage({name: ".fa-500px", character: "\uf26e"}, "black");
-	createsImage({name: ".fa-s00px", character: "\uf368"}, "black");
-	createsImage({name: ".fa-x00px", character: "\uf369"}, "black");
-	createsImage({name: ".fa-x00px", character: "\uf2b9"}, "black");
-	createsImage({name: ".fa-x00px", character: "\uf037"}, "black");
-	*/
-		
+	function loadSVGFont(f) {
+		let httpquery = require("@pdulvp/httpquery");
+
+		return httpquery.get(f.fontUrl).then(e => {
+			e = e.replace("</svg>", "");
+			e = e.substring(e.indexOf(">", e.indexOf("<svg")+5)+1);
+			console.log(e);
+			let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+			svg.innerHTML = e;
+			return Promise.resolve(svg);
+			
+		}).then(svg => {
+			let symbols = svg.getElementsByTagName("symbol");
+			f.items = [];
+			for (let s of symbols) {
+				f.items.push({
+					"name": s.getAttribute("id")
+				});
+			}
+			f.svg = svg;
+			console.log(f);
+			return Promise.resolve(f);
+		});
+	}
+
+	function loadFontFace(f) {
+		let fontface = new FontFace(f.family, 'url('+f.fontUrl+')', { style: f.style, weight: f.weight });
+		return fontface.load().then(e => {
+			console.log(e);
+			document.fonts.add(e);
+
+		}).then(e => {
+			return document.fonts.ready;
+			
+		}).then(e => {
+			if (f.jsonUrl != undefined) {
+				console.log("Load json: "+f.jsonUrl);
+				return getJson(f.jsonUrl).then(json => {
+					console.log("Loaded json: ");
+					console.log(json);
+					//fonts.filter(x => x.name == f.name)[0].items = css.items;
+					f.json = json;
+					return Promise.resolve(f);
+				});
+			} 
+			return Promise.resolve(f);
+		}).then(e => {
+			if (f.cssUrl != null) {
+				return getCss(f.cssUrl).then(css => {
+					console.log("Loaded css: "+css.url);
+					console.log(css);
+					//fonts.filter(x => x.name == f.name)[0].items = css.items;
+					f.items = css.items;
+					return Promise.resolve(f);
+				});
+			} else if (f.jsonUrl != undefined) {
+				let res = "";
+				f.json.forEach(function (icon) {
+					res += `.${f.name}-${icon.name}::before { content: "\\${icon.code}"; }\n`;
+				});
+				return registerCss(f.jsonUrl, res).then(css => {
+					console.log("Loaded created css: "+css.url);
+					console.log(css); 
+					f.items = css.items;
+					return Promise.resolve(f);
+				});
+			}
+
+		}).then(f => {
+			console.log("Loaded font: "+f.name);
+			console.log(f);
+			f.loaded = true;
+			return Promise.resolve(f);
+		});
+	}
+
 }
 
 
@@ -922,7 +979,7 @@ function drawVisibleCanvas() {
 		ctx.textBaseline = "middle";
 		ctx.imageSmoothingEnabled = false;
 		ctx.textAlign = 'center';
-		ctx.font = canvas.getAttribute("font");
+
 
 		var x = Math.floor(canvas.width / 2);
 		var y = Math.floor(canvas.height / 2);
@@ -936,11 +993,46 @@ function drawVisibleCanvas() {
 			ctx.closePath();
 		}
 
-		ctx.beginPath();
-		ctx.filter = "url(#filterMatrix)";
-		ctx.fillStyle = mainColor; //sepia canvas.getAttribute("font-color");
-		ctx.fillText(canvas.getAttribute("font-character"), x, y);
-		ctx.closePath();
+		if (canvas.getAttribute("font-type") != "svg") {
+			ctx.font = canvas.getAttribute("font");
+			ctx.beginPath();
+			ctx.filter = "url(#filterMatrix)";
+			ctx.fillStyle = mainColor; //sepia canvas.getAttribute("font-color");
+			ctx.fillText(canvas.getAttribute("font-character"), x, y);
+			ctx.closePath();
+			
+		} else {
+			let temporary = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+			let defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+			let font = fonts.filter(x => x.name == canvas.getAttribute("font-name"))[0];
+			let spriteId = canvas.getAttribute("font-sprite");
+			let element = font.svg.getElementById(spriteId);
+			let uses = document.createElementNS("http://www.w3.org/2000/svg", "use");
+			uses.setAttributeNS("http://www.w3.org/1999/xlink", "href", `#${element.id}`);
+			temporary.appendChild(element.cloneNode(true));
+			temporary.appendChild(defs);
+			temporary.appendChild(uses);
+			defs.appendChild(document.getElementById("filterMatrix").cloneNode(true));
+			while (canvas.firstChild != undefined) {
+				canvas.removeChild(canvas.firstChild);
+			}
+			canvas.appendChild(temporary);
+
+			temporary.setAttribute("viewBox", element.getAttribute("viewBox"));
+			uses.setAttribute("fill", mainColor);
+			uses.setAttribute("style", "filter: url(#filterMatrix);");
+			temporary.setAttribute("height", canvas.height - padding * 2);
+			temporary.setAttribute("width", canvas.width - padding * 2);
+			console.log(temporary);
+			//<use xlink:href="#refresh" width="24" height="24" x="303" y="303"/>
+			var xml = new XMLSerializer().serializeToString(temporary);
+			var svg64 = btoa(xml);
+			let img = new Image();
+			img.onload = function() {
+				ctx.drawImage(img, padding, padding);
+			}
+			img.src = 'data:image/svg+xml;base64,'+svg64;
+		}
 
 		canvas.setAttribute("dirty", "false");
 	});
@@ -957,18 +1049,15 @@ function createsImage(element, color, font, rootContainer) {
 	tctx.textBaseline = "middle";
 	tctx.textAlign = 'center';
 
-	let fontS = fontSize - padding * 2;
-	tctx.font = `${font.weight} ${fontS}px "${font.family}"`;
-	let invalid = tctx.measureText("\uFFFF");
-	let b = tctx.measureText(element.character);
-	if ((invalid.width == b.width && invalid.actualBoundingBoxAscent == b.actualBoundingBoxAscent && invalid.actualBoundingBoxDescent == b.actualBoundingBoxDescent && invalid.actualBoundingBoxLeft == b.actualBoundingBoxLeft && invalid.actualBoundingBoxRight == b.actualBoundingBoxRight)) {
-		return;
-	}
-
-	while (fontS > 0 && b.width > temporary.width - padding * 2) {
-		fontS--;
+	if (font.fontType != "svg") {
+		let fontS = fontSize - padding * 2;
 		tctx.font = `${font.weight} ${fontS}px "${font.family}"`;
-		b = tctx.measureText(element.character);
+		
+		let invalid = tctx.measureText("\uFFFF");
+		let b = tctx.measureText(element.character);
+		if ((invalid.width == b.width && invalid.actualBoundingBoxAscent == b.actualBoundingBoxAscent && invalid.actualBoundingBoxDescent == b.actualBoundingBoxDescent && invalid.actualBoundingBoxLeft == b.actualBoundingBoxLeft && invalid.actualBoundingBoxRight == b.actualBoundingBoxRight)) {
+			return;
+		}
 	}
 
 	let dirty = false;
@@ -999,14 +1088,38 @@ function createsImage(element, color, font, rootContainer) {
 		canvas.setAttribute("font-character", element.character);
 		dirty = true;
 	}
-	if (canvas.getAttribute("font") != tctx.font) {
-		canvas.setAttribute("font", tctx.font);
-		canvas.setAttribute("font-weight", font.weight);
-		canvas.setAttribute("font-size", fontS);
-		canvas.setAttribute("font-family", font.family);
+	
+	canvas.setAttribute("font-type", font.fontType);
+
+	if (font.fontType != "svg") {
+		let fontS = fontSize - padding * 2;
+		tctx.font = `${font.weight} ${fontS}px "${font.family}"`;
+		
+		let invalid = tctx.measureText("\uFFFF");
+		let b = tctx.measureText(element.character);
+		if ((invalid.width == b.width && invalid.actualBoundingBoxAscent == b.actualBoundingBoxAscent && invalid.actualBoundingBoxDescent == b.actualBoundingBoxDescent && invalid.actualBoundingBoxLeft == b.actualBoundingBoxLeft && invalid.actualBoundingBoxRight == b.actualBoundingBoxRight)) {
+			return;
+		}
+
+		while (fontS > 0 && b.width > temporary.width - padding * 2) {
+			fontS--;
+			tctx.font = `${font.weight} ${fontS}px "${font.family}"`;
+			b = tctx.measureText(element.character);
+		}
+
+		if (canvas.getAttribute("font") != tctx.font) {
+			canvas.setAttribute("font", tctx.font);
+			canvas.setAttribute("font-weight", font.weight);
+			canvas.setAttribute("font-size", fontS);
+			canvas.setAttribute("font-family", font.family);
+			canvas.setAttribute("font-name", font.name);
+			dirty = true;
+		}
+	} else {
 		canvas.setAttribute("font-name", font.name);
-		dirty = true;
+		canvas.setAttribute("font-sprite", element.name);
 	}
+
 	if (canvas.width != fontSize) {
 		canvas.width = fontSize;
 		canvas.style.width = fontSize; //Edge compatibility

@@ -1,9 +1,7 @@
 [
     {   "name" : "font-awesome-regular",
-        "url" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/css/all.css",
-        "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/webfonts/fa-regular-400.woff2",
-        "fontType" : "woff2",
-        "weight": 400, "style" : "normal",
+        "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/sprites/regular.svg",
+        "fontType" : "svg",
 		"meta": {
             "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)", "licenseLink" : "https://fontawesome.com/license/free",
             "mainPage" : "fontawesome.com", "mainPageLink" : "https://fontawesome.com",
@@ -11,10 +9,8 @@
         }
     },
     { "name" : "font-awesome-solid",
-        "url" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/css/all.css",
-        "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/webfonts/fa-solid-900.woff2",
-        "fontType" : "woff2",
-        "weight": 900, "style" : "normal",
+        "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/sprites/solid.svg",
+        "fontType" : "svg",
         "meta": {
             "licenseLink" : "https://fontawesome.com/license/free", "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)",
             "mainPage" : "fontawesome.com", "mainPageLink" : "https://fontawesome.com",
@@ -22,10 +18,8 @@
         }
 	},
     { "name" : "font-awesome-brands",
-        "url" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/css/all.css",
-        "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/webfonts/fa-brands-400.woff2",
-        "fontType" : "woff2",
-        "weight": 400, "style" : "normal",
+        "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/sprites/brands.svg",
+        "fontType" : "svg",
         "meta": {
             "licenseLink" : "https://fontawesome.com/license/free", "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)",
             "mainPage" : "fontawesome.com", "mainPageLink" : "https://fontawesome.com",
@@ -33,7 +27,7 @@
         }
 	},
     { "name" : "fontelico",
-        "url" : "webfonts/fontelico.css",
+        "cssUrl" : "webfonts/fontelico.css",
         "fontUrl" : "https://raw.githubusercontent.com/fontello/fontelico.font/master/font/fontelico.woff",
         "fontType" : "woff",
 		"font2css": true,
@@ -44,9 +38,9 @@
             "author" : "by Crowdsourced, for Fontello project", "authorLink" : "https://github.com/fontello/fontelico.font#contributors"
         }
 	},
-    { "name" : "ionicons",
-        "url" : "https://raw.githubusercontent.com/ionic-team/ionicons/master/docs/css/ionicons.min.css",
-        "fontUrl" : "https://raw.githubusercontent.com/ionic-team/ionicons/master/docs/fonts/ionicons.woff2",
+    { "name" : "Ionicons",
+        "cssUrl": "https://raw.githubusercontent.com/ionic-team/ionicons/master/docs/css/ionicons.min.css",
+        "fontUrl": "https://raw.githubusercontent.com/ionic-team/ionicons/master/docs/fonts/ionicons.woff2",
         "fontType" : "woff2",
         "weight" : 400, "style" : "normal",
         "meta": {
@@ -56,7 +50,7 @@
         }
     },
     { "name" : "FxEmojis",
-        "url" : "https://raw.githubusercontent.com/mozilla/fxemoji/master/dist/FirefoxEmoji/style.css",
+        "cssUrl" : "https://raw.githubusercontent.com/mozilla/fxemoji/master/dist/FirefoxEmoji/style.css",
         "fontUrl" : "https://raw.githubusercontent.com/mozilla/fxemoji/master/dist/FirefoxEmoji/FirefoxEmoji.ttf",
         "color" : true,
         "fontType" : "truetype",
@@ -68,7 +62,7 @@
         }
     },
     { "name" : "BoxIcons",
-        "url" : "https://raw.githubusercontent.com/atisawd/boxicons/master/css/boxicons.css",
+        "cssUrl" : "https://raw.githubusercontent.com/atisawd/boxicons/master/css/boxicons.css",
         "fontUrl" : "https://raw.githubusercontent.com/atisawd/boxicons/master/fonts/boxicons.woff2",
         "fontType" : "woff2",
         "weight" : "normal", "style" : "normal",
@@ -80,22 +74,21 @@
     },
 
     { "name" : "noto-emoji",
-        "url" : "webfonts/noto-emoji.css",
+        "cssUrl" : "webfonts/noto-emoji.css",
         "fontUrl" : "https://raw.githubusercontent.com/googlefonts/noto-emoji/master/fonts/NotoColorEmoji.ttf",
         "color" : true,
         "fontType" : "ttf",
         "weight" : "normal", "style" : "normal",
         "meta": {
-            "licenseLink" : "https://github.com/Remix-Design/RemixIcon/blob/master/License", "license" : "Apache License 2.0",
-            "mainPage" : "https://remixicon.com/", "mainPageLink" : "https://remixicon.com/",
-            "author" : "by Remix Design.", "authorLink" : "https://github.com/Remix-Design"
+            "licenseLink" : "https://github.com/googlefonts/noto-emoji/blob/master/LICENSE", "license" : "Apache License 2.0",
+            "mainPage" : "google.com/get/noto/help/emoji", "mainPageLink" : "https://www.google.com/get/noto/help/emoji/",
+            "author" : "by Google.", "authorLink" : "https://www.google.com/get/noto/help/emoji"
         }
     },
 
     { "name" : "evil-icons",
-        "url" : "/webfonts/evil-icons.css",
-        "fontUrl" : "/webfonts/evil-icons.woff2",
-        "fontType" : "woff2",
+        "fontUrl" : "https://raw.githubusercontent.com/evil-icons/evil-icons/master/assets/sprite.svg",
+        "fontType" : "svg",
         "weight" : "normal", "style" : "normal",
         "meta": {
             "licenseLink" : "https://github.com/evil-icons/evil-icons/blob/master/LICENSE.txt", "license" : "icons(MIT)",
@@ -105,7 +98,7 @@
     },
 
     { "name" : "microns-icons",
-        "url" : "https://raw.githubusercontent.com/stephenhutchings/microns/master/fonts/microns.css",
+        "cssUrl" : "https://raw.githubusercontent.com/stephenhutchings/microns/master/fonts/microns.css",
         "fontUrl" : "https://raw.githubusercontent.com/stephenhutchings/microns/master/fonts/microns.woff2",
         "fontType" : "woff2",
         "weight" : "normal", "style" : "normal",
@@ -117,7 +110,7 @@
     }, 
 
     { "name" : "material-design-iconic-font",
-        "url" : "https://raw.githubusercontent.com/zavoloklom/material-design-iconic-font/master/dist/css/material-design-iconic-font.css",
+        "cssUrl" : "https://raw.githubusercontent.com/zavoloklom/material-design-iconic-font/master/dist/css/material-design-iconic-font.css",
         "fontUrl" : "https://raw.githubusercontent.com/zavoloklom/material-design-iconic-font/master/dist/fonts/Material-Design-Iconic-Font.woff2",
         "font2css" : true,
         "fontType" : "ttf",
@@ -130,7 +123,7 @@
     },
 
     { "name" : "devicon",
-        "url" : "https://raw.githubusercontent.com/devicons/devicon/master/devicon.css",
+        "cssUrl" : "https://raw.githubusercontent.com/devicons/devicon/master/devicon.css",
         "fontUrl" : "https://raw.githubusercontent.com/devicons/devicon/master/fonts/devicon.woff",
         "fontType" : "woff",
         "weight" : "normal", "style" : "normal",
@@ -142,7 +135,7 @@
     },
 
     { "name" : "weather-icons",
-        "url" : "https://raw.githubusercontent.com/erikflowers/weather-icons/master/css/weather-icons.min.css",
+        "cssUrl" : "https://raw.githubusercontent.com/erikflowers/weather-icons/master/css/weather-icons.min.css",
         "fontUrl" : "https://raw.githubusercontent.com/erikflowers/weather-icons/master/font/weathericons-regular-webfont.woff2",
         "fontType" : "woff2",
         "weight" : "normal", "style" : "normal",
@@ -154,9 +147,8 @@
     },
 
     { "name" : "RemixIcon",
-        "url" : "https://raw.githubusercontent.com/Remix-Design/RemixIcon/master/fonts/remixicon.css",
-        "fontUrl" : "https://raw.githubusercontent.com/Remix-Design/RemixIcon/master/fonts/remixicon.woff2",
-        "fontType" : "woff2",
+        "fontUrl" : "https://raw.githubusercontent.com/Remix-Design/RemixIcon/master/fonts/remixicon.symbol.svg",
+        "fontType" : "svg",
         "weight" : "normal", "style" : "normal",
         "meta": {
             "licenseLink" : "https://github.com/Remix-Design/RemixIcon/blob/master/License", "license" : "Apache License 2.0",
@@ -165,8 +157,8 @@
         }
     },
 
-    { "name" : " line-awesome-regular",
-        "url" : "https://raw.githubusercontent.com/icons8/line-awesome/master/dist/line-awesome/css/line-awesome.css",
+    { "name" : "line-awesome-regular",
+        "cssUrl" : "https://raw.githubusercontent.com/icons8/line-awesome/master/dist/line-awesome/css/line-awesome.css",
         "fontUrl" : "https://raw.githubusercontent.com/icons8/line-awesome/master/dist/line-awesome/fonts/la-regular-400.woff2",
         "fontType" : "woff2",
         "weight" : 400, "style" : "normal",
@@ -178,7 +170,7 @@
     },
 
     { "name" : " line-awesome-brands",
-        "url" : "https://raw.githubusercontent.com/icons8/line-awesome/master/dist/line-awesome/css/line-awesome.css",
+        "cssUrl" : "https://raw.githubusercontent.com/icons8/line-awesome/master/dist/line-awesome/css/line-awesome.css",
         "fontUrl" : "https://raw.githubusercontent.com/icons8/line-awesome/master/dist/line-awesome/fonts/la-brands-400.woff2",
         "fontType" : "woff2",
         "weight" : 400, "style" : "normal",
@@ -190,7 +182,7 @@
     },
 
     { "name" : "line-awesome-solid",
-        "url" : "https://raw.githubusercontent.com/icons8/line-awesome/master/dist/line-awesome/css/line-awesome.css",
+        "cssUrl" : "https://raw.githubusercontent.com/icons8/line-awesome/master/dist/line-awesome/css/line-awesome.css",
         "fontUrl" : "https://raw.githubusercontent.com/icons8/line-awesome/master/dist/line-awesome/fonts/la-solid-900.woff2",
         "fontType" : "woff2",
         "weight" : 900, "style" : "normal",
@@ -202,19 +194,19 @@
     },
 
     { "name" : "Bootstrap Icons",
-        "url" : "https://raw.githubusercontent.com/twbs/icons/main/font/bootstrap-icons.css",
+        "cssUrl" : "https://raw.githubusercontent.com/twbs/icons/main/font/bootstrap-icons.css",
         "fontUrl" : "https://raw.githubusercontent.com/twbs/icons/main/font/fonts/bootstrap-icons.woff2",
         "fontType" : "woff2",
         "weight" : "normal", "style" : "normal",
         "meta": {
-            "licenseLink" : "https://github.com/icons8/line-awesome/blob/master/LICENSE.md", "license" : "MIT",
+            "licenseLink" : "https://github.com/twbs/icons/blob/main/LICENSE.md", "license" : "MIT",
             "mainPage" : "icons.getbootstrap.com/", "mainPageLink" : "https://icons.getbootstrap.com",
             "author" : "by The Bootstrap Authors.", "authorLink" : "https://getbootstrap.com"
         }
     },
 
     { "name" : "Vaadin Icons",
-        "url" : "/webfonts/vaadin.css",
+        "jsonUrl" : "https://raw.githubusercontent.com/vaadin/vaadin-icons/master/assets/vaadin-font-icons.json",
         "fontUrl" : "https://raw.githubusercontent.com/vaadin/vaadin-icons/master/assets/fonts/Vaadin-Icons.woff",
         "fontType" : "woff",
         "weight" : "normal", "style" : "normal",
@@ -226,7 +218,7 @@
     },
 
     { "name" : "phosphor-icons",
-        "url" : "https://raw.githubusercontent.com/phosphor-icons/phosphor-icons/master/src/css/phosphor.css",
+        "cssUrl" : "https://raw.githubusercontent.com/phosphor-icons/phosphor-icons/master/src/css/phosphor.css",
         "fontUrl" : "https://raw.githubusercontent.com/phosphor-icons/phosphor-icons/master/src/font/phosphor.woff?raw=true",
         "fontType" : "woff",
         "weight" : "normal", "style" : "normal",
