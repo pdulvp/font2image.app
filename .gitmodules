@@ -1,0 +1,30 @@
+[submodule "fetch/boxicons"]
+	path = fetch/boxicons
+	url = https://github.com/atisawd/boxicons.git
+[submodule "fetch/microns"]
+	path = fetch/microns
+	url = https://github.com/stephenhutchings/microns
+[submodule "fetch/material-design-iconic-font"]
+	path = fetch/material-design-iconic-font
+	url = https://github.com/zavoloklom/material-design-iconic-font.git
+[submodule "fetch/ionicons"]
+	path = fetch/ionicons
+	url = https://github.com/ionic-team/ionicons.git
+[submodule "fetch/devicon"]
+	path = fetch/devicon
+	url = https://github.com/devicons/devicon.git
+[submodule "fetch/weather-icons"]
+	path = fetch/weather-icons
+	url = https://github.com/erikflowers/weather-icons.git
+[submodule "fetch/line-awesome"]
+	path = fetch/line-awesome
+	url = https://github.com/icons8/line-awesome.git
+[submodule "fetch/twbs-icons"]
+	path = fetch/twbs-icons
+	url = https://github.com/twbs/icons.git
+[submodule "fetch/vaadin-icons"]
+	path = fetch/vaadin-icons
+	url = https://github.com/vaadin/vaadin-icons.git
+[submodule "fetch/phosphor-icons"]
+	path = fetch/phosphor-icons
+	url = https://github.com/phosphor-icons/phosphor-icons.git

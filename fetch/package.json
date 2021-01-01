@@ -1,0 +1,15 @@
+{
+  "name": "fetch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pdulvp",
+  "license": "CC-BY-NC-ND-4.0",
+  "dependencies": {
+    "htmlclean": "^3.0.8",
+    "svgstore": "^3.0.0-2"
+  }
+}
