@@ -54,6 +54,9 @@ function toSprite(folders) {
     }).then(sprites => {
         let output = htmlclean(sprites.toString());
         return Promise.resolve(output);
+    }).then(output => {
+        output = output.replace(/ fill=\"#444\" /g, " ");
+        return Promise.resolve(output);
     });
 }
 

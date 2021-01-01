@@ -3,6 +3,7 @@
 .vscode/launch.json
 .npmrc
 .publishignore
+fetch
 images/colors.png
 images/rasterize.png
 images/thumbnail.png

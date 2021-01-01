@@ -76,7 +76,7 @@ ForEach($i in $filePath) {
 	$dir = $dir.replace("\","/")
 	$name = $name.replace("\","/")
 	
-	If(! (Get-Content $ignoreFile).Contains($name)) {
+	If(! ($name.Contains("fetch"))) {
 		$add = $FALSE
 		$md5 = Get-FileHash $name -Algorithm MD5
 		if (! ($md5values.ContainsKey($name))) {
