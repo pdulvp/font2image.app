@@ -1,45 +1,30 @@
 [
-    {   "name" : "font-awesome-regular",
-        "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/sprites/regular.svg",
+    {   "name" : "font-awesome",
+        "fontUrl" : "/webfonts/font-awesome.svg",
         "fontType" : "svg",
+        "preview" : "/webfonts/css/font-awesome-preview.svg",
 		"meta": {
             "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)", "licenseLink" : "https://fontawesome.com/license/free",
             "mainPage" : "fontawesome.com", "mainPageLink" : "https://fontawesome.com",
             "author" : "by @fontawesome", "authorLink" : "https://fontawesome.com"
         }
     },
-    { "name" : "font-awesome-solid",
-        "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/sprites/solid.svg",
-        "fontType" : "svg",
-        "meta": {
-            "licenseLink" : "https://fontawesome.com/license/free", "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)",
-            "mainPage" : "fontawesome.com", "mainPageLink" : "https://fontawesome.com",
-            "author" : "by @fontawesome", "authorLink" : "https://fontawesome.com"
-        }
-	},
-    { "name" : "font-awesome-brands",
-        "fontUrl" : "https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/sprites/brands.svg",
-        "fontType" : "svg",
-        "meta": {
-            "licenseLink" : "https://fontawesome.com/license/free", "license" : "icons(CC-BY-4.0) font(SIL-OFL-1.1)",
-            "mainPage" : "fontawesome.com", "mainPageLink" : "https://fontawesome.com",
-            "author" : "by @fontawesome", "authorLink" : "https://fontawesome.com"
-        }
-	},
     { "name" : "Ionicons",
-        "fontUrl" : "https://raw.githubusercontent.com/pdulvp/font2image.app/master/webfonts/ionicons.svg",
+        "fontUrl" : "/webfonts/view/ionicons.svg",
+        "cssUrl" : "/webfonts/view/ionicons.css",
         "fontType" : "svg",
+        "preview" : "/webfonts/view/ionicons-preview.svg",
         "meta": {
             "licenseLink" : "https://github.com/ionic-team/ionicons/blob/master/LICENSE", "license" : "MIT",
             "mainPage" : "ionicons.com", "mainPageLink" : "https://ionicons.com",
             "author" : "by Ionic Framework team", "authorLink" : "https://ionicframework.com"
         }
     },
-    { "name" : "FxEmojis",
-        "cssUrl" : "https://raw.githubusercontent.com/mozilla/fxemoji/master/dist/FirefoxEmoji/style.css",
-        "fontUrl" : "https://raw.githubusercontent.com/mozilla/fxemoji/master/dist/FirefoxEmoji/FirefoxEmoji.ttf",
+    { "name" : "FxEmoji",
+        "fontUrl" : "https://raw.githubusercontent.com/pdulvp/font2image.app/ccc/webfonts/fxemoji.svg",
+        "fontType" : "svg",
+        "preview" : "/webfonts/view/fxemoji-preview.svg",
         "color" : true,
-        "fontType" : "truetype",
         "weight" : "normal", "style" : "normal",
         "meta": {
             "licenseLink" : "https://github.com/mozilla/fxemoji/blob/master/LICENSE.md", "license" : "icons(CC BY 4.0)",
@@ -48,8 +33,10 @@
         }
     },
     { "name" : "BoxIcons",
-        "fontUrl" : "https://raw.githubusercontent.com/pdulvp/font2image.app/master/webfonts/boxicons.svg",
+        "fontUrl" : "/webfonts/view/boxicons.svg",
         "fontType" : "svg",
+        "cssUrl" : "/webfonts/view/boxicons.css",
+        "preview" : "/webfonts/view/boxicons-preview.svg",
         "meta": {
             "licenseLink" : "https://github.com/atisawd/boxicons/blob/master/LICENSE.md", "license" : "icons(CC 4.0) font(SIL-OFL-1.1)",
             "mainPage" : "boxicons.com", "mainPageLink" : "https://boxicons.com",
@@ -60,6 +47,7 @@
     { "name" : "noto-emoji",
         "cssUrl" : "webfonts/noto-emoji.css",
         "fontUrl" : "https://raw.githubusercontent.com/googlefonts/noto-emoji/master/fonts/NotoColorEmoji.ttf",
+        "preview" : "/webfonts/css/noto-emoji-preview.svg",
         "color" : true,
         "fontType" : "ttf",
         "weight" : "normal", "style" : "normal",
@@ -71,7 +59,8 @@
     },
 
     { "name" : "evil-icons",
-        "fontUrl" : "https://raw.githubusercontent.com/evil-icons/evil-icons/master/assets/sprite.svg",
+        "fontUrl" : "/webfonts/evil-icons.svg",
+        "preview" : "/webfonts/css/evil-icons-preview.svg",
         "fontType" : "svg",
         "weight" : "normal", "style" : "normal",
         "meta": {
@@ -82,6 +71,7 @@
     },
     { "name" : "microns-icons",
         "fontUrl" : "https://raw.githubusercontent.com/pdulvp/font2image.app/master/webfonts/microns.svg",
+        "preview" : "/webfonts/css/microns-preview.svg",
         "fontType" : "svg",
         "weight" : "normal", "style" : "normal",
         "meta": {
@@ -94,6 +84,7 @@
     { "name" : "material-design-iconic-font",
         "fontUrl" : "https://raw.githubusercontent.com/pdulvp/font2image.app/master/webfonts/material-design-iconic-font.svg",
         "fontType" : "svg",
+        "preview" : "/webfonts/css/material-design-iconic-font-preview.svg",
         "weight" : "normal", "style" : "normal",
         "meta": {
             "licenseLink" : "https://github.com/zavoloklom/material-design-iconic-font/blob/master/License.md", "license" : "CC BY-SA 4.0",
@@ -105,6 +96,7 @@
     { "name" : "devicon",
         "fontUrl" : "https://raw.githubusercontent.com/pdulvp/font2image.app/master/webfonts/devicon.svg",
         "fontType" : "svg",
+        "preview" : "/webfonts/css/devicon-preview.svg",
         "meta": {
             "licenseLink" : "https://github.com/devicons/devicon/blob/master/LICENSE", "license" : "icons(MIT) font(SIL-OFL-1.1)",
             "mainPage" : "devicon.dev", "mainPageLink" : "https://devicon.dev",
@@ -115,6 +107,7 @@
     { "name" : "weather-icons",
         "fontUrl" : "https://raw.githubusercontent.com/pdulvp/font2image.app/master/webfonts/weather-icons.svg",
         "fontType" : "svg",
+        "preview" : "/webfonts/css/weather-icons-preview.svg",
         "meta": {
             "licenseLink" : "http://scripts.sil.org/OFL", "license" : "font(SIL-OFL-1.1)",
             "mainPage" : "erikflowers.github.io/weather-icons", "mainPageLink" : "https://erikflowers.github.io/weather-icons/",
@@ -123,7 +116,8 @@
     },
 
     { "name" : "RemixIcon",
-        "fontUrl" : "https://raw.githubusercontent.com/Remix-Design/RemixIcon/master/fonts/remixicon.symbol.svg",
+        "fontUrl" : "/webfonts/remix-icon.svg",
+        "preview" : "/webfonts/css/remixicon-preview.svg",
         "fontType" : "svg",
         "weight" : "normal", "style" : "normal",
         "meta": {
@@ -136,6 +130,7 @@
     { "name" : "line-awesome",
         "fontUrl" : "https://raw.githubusercontent.com/pdulvp/font2image.app/master/webfonts/line-awesome.svg",
         "fontType" : "svg",
+        "preview" : "/webfonts/css/line-awesome-preview.svg",
         "meta": {
             "licenseLink" : "https://github.com/icons8/line-awesome/blob/master/LICENSE.md", "license" : "MIT / Good Old Boy",
             "mainPage" : "icons8.com/line-awesome", "mainPageLink" : "https://icons8.com/line-awesome",
@@ -146,6 +141,7 @@
     { "name" : "Bootstrap Icons",
         "fontUrl" : "https://raw.githubusercontent.com/pdulvp/font2image.app/master/webfonts/twbs-icons.svg",
         "fontType" : "svg",
+        "preview" : "/webfonts/css/twbs-icons-preview.svg",
         "meta": {
             "licenseLink" : "https://github.com/twbs/icons/blob/main/LICENSE.md", "license" : "MIT",
             "mainPage" : "icons.getbootstrap.com/", "mainPageLink" : "https://icons.getbootstrap.com",
@@ -155,6 +151,7 @@
 
     { "name" : "Vaadin Icons",
         "fontUrl" : "https://raw.githubusercontent.com/pdulvp/font2image.app/master/webfonts/vaadin-icons.svg",
+        "preview" : "/webfonts/css/vaadin-icons-preview.svg",
         "fontType" : "svg",
         "meta": {
             "licenseLink" : "https://github.com/vaadin/vaadin-icons/blob/master/LICENSE", "license" : "Apache License 2.0",
@@ -165,6 +162,7 @@
 
     { "name" : "phosphor-icons",
         "fontUrl" : "https://raw.githubusercontent.com/pdulvp/font2image.app/master/webfonts/phosphor-icons.svg",
+        "preview" : "/webfonts/css/phosphor-icons-preview.svg",
         "fontType" : "svg",
         "meta": {
             "licenseLink" : "https://github.com/phosphor-icons/phosphor-icons/blob/master/LICENSE", "license" : "MIT",

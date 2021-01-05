@@ -145,7 +145,7 @@
   }
   .modal-window  {
     justify-content: center;
-    align-items: center ;
+    align-items: center;
   }
 }
 
@@ -350,6 +350,10 @@ width:100%;
 }
 
 
+.font-chooser-item img {
+  display: block;
+  padding: 6px;
+}
 .font-chooser-item-close {
   margin-left: 6px;
 }
@@ -385,7 +389,8 @@ width:100%;
   z-index: 12;
 }
 #modal-font {
-  flex-direction: column;    -webkit-flex-direction: column;
+  flex-direction: row;    -webkit-flex-direction: row;
+  flex-wrap: wrap;
 }
 .modal .modal-window-content {
   background-color: rgb(240, 240, 240);

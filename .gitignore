@@ -3,3 +3,4 @@ publish-config.json
 publish-cache.json
 sitemap.xml
 tmp
+/fetch/node_modules

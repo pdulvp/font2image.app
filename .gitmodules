@@ -28,3 +28,18 @@
 [submodule "fetch/phosphor-icons"]
 	path = fetch/phosphor-icons
 	url = https://github.com/phosphor-icons/phosphor-icons.git
+[submodule "fetch/fxemoji"]
+	path = fetch/fxemoji
+	url = https://github.com/mozilla/fxemoji.git
+[submodule "fetch/evil-icons"]
+	path = fetch/evil-icons
+	url = https://github.com/evil-icons/evil-icons.git
+[submodule "fetch/noto-emoji"]
+	path = fetch/noto-emoji
+	url = https://github.com/googlefonts/noto-emoji.git
+[submodule "fetch/font-awesome"]
+	path = fetch/font-awesome
+	url = https://github.com/FortAwesome/Font-Awesome.git
+[submodule "fetch/remixicon"]
+	path = fetch/remixicon
+	url = https://github.com/Remix-Design/RemixIcon.git
