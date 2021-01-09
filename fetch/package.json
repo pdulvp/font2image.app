@@ -9,8 +9,6 @@
   "author": "pdulvp",
   "license": "CC-BY-NC-ND-4.0",
   "dependencies": {
-    "htmlclean": "^3.0.8",
-    "svg-sprite": "^1.5.0",
-    "svgstore": "^3.0.0-2"
+    "svg-sprite": "^1.5.0"
   }
 }

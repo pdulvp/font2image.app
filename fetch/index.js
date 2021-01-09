@@ -15,10 +15,6 @@ const cacheq = require('./cacheq')
 const promiseq = require('./promiseq')
 const path = require('path')
 const File = require('vinyl');
- 
-const { captureRejectionSymbol } = require('events');
-
- 
 
 function getFiles(folder) {
     return new Promise(function(resolve, reject) {
@@ -179,36 +175,8 @@ function exportSprites(folders, filename, exportSvg = true) {
             fs.writeFileSync(sprites.small.css.sprite.path, contents);
             return Promise.resolve(sprites);
 
-            /*let sprites2 = sprites.replace(/<svg /g, "<svg xmlns:inkscape=\"http://www.inkscape.org/namespaces/inkscape\" ");
-            sprites2 = sprites2.replace(new RegExp(`<metadata.+?</metadata>`, "g"), function(match, group) {
-                console.log(match);
-                return "";
-              });
-            sprites2 = sprites2.replace(new RegExp(`<style.+?</style>`, "g"), function(match, group) {
-                console.log(match);
-                return "";
-              });
-              if (exportSvg) {
-                let result = addUses(sprites2);
-                return fsq.writeIfChange(filename, result).then(res => {
-                    return Promise.resolve(sprites2);
-                });
-              } else {
-                return Promise.resolve(sprites2);
-              }
-*/
-        })/*.then(sprites => {
-            let content = sprites.full.css.css.contents.toString();
-            content = content.replace(/url\(\"/g, "url\(\"/webfonts/css/");
-            fs.writeFileSync(sprites.full.css.css.path, content);
+        }).then(sprites => {
             return Promise.resolve(sprites);
-
-        })*/.then(sprites => {
-            return Promise.resolve(sprites);
-            /*let output = sprites;
-            output = addUses(output, 16);
-            return fsq.writeIfChange(filename+".preview.svg", output);
-*/
         });
 }
 
