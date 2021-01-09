@@ -13,8 +13,6 @@ const url = require('url');
 const httpq = require('./httpq')
 const cacheq = require('./cacheq')
 const promiseq = require('./promiseq')
-const svgstore = require('svgstore')
-const htmlclean = require('htmlclean')
 const path = require('path')
 const File = require('vinyl');
  
@@ -39,6 +37,7 @@ function getFiles(folder) {
 function getAll(folder, extension) {
     return getFiles(folder).then(files => {
         let filteredFiles = files.filter(x => x.endsWith("."+extension));
+        filteredFiles = filteredFiles.filter(x => !x.includes(".layer"));
         return Promise.resolve(filteredFiles);
     });
 }
@@ -60,13 +59,14 @@ function toSprite(files, id, kind) {
                     maxWidth: kind == "small" ? 24: 128,
                     maxHeight: kind == "small" ? 24: 128,
                 },
-                spacing: { 
+                spacing: {
                     padding: 2
                 }
             },
             dest: '../webfonts',
             mode: {
-                view: {
+                css: {
+                    inline: true,
                     bust: false,
                     sprite:  ""+id+suffix+".svg",
                     render: {
@@ -93,7 +93,6 @@ function toSprite(files, id, kind) {
     }).then(spriter => {
         return new Promise(function(resolve, reject) {
             spriter.compile(function (error, result, data) {
-                console.log("okok");
                 if (error) {
                     reject(error);
                 } else {
@@ -152,33 +151,32 @@ function addUses(sprites, limit = -1) {
 function exportSprites(folders, filename, exportSvg = true) {
     console.log(filename);
     let fetchs = folders.map(x => getAll(x, "svg"));
+    let fontName = folders[0].split("/")[0];
     return Promise.all(fetchs)
         .then(filesPerFolder => Promise.resolve(promiseq.flat(filesPerFolder)))
         .then(files => {
             
             return new Promise(function(resolve, reject) {
-                toSprite(files, folders[0].split("/")[0], "").then(full => {
+                toSprite(files, fontName, "").then(full => {
                     shuffleArray(files);
                     files = files.slice(0, 16);
-                    
-                    toSprite(files, folders[0].split("/")[0], "small").then(small => {
+                    console.log(files);
+                    toSprite(files, fontName, "small").then(small => {
                         resolve({full: full, small: small});
                     });
                 });
             });
 
         }).then(sprites => {
-            fs.writeFileSync(sprites.full.view.sprite.path, sprites.full.view.sprite.contents);
+            let contents = sprites.full.css.sprite.contents.toString().replace(/fill=\"#444\"/g, ""); //vaading
+            contents = contents.replace(/fill=\"currentColor\"/g, ""); //bootstrap
+            fs.writeFileSync(sprites.full.css.sprite.path, contents);
             return Promise.resolve(sprites);
 
         }).then(sprites => {
-            let content = sprites.full.view.css.contents.toString();
-            content = content.replace(/url\(\"/g, "url\(\"/webfonts/css/");
-            fs.writeFileSync(sprites.full.view.css.path, content);
-            return Promise.resolve(sprites);
-
-        }).then(sprites => {
-            fs.writeFileSync(sprites.small.view.sprite.path, sprites.small.view.sprite.contents);
+            let contents = sprites.small.css.sprite.contents.toString().replace(/fill=\"#444\"/g, "");
+            contents = contents.replace(/fill=\"currentColor\"/g, ""); //bootstrap
+            fs.writeFileSync(sprites.small.css.sprite.path, contents);
             return Promise.resolve(sprites);
 
             /*let sprites2 = sprites.replace(/<svg /g, "<svg xmlns:inkscape=\"http://www.inkscape.org/namespaces/inkscape\" ");
@@ -199,7 +197,13 @@ function exportSprites(folders, filename, exportSvg = true) {
                 return Promise.resolve(sprites2);
               }
 */
-        }).then(sprites => {
+        })/*.then(sprites => {
+            let content = sprites.full.css.css.contents.toString();
+            content = content.replace(/url\(\"/g, "url\(\"/webfonts/css/");
+            fs.writeFileSync(sprites.full.css.css.path, content);
+            return Promise.resolve(sprites);
+
+        })*/.then(sprites => {
             return Promise.resolve(sprites);
             /*let output = sprites;
             output = addUses(output, 16);

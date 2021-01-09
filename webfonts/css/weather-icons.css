@@ -1,0 +1,1971 @@
+.svg-weather-icons-wi-alien {
+	background: url("/webfonts/css/weather-icons.svg") 0 0 no-repeat;
+}
+
+.svg-weather-icons-wi-alien-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-barometer {
+	background: url("/webfonts/css/weather-icons.svg") 7.142857142857143% 0 no-repeat;
+}
+
+.svg-weather-icons-wi-barometer-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-celsius {
+	background: url("/webfonts/css/weather-icons.svg") 0 7.142857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-celsius-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-cloud {
+	background: url("/webfonts/css/weather-icons.svg") 7.142857142857143% 7.142857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-cloud-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-cloud-down {
+	background: url("/webfonts/css/weather-icons.svg") 14.285714285714286% 0 no-repeat;
+}
+
+.svg-weather-icons-wi-cloud-down-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-cloud-refresh {
+	background: url("/webfonts/css/weather-icons.svg") 14.285714285714286% 7.142857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-cloud-refresh-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-cloud-up {
+	background: url("/webfonts/css/weather-icons.svg") 0 14.285714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-cloud-up-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-cloudy {
+	background: url("/webfonts/css/weather-icons.svg") 7.142857142857143% 14.285714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-cloudy-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-cloudy-gusts {
+	background: url("/webfonts/css/weather-icons.svg") 14.285714285714286% 14.285714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-cloudy-gusts-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-cloudy-windy {
+	background: url("/webfonts/css/weather-icons.svg") 21.428571428571427% 0 no-repeat;
+}
+
+.svg-weather-icons-wi-cloudy-windy-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-cloudy {
+	background: url("/webfonts/css/weather-icons.svg") 21.428571428571427% 7.142857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-day-cloudy-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-cloudy-gusts {
+	background: url("/webfonts/css/weather-icons.svg") 21.428571428571427% 14.285714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-day-cloudy-gusts-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-cloudy-high {
+	background: url("/webfonts/css/weather-icons.svg") 0 21.428571428571427% no-repeat;
+}
+
+.svg-weather-icons-wi-day-cloudy-high-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-cloudy-windy {
+	background: url("/webfonts/css/weather-icons.svg") 7.142857142857143% 21.428571428571427% no-repeat;
+}
+
+.svg-weather-icons-wi-day-cloudy-windy-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-fog {
+	background: url("/webfonts/css/weather-icons.svg") 14.285714285714286% 21.428571428571427% no-repeat;
+}
+
+.svg-weather-icons-wi-day-fog-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-hail {
+	background: url("/webfonts/css/weather-icons.svg") 21.428571428571427% 21.428571428571427% no-repeat;
+}
+
+.svg-weather-icons-wi-day-hail-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-haze {
+	background: url("/webfonts/css/weather-icons.svg") 28.571428571428573% 0 no-repeat;
+}
+
+.svg-weather-icons-wi-day-haze-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-light-wind {
+	background: url("/webfonts/css/weather-icons.svg") 28.571428571428573% 7.142857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-day-light-wind-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-lightning {
+	background: url("/webfonts/css/weather-icons.svg") 28.571428571428573% 14.285714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-day-lightning-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-rain {
+	background: url("/webfonts/css/weather-icons.svg") 28.571428571428573% 21.428571428571427% no-repeat;
+}
+
+.svg-weather-icons-wi-day-rain-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-rain-mix {
+	background: url("/webfonts/css/weather-icons.svg") 0 28.571428571428573% no-repeat;
+}
+
+.svg-weather-icons-wi-day-rain-mix-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-rain-wind {
+	background: url("/webfonts/css/weather-icons.svg") 7.142857142857143% 28.571428571428573% no-repeat;
+}
+
+.svg-weather-icons-wi-day-rain-wind-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-showers {
+	background: url("/webfonts/css/weather-icons.svg") 14.285714285714286% 28.571428571428573% no-repeat;
+}
+
+.svg-weather-icons-wi-day-showers-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-sleet {
+	background: url("/webfonts/css/weather-icons.svg") 21.428571428571427% 28.571428571428573% no-repeat;
+}
+
+.svg-weather-icons-wi-day-sleet-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-sleet-storm {
+	background: url("/webfonts/css/weather-icons.svg") 28.571428571428573% 28.571428571428573% no-repeat;
+}
+
+.svg-weather-icons-wi-day-sleet-storm-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-snow {
+	background: url("/webfonts/css/weather-icons.svg") 35.714285714285715% 0 no-repeat;
+}
+
+.svg-weather-icons-wi-day-snow-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-snow-thunderstorm {
+	background: url("/webfonts/css/weather-icons.svg") 35.714285714285715% 7.142857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-day-snow-thunderstorm-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-snow-wind {
+	background: url("/webfonts/css/weather-icons.svg") 35.714285714285715% 14.285714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-day-snow-wind-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-sprinkle {
+	background: url("/webfonts/css/weather-icons.svg") 35.714285714285715% 21.428571428571427% no-repeat;
+}
+
+.svg-weather-icons-wi-day-sprinkle-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-storm-showers {
+	background: url("/webfonts/css/weather-icons.svg") 35.714285714285715% 28.571428571428573% no-repeat;
+}
+
+.svg-weather-icons-wi-day-storm-showers-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-sunny {
+	background: url("/webfonts/css/weather-icons.svg") 0 35.714285714285715% no-repeat;
+}
+
+.svg-weather-icons-wi-day-sunny-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-sunny-overcast {
+	background: url("/webfonts/css/weather-icons.svg") 7.142857142857143% 35.714285714285715% no-repeat;
+}
+
+.svg-weather-icons-wi-day-sunny-overcast-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-thunderstorm {
+	background: url("/webfonts/css/weather-icons.svg") 14.285714285714286% 35.714285714285715% no-repeat;
+}
+
+.svg-weather-icons-wi-day-thunderstorm-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-day-windy {
+	background: url("/webfonts/css/weather-icons.svg") 21.428571428571427% 35.714285714285715% no-repeat;
+}
+
+.svg-weather-icons-wi-day-windy-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-degrees {
+	background: url("/webfonts/css/weather-icons.svg") 28.571428571428573% 35.714285714285715% no-repeat;
+}
+
+.svg-weather-icons-wi-degrees-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-direction-down {
+	background: url("/webfonts/css/weather-icons.svg") 35.714285714285715% 35.714285714285715% no-repeat;
+}
+
+.svg-weather-icons-wi-direction-down-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-direction-down-left {
+	background: url("/webfonts/css/weather-icons.svg") 42.857142857142854% 0 no-repeat;
+}
+
+.svg-weather-icons-wi-direction-down-left-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-direction-down-right {
+	background: url("/webfonts/css/weather-icons.svg") 42.857142857142854% 7.142857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-direction-down-right-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-direction-left {
+	background: url("/webfonts/css/weather-icons.svg") 42.857142857142854% 14.285714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-direction-left-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-direction-right {
+	background: url("/webfonts/css/weather-icons.svg") 42.857142857142854% 21.428571428571427% no-repeat;
+}
+
+.svg-weather-icons-wi-direction-right-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-direction-up {
+	background: url("/webfonts/css/weather-icons.svg") 42.857142857142854% 28.571428571428573% no-repeat;
+}
+
+.svg-weather-icons-wi-direction-up-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-direction-up-left {
+	background: url("/webfonts/css/weather-icons.svg") 42.857142857142854% 35.714285714285715% no-repeat;
+}
+
+.svg-weather-icons-wi-direction-up-left-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-direction-up-right {
+	background: url("/webfonts/css/weather-icons.svg") 0 42.857142857142854% no-repeat;
+}
+
+.svg-weather-icons-wi-direction-up-right-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-dust {
+	background: url("/webfonts/css/weather-icons.svg") 7.142857142857143% 42.857142857142854% no-repeat;
+}
+
+.svg-weather-icons-wi-dust-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-earthquake {
+	background: url("/webfonts/css/weather-icons.svg") 14.285714285714286% 42.857142857142854% no-repeat;
+}
+
+.svg-weather-icons-wi-earthquake-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-fahrenheit {
+	background: url("/webfonts/css/weather-icons.svg") 21.428571428571427% 42.857142857142854% no-repeat;
+}
+
+.svg-weather-icons-wi-fahrenheit-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-fire {
+	background: url("/webfonts/css/weather-icons.svg") 28.571428571428573% 42.857142857142854% no-repeat;
+}
+
+.svg-weather-icons-wi-fire-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-flood {
+	background: url("/webfonts/css/weather-icons.svg") 35.714285714285715% 42.857142857142854% no-repeat;
+}
+
+.svg-weather-icons-wi-flood-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-fog {
+	background: url("/webfonts/css/weather-icons.svg") 42.857142857142854% 42.857142857142854% no-repeat;
+}
+
+.svg-weather-icons-wi-fog-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-gale-warning {
+	background: url("/webfonts/css/weather-icons.svg") 50% 0 no-repeat;
+}
+
+.svg-weather-icons-wi-gale-warning-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-hail {
+	background: url("/webfonts/css/weather-icons.svg") 50% 7.142857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-hail-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-horizon {
+	background: url("/webfonts/css/weather-icons.svg") 50% 14.285714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-horizon-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-horizon-alt {
+	background: url("/webfonts/css/weather-icons.svg") 50% 21.428571428571427% no-repeat;
+}
+
+.svg-weather-icons-wi-horizon-alt-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-hot {
+	background: url("/webfonts/css/weather-icons.svg") 50% 28.571428571428573% no-repeat;
+}
+
+.svg-weather-icons-wi-hot-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-humidity {
+	background: url("/webfonts/css/weather-icons.svg") 50% 35.714285714285715% no-repeat;
+}
+
+.svg-weather-icons-wi-humidity-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-hurricane {
+	background: url("/webfonts/css/weather-icons.svg") 50% 42.857142857142854% no-repeat;
+}
+
+.svg-weather-icons-wi-hurricane-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-hurricane-warning {
+	background: url("/webfonts/css/weather-icons.svg") 0 50% no-repeat;
+}
+
+.svg-weather-icons-wi-hurricane-warning-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-lightning {
+	background: url("/webfonts/css/weather-icons.svg") 7.142857142857143% 50% no-repeat;
+}
+
+.svg-weather-icons-wi-lightning-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-lunar-eclipse {
+	background: url("/webfonts/css/weather-icons.svg") 14.285714285714286% 50% no-repeat;
+}
+
+.svg-weather-icons-wi-lunar-eclipse-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-meteor {
+	background: url("/webfonts/css/weather-icons.svg") 21.428571428571427% 50% no-repeat;
+}
+
+.svg-weather-icons-wi-meteor-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-first-quarter {
+	background: url("/webfonts/css/weather-icons.svg") 28.571428571428573% 50% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-first-quarter-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-full {
+	background: url("/webfonts/css/weather-icons.svg") 35.714285714285715% 50% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-full-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-new {
+	background: url("/webfonts/css/weather-icons.svg") 42.857142857142854% 50% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-new-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-third-quarter {
+	background: url("/webfonts/css/weather-icons.svg") 50% 50% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-third-quarter-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-crescent-1 {
+	background: url("/webfonts/css/weather-icons.svg") 57.142857142857146% 0 no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-crescent-1-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-crescent-2 {
+	background: url("/webfonts/css/weather-icons.svg") 57.142857142857146% 7.142857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-crescent-2-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-crescent-3 {
+	background: url("/webfonts/css/weather-icons.svg") 57.142857142857146% 14.285714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-crescent-3-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-crescent-4 {
+	background: url("/webfonts/css/weather-icons.svg") 57.142857142857146% 21.428571428571427% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-crescent-4-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-crescent-5 {
+	background: url("/webfonts/css/weather-icons.svg") 57.142857142857146% 28.571428571428573% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-crescent-5-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-crescent-6 {
+	background: url("/webfonts/css/weather-icons.svg") 57.142857142857146% 35.714285714285715% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-crescent-6-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-gibbous-1 {
+	background: url("/webfonts/css/weather-icons.svg") 57.142857142857146% 42.857142857142854% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-gibbous-1-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-gibbous-2 {
+	background: url("/webfonts/css/weather-icons.svg") 57.142857142857146% 50% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-gibbous-2-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-gibbous-3 {
+	background: url("/webfonts/css/weather-icons.svg") 0 57.142857142857146% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-gibbous-3-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-gibbous-4 {
+	background: url("/webfonts/css/weather-icons.svg") 7.142857142857143% 57.142857142857146% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-gibbous-4-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-gibbous-5 {
+	background: url("/webfonts/css/weather-icons.svg") 14.285714285714286% 57.142857142857146% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-gibbous-5-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-gibbous-6 {
+	background: url("/webfonts/css/weather-icons.svg") 21.428571428571427% 57.142857142857146% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waning-gibbous-6-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-crescent-1 {
+	background: url("/webfonts/css/weather-icons.svg") 28.571428571428573% 57.142857142857146% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-crescent-1-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-crescent-2 {
+	background: url("/webfonts/css/weather-icons.svg") 35.714285714285715% 57.142857142857146% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-crescent-2-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-crescent-3 {
+	background: url("/webfonts/css/weather-icons.svg") 42.857142857142854% 57.142857142857146% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-crescent-3-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-crescent-4 {
+	background: url("/webfonts/css/weather-icons.svg") 50% 57.142857142857146% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-crescent-4-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-crescent-5 {
+	background: url("/webfonts/css/weather-icons.svg") 57.142857142857146% 57.142857142857146% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-crescent-5-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-crescent-6  {
+	background: url("/webfonts/css/weather-icons.svg") 64.28571428571429% 0 no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-crescent-6 -dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-gibbous-1 {
+	background: url("/webfonts/css/weather-icons.svg") 64.28571428571429% 7.142857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-gibbous-1-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-gibbous-2 {
+	background: url("/webfonts/css/weather-icons.svg") 64.28571428571429% 14.285714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-gibbous-2-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-gibbous-3 {
+	background: url("/webfonts/css/weather-icons.svg") 64.28571428571429% 21.428571428571427% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-gibbous-3-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-gibbous-4 {
+	background: url("/webfonts/css/weather-icons.svg") 64.28571428571429% 28.571428571428573% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-gibbous-4-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-gibbous-5 {
+	background: url("/webfonts/css/weather-icons.svg") 64.28571428571429% 35.714285714285715% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-gibbous-5-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-gibbous-6  {
+	background: url("/webfonts/css/weather-icons.svg") 64.28571428571429% 42.857142857142854% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-alt-waxing-gibbous-6 -dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-first-quarter {
+	background: url("/webfonts/css/weather-icons.svg") 64.28571428571429% 50% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-first-quarter-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-full {
+	background: url("/webfonts/css/weather-icons.svg") 64.28571428571429% 57.142857142857146% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-full-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-new {
+	background: url("/webfonts/css/weather-icons.svg") 0 64.28571428571429% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-new-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-third-quarter {
+	background: url("/webfonts/css/weather-icons.svg") 7.142857142857143% 64.28571428571429% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-third-quarter-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waning-crescent-1 {
+	background: url("/webfonts/css/weather-icons.svg") 14.285714285714286% 64.28571428571429% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waning-crescent-1-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waning-crescent-2 {
+	background: url("/webfonts/css/weather-icons.svg") 21.428571428571427% 64.28571428571429% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waning-crescent-2-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waning-crescent-3 {
+	background: url("/webfonts/css/weather-icons.svg") 28.571428571428573% 64.28571428571429% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waning-crescent-3-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waning-crescent-4  {
+	background: url("/webfonts/css/weather-icons.svg") 35.714285714285715% 64.28571428571429% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waning-crescent-4 -dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waning-crescent-5 {
+	background: url("/webfonts/css/weather-icons.svg") 42.857142857142854% 64.28571428571429% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waning-crescent-5-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waning-crescent-6 {
+	background: url("/webfonts/css/weather-icons.svg") 50% 64.28571428571429% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waning-crescent-6-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waning-gibbous-1 {
+	background: url("/webfonts/css/weather-icons.svg") 57.142857142857146% 64.28571428571429% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waning-gibbous-1-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waning-gibbous-2 {
+	background: url("/webfonts/css/weather-icons.svg") 64.28571428571429% 64.28571428571429% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waning-gibbous-2-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waning-gibbous-3 {
+	background: url("/webfonts/css/weather-icons.svg") 71.42857142857143% 0 no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waning-gibbous-3-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waning-gibbous-4 {
+	background: url("/webfonts/css/weather-icons.svg") 71.42857142857143% 7.142857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waning-gibbous-4-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waning-gibbous-5  {
+	background: url("/webfonts/css/weather-icons.svg") 71.42857142857143% 14.285714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waning-gibbous-5 -dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waning-gibbous-6 {
+	background: url("/webfonts/css/weather-icons.svg") 71.42857142857143% 21.428571428571427% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waning-gibbous-6-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waxing-crescent-1 {
+	background: url("/webfonts/css/weather-icons.svg") 71.42857142857143% 28.571428571428573% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waxing-crescent-1-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waxing-crescent-2 {
+	background: url("/webfonts/css/weather-icons.svg") 71.42857142857143% 35.714285714285715% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waxing-crescent-2-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waxing-crescent-3 {
+	background: url("/webfonts/css/weather-icons.svg") 71.42857142857143% 42.857142857142854% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waxing-crescent-3-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waxing-crescent-4 {
+	background: url("/webfonts/css/weather-icons.svg") 71.42857142857143% 50% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waxing-crescent-4-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waxing-crescent-5 {
+	background: url("/webfonts/css/weather-icons.svg") 71.42857142857143% 57.142857142857146% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waxing-crescent-5-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waxing-crescent-6  {
+	background: url("/webfonts/css/weather-icons.svg") 71.42857142857143% 64.28571428571429% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waxing-crescent-6 -dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waxing-gibbous-1 {
+	background: url("/webfonts/css/weather-icons.svg") 0 71.42857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waxing-gibbous-1-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waxing-gibbous-2 {
+	background: url("/webfonts/css/weather-icons.svg") 7.142857142857143% 71.42857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waxing-gibbous-2-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waxing-gibbous-3 {
+	background: url("/webfonts/css/weather-icons.svg") 14.285714285714286% 71.42857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waxing-gibbous-3-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waxing-gibbous-4  {
+	background: url("/webfonts/css/weather-icons.svg") 21.428571428571427% 71.42857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waxing-gibbous-4 -dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waxing-gibbous-5 {
+	background: url("/webfonts/css/weather-icons.svg") 28.571428571428573% 71.42857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waxing-gibbous-5-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moon-waxing-gibbous-6 {
+	background: url("/webfonts/css/weather-icons.svg") 35.714285714285715% 71.42857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-moon-waxing-gibbous-6-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moonrise {
+	background: url("/webfonts/css/weather-icons.svg") 42.857142857142854% 71.42857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-moonrise-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-moonset {
+	background: url("/webfonts/css/weather-icons.svg") 50% 71.42857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-moonset-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-na {
+	background: url("/webfonts/css/weather-icons.svg") 57.142857142857146% 71.42857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-na-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-cloudy {
+	background: url("/webfonts/css/weather-icons.svg") 64.28571428571429% 71.42857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-cloudy-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-cloudy-gusts {
+	background: url("/webfonts/css/weather-icons.svg") 71.42857142857143% 71.42857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-cloudy-gusts-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-cloudy-high {
+	background: url("/webfonts/css/weather-icons.svg") 78.57142857142857% 0 no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-cloudy-high-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-cloudy-windy {
+	background: url("/webfonts/css/weather-icons.svg") 78.57142857142857% 7.142857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-cloudy-windy-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-hail {
+	background: url("/webfonts/css/weather-icons.svg") 78.57142857142857% 14.285714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-hail-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-lightning {
+	background: url("/webfonts/css/weather-icons.svg") 78.57142857142857% 21.428571428571427% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-lightning-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-partly-cloudy {
+	background: url("/webfonts/css/weather-icons.svg") 78.57142857142857% 28.571428571428573% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-partly-cloudy-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-rain {
+	background: url("/webfonts/css/weather-icons.svg") 78.57142857142857% 35.714285714285715% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-rain-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-rain-mix {
+	background: url("/webfonts/css/weather-icons.svg") 78.57142857142857% 42.857142857142854% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-rain-mix-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-rain-wind {
+	background: url("/webfonts/css/weather-icons.svg") 78.57142857142857% 50% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-rain-wind-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-showers {
+	background: url("/webfonts/css/weather-icons.svg") 78.57142857142857% 57.142857142857146% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-showers-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-sleet {
+	background: url("/webfonts/css/weather-icons.svg") 78.57142857142857% 64.28571428571429% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-sleet-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-sleet-storm {
+	background: url("/webfonts/css/weather-icons.svg") 78.57142857142857% 71.42857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-sleet-storm-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-snow {
+	background: url("/webfonts/css/weather-icons.svg") 0 78.57142857142857% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-snow-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-snow-thunderstorm {
+	background: url("/webfonts/css/weather-icons.svg") 7.142857142857143% 78.57142857142857% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-snow-thunderstorm-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-snow-wind {
+	background: url("/webfonts/css/weather-icons.svg") 14.285714285714286% 78.57142857142857% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-snow-wind-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-sprinkle {
+	background: url("/webfonts/css/weather-icons.svg") 21.428571428571427% 78.57142857142857% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-sprinkle-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-storm-showers {
+	background: url("/webfonts/css/weather-icons.svg") 28.571428571428573% 78.57142857142857% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-storm-showers-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-alt-thunderstorm {
+	background: url("/webfonts/css/weather-icons.svg") 35.714285714285715% 78.57142857142857% no-repeat;
+}
+
+.svg-weather-icons-wi-night-alt-thunderstorm-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-clear {
+	background: url("/webfonts/css/weather-icons.svg") 42.857142857142854% 78.57142857142857% no-repeat;
+}
+
+.svg-weather-icons-wi-night-clear-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-cloudy {
+	background: url("/webfonts/css/weather-icons.svg") 50% 78.57142857142857% no-repeat;
+}
+
+.svg-weather-icons-wi-night-cloudy-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-cloudy-gusts {
+	background: url("/webfonts/css/weather-icons.svg") 57.142857142857146% 78.57142857142857% no-repeat;
+}
+
+.svg-weather-icons-wi-night-cloudy-gusts-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-cloudy-high {
+	background: url("/webfonts/css/weather-icons.svg") 64.28571428571429% 78.57142857142857% no-repeat;
+}
+
+.svg-weather-icons-wi-night-cloudy-high-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-cloudy-windy {
+	background: url("/webfonts/css/weather-icons.svg") 71.42857142857143% 78.57142857142857% no-repeat;
+}
+
+.svg-weather-icons-wi-night-cloudy-windy-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-fog {
+	background: url("/webfonts/css/weather-icons.svg") 78.57142857142857% 78.57142857142857% no-repeat;
+}
+
+.svg-weather-icons-wi-night-fog-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-hail {
+	background: url("/webfonts/css/weather-icons.svg") 85.71428571428571% 0 no-repeat;
+}
+
+.svg-weather-icons-wi-night-hail-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-lightning {
+	background: url("/webfonts/css/weather-icons.svg") 85.71428571428571% 7.142857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-night-lightning-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-partly-cloudy {
+	background: url("/webfonts/css/weather-icons.svg") 85.71428571428571% 14.285714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-night-partly-cloudy-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-rain {
+	background: url("/webfonts/css/weather-icons.svg") 85.71428571428571% 21.428571428571427% no-repeat;
+}
+
+.svg-weather-icons-wi-night-rain-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-rain-mix {
+	background: url("/webfonts/css/weather-icons.svg") 85.71428571428571% 28.571428571428573% no-repeat;
+}
+
+.svg-weather-icons-wi-night-rain-mix-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-rain-wind {
+	background: url("/webfonts/css/weather-icons.svg") 85.71428571428571% 35.714285714285715% no-repeat;
+}
+
+.svg-weather-icons-wi-night-rain-wind-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-showers {
+	background: url("/webfonts/css/weather-icons.svg") 85.71428571428571% 42.857142857142854% no-repeat;
+}
+
+.svg-weather-icons-wi-night-showers-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-sleet {
+	background: url("/webfonts/css/weather-icons.svg") 85.71428571428571% 50% no-repeat;
+}
+
+.svg-weather-icons-wi-night-sleet-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-sleet-storm {
+	background: url("/webfonts/css/weather-icons.svg") 85.71428571428571% 57.142857142857146% no-repeat;
+}
+
+.svg-weather-icons-wi-night-sleet-storm-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-snow {
+	background: url("/webfonts/css/weather-icons.svg") 85.71428571428571% 64.28571428571429% no-repeat;
+}
+
+.svg-weather-icons-wi-night-snow-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-snow-thunderstorm {
+	background: url("/webfonts/css/weather-icons.svg") 85.71428571428571% 71.42857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-night-snow-thunderstorm-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-snow-wind {
+	background: url("/webfonts/css/weather-icons.svg") 85.71428571428571% 78.57142857142857% no-repeat;
+}
+
+.svg-weather-icons-wi-night-snow-wind-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-sprinkle {
+	background: url("/webfonts/css/weather-icons.svg") 0 85.71428571428571% no-repeat;
+}
+
+.svg-weather-icons-wi-night-sprinkle-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-storm-showers {
+	background: url("/webfonts/css/weather-icons.svg") 7.142857142857143% 85.71428571428571% no-repeat;
+}
+
+.svg-weather-icons-wi-night-storm-showers-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-night-thunderstorm {
+	background: url("/webfonts/css/weather-icons.svg") 14.285714285714286% 85.71428571428571% no-repeat;
+}
+
+.svg-weather-icons-wi-night-thunderstorm-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-rain {
+	background: url("/webfonts/css/weather-icons.svg") 21.428571428571427% 85.71428571428571% no-repeat;
+}
+
+.svg-weather-icons-wi-rain-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-rain-mix {
+	background: url("/webfonts/css/weather-icons.svg") 28.571428571428573% 85.71428571428571% no-repeat;
+}
+
+.svg-weather-icons-wi-rain-mix-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-rain-wind {
+	background: url("/webfonts/css/weather-icons.svg") 35.714285714285715% 85.71428571428571% no-repeat;
+}
+
+.svg-weather-icons-wi-rain-wind-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-raindrop {
+	background: url("/webfonts/css/weather-icons.svg") 42.857142857142854% 85.71428571428571% no-repeat;
+}
+
+.svg-weather-icons-wi-raindrop-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-raindrops {
+	background: url("/webfonts/css/weather-icons.svg") 50% 85.71428571428571% no-repeat;
+}
+
+.svg-weather-icons-wi-raindrops-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-refresh {
+	background: url("/webfonts/css/weather-icons.svg") 57.142857142857146% 85.71428571428571% no-repeat;
+}
+
+.svg-weather-icons-wi-refresh-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-refresh-alt {
+	background: url("/webfonts/css/weather-icons.svg") 64.28571428571429% 85.71428571428571% no-repeat;
+}
+
+.svg-weather-icons-wi-refresh-alt-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-sandstorm {
+	background: url("/webfonts/css/weather-icons.svg") 71.42857142857143% 85.71428571428571% no-repeat;
+}
+
+.svg-weather-icons-wi-sandstorm-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-showers {
+	background: url("/webfonts/css/weather-icons.svg") 78.57142857142857% 85.71428571428571% no-repeat;
+}
+
+.svg-weather-icons-wi-showers-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-sleet {
+	background: url("/webfonts/css/weather-icons.svg") 85.71428571428571% 85.71428571428571% no-repeat;
+}
+
+.svg-weather-icons-wi-sleet-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-small-craft-advisory {
+	background: url("/webfonts/css/weather-icons.svg") 92.85714285714286% 0 no-repeat;
+}
+
+.svg-weather-icons-wi-small-craft-advisory-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-smog {
+	background: url("/webfonts/css/weather-icons.svg") 92.85714285714286% 7.142857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-smog-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-smoke {
+	background: url("/webfonts/css/weather-icons.svg") 92.85714285714286% 14.285714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-smoke-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-snow {
+	background: url("/webfonts/css/weather-icons.svg") 92.85714285714286% 21.428571428571427% no-repeat;
+}
+
+.svg-weather-icons-wi-snow-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-snow-wind {
+	background: url("/webfonts/css/weather-icons.svg") 92.85714285714286% 28.571428571428573% no-repeat;
+}
+
+.svg-weather-icons-wi-snow-wind-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-snowflake-cold {
+	background: url("/webfonts/css/weather-icons.svg") 92.85714285714286% 35.714285714285715% no-repeat;
+}
+
+.svg-weather-icons-wi-snowflake-cold-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-solar-eclipse {
+	background: url("/webfonts/css/weather-icons.svg") 92.85714285714286% 42.857142857142854% no-repeat;
+}
+
+.svg-weather-icons-wi-solar-eclipse-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-sprinkle {
+	background: url("/webfonts/css/weather-icons.svg") 92.85714285714286% 50% no-repeat;
+}
+
+.svg-weather-icons-wi-sprinkle-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-stars {
+	background: url("/webfonts/css/weather-icons.svg") 92.85714285714286% 57.142857142857146% no-repeat;
+}
+
+.svg-weather-icons-wi-stars-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-storm-showers {
+	background: url("/webfonts/css/weather-icons.svg") 92.85714285714286% 64.28571428571429% no-repeat;
+}
+
+.svg-weather-icons-wi-storm-showers-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-storm-warning {
+	background: url("/webfonts/css/weather-icons.svg") 92.85714285714286% 71.42857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-storm-warning-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-strong-wind {
+	background: url("/webfonts/css/weather-icons.svg") 92.85714285714286% 78.57142857142857% no-repeat;
+}
+
+.svg-weather-icons-wi-strong-wind-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-sunrise {
+	background: url("/webfonts/css/weather-icons.svg") 92.85714285714286% 85.71428571428571% no-repeat;
+}
+
+.svg-weather-icons-wi-sunrise-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-sunset {
+	background: url("/webfonts/css/weather-icons.svg") 0 92.85714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-sunset-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-thermometer {
+	background: url("/webfonts/css/weather-icons.svg") 7.142857142857143% 92.85714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-thermometer-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-thermometer-exterior {
+	background: url("/webfonts/css/weather-icons.svg") 14.285714285714286% 92.85714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-thermometer-exterior-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-thermometer-internal {
+	background: url("/webfonts/css/weather-icons.svg") 21.428571428571427% 92.85714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-thermometer-internal-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-thunderstorm {
+	background: url("/webfonts/css/weather-icons.svg") 28.571428571428573% 92.85714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-thunderstorm-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-time-1 {
+	background: url("/webfonts/css/weather-icons.svg") 35.714285714285715% 92.85714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-time-1-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-time-10 {
+	background: url("/webfonts/css/weather-icons.svg") 42.857142857142854% 92.85714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-time-10-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-time-11 {
+	background: url("/webfonts/css/weather-icons.svg") 50% 92.85714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-time-11-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-time-12 {
+	background: url("/webfonts/css/weather-icons.svg") 57.142857142857146% 92.85714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-time-12-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-time-2 {
+	background: url("/webfonts/css/weather-icons.svg") 64.28571428571429% 92.85714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-time-2-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-time-3 {
+	background: url("/webfonts/css/weather-icons.svg") 71.42857142857143% 92.85714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-time-3-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-time-4 {
+	background: url("/webfonts/css/weather-icons.svg") 78.57142857142857% 92.85714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-time-4-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-time-5 {
+	background: url("/webfonts/css/weather-icons.svg") 85.71428571428571% 92.85714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-time-5-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-time-6 {
+	background: url("/webfonts/css/weather-icons.svg") 92.85714285714286% 92.85714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-time-6-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-time-7 {
+	background: url("/webfonts/css/weather-icons.svg") 100% 0 no-repeat;
+}
+
+.svg-weather-icons-wi-time-7-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-time-8 {
+	background: url("/webfonts/css/weather-icons.svg") 100% 7.142857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-time-8-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-time-9 {
+	background: url("/webfonts/css/weather-icons.svg") 100% 14.285714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-time-9-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-tornado {
+	background: url("/webfonts/css/weather-icons.svg") 100% 21.428571428571427% no-repeat;
+}
+
+.svg-weather-icons-wi-tornado-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-train {
+	background: url("/webfonts/css/weather-icons.svg") 100% 28.571428571428573% no-repeat;
+}
+
+.svg-weather-icons-wi-train-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-tsunami {
+	background: url("/webfonts/css/weather-icons.svg") 100% 35.714285714285715% no-repeat;
+}
+
+.svg-weather-icons-wi-tsunami-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-umbrella {
+	background: url("/webfonts/css/weather-icons.svg") 100% 42.857142857142854% no-repeat;
+}
+
+.svg-weather-icons-wi-umbrella-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-volcano {
+	background: url("/webfonts/css/weather-icons.svg") 100% 50% no-repeat;
+}
+
+.svg-weather-icons-wi-volcano-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-wind-beaufort-0 {
+	background: url("/webfonts/css/weather-icons.svg") 100% 57.142857142857146% no-repeat;
+}
+
+.svg-weather-icons-wi-wind-beaufort-0-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-wind-beaufort-1 {
+	background: url("/webfonts/css/weather-icons.svg") 100% 64.28571428571429% no-repeat;
+}
+
+.svg-weather-icons-wi-wind-beaufort-1-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-wind-beaufort-10 {
+	background: url("/webfonts/css/weather-icons.svg") 100% 71.42857142857143% no-repeat;
+}
+
+.svg-weather-icons-wi-wind-beaufort-10-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-wind-beaufort-11 {
+	background: url("/webfonts/css/weather-icons.svg") 100% 78.57142857142857% no-repeat;
+}
+
+.svg-weather-icons-wi-wind-beaufort-11-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-wind-beaufort-12 {
+	background: url("/webfonts/css/weather-icons.svg") 100% 85.71428571428571% no-repeat;
+}
+
+.svg-weather-icons-wi-wind-beaufort-12-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-wind-beaufort-2 {
+	background: url("/webfonts/css/weather-icons.svg") 100% 92.85714285714286% no-repeat;
+}
+
+.svg-weather-icons-wi-wind-beaufort-2-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-wind-beaufort-3 {
+	background: url("/webfonts/css/weather-icons.svg") 0 100% no-repeat;
+}
+
+.svg-weather-icons-wi-wind-beaufort-3-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-wind-beaufort-4 {
+	background: url("/webfonts/css/weather-icons.svg") 7.142857142857143% 100% no-repeat;
+}
+
+.svg-weather-icons-wi-wind-beaufort-4-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-wind-beaufort-5 {
+	background: url("/webfonts/css/weather-icons.svg") 14.285714285714286% 100% no-repeat;
+}
+
+.svg-weather-icons-wi-wind-beaufort-5-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-wind-beaufort-6 {
+	background: url("/webfonts/css/weather-icons.svg") 21.428571428571427% 100% no-repeat;
+}
+
+.svg-weather-icons-wi-wind-beaufort-6-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-wind-beaufort-7 {
+	background: url("/webfonts/css/weather-icons.svg") 28.571428571428573% 100% no-repeat;
+}
+
+.svg-weather-icons-wi-wind-beaufort-7-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-wind-beaufort-8 {
+	background: url("/webfonts/css/weather-icons.svg") 35.714285714285715% 100% no-repeat;
+}
+
+.svg-weather-icons-wi-wind-beaufort-8-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-wind-beaufort-9 {
+	background: url("/webfonts/css/weather-icons.svg") 42.857142857142854% 100% no-repeat;
+}
+
+.svg-weather-icons-wi-wind-beaufort-9-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-wind-deg {
+	background: url("/webfonts/css/weather-icons.svg") 50% 100% no-repeat;
+}
+
+.svg-weather-icons-wi-wind-deg-dims {
+	width: 34px;
+	height: 34px;
+}
+
+.svg-weather-icons-wi-windy {
+	background: url("/webfonts/css/weather-icons.svg") 57.142857142857146% 100% no-repeat;
+}
+
+.svg-weather-icons-wi-windy-dims {
+	width: 34px;
+	height: 34px;
+}
+

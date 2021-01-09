@@ -61,7 +61,7 @@ function SaveCache {
 }
 
 $filePath = Get-ChildItem -Recurse . | Where { ! $_.PSIsContainer }
-$filePath | CreateSiteMap | out-file -encoding UTF-8 sitemap.xml
+$filePath | CreateSiteMap | out-file -encoding utf8 sitemap.xml
 
 $md5values = LoadCache
 
@@ -77,6 +77,7 @@ ForEach($i in $filePath) {
 	$name = $name.replace("\","/")
 	
 	If(! ($name.Contains("fetch"))) {
+	If(! ($name.Contains("publish-config.json"))) {
 		$add = $FALSE
 		$md5 = Get-FileHash $name -Algorithm MD5
 		if (! ($md5values.ContainsKey($name))) {
@@ -92,6 +93,7 @@ ForEach($i in $filePath) {
 			Write-Host $name
 			curl -s -u $credentials --create-dirs --ftp-create-dirs -T "$name" "$ftpUrl/$dir"
 		}
+	}
 	}
 }
 

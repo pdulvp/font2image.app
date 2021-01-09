@@ -52,6 +52,52 @@ function b64EncodeUnicode(str) {
     }));
 }
 
+function flatSVG(svg) {
+
+	var wrap = document.createElement('div');
+	wrap.appendChild(svg.cloneNode(true));
+	let svgCopy = wrap.children[0];
+	let defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+	svgCopy.appendChild(defs);
+	defs.appendChild(document.getElementById("filterMatrix").cloneNode(true));
+	let used = svgCopy.children[0].getAttribute("href").substring(1);
+	defs.appendChild(document.getElementById(used).cloneNode(true));
+	return svgCopy;
+}
+
+function drawSVG(svg, translucentBackground) {
+	console.log("drawSVG");
+	return new Promise((resolve, reject) => {
+		var canvas = document.createElement('canvas');
+		var ctx = canvas.getContext("2d");
+
+		if (!translucentBackground) {
+			ctx.beginPath();
+			ctx.filter = "none";
+			ctx.fillStyle = "rgb(255, 255, 255)";
+			ctx.fillRect(0, 0, canvas.width, canvas.height);
+			ctx.closePath();
+		}
+
+		ctx.imageSmoothingEnabled = false;
+		ctx.textAlign = 'center';
+		ctx.textBaseline = "middle";
+		canvas.width = svg.getAttribute("width");
+		canvas.height = svg.getAttribute("height");
+		let img = document.createElement("img");
+		var xml = new XMLSerializer().serializeToString(svg);
+		img.width = svg.getAttribute("width");
+		img.height = svg.getAttribute("height");
+		let fct = function() {
+			ctx.drawImage(img, 0, 0);
+			console.log("drawImage");
+			resolve(canvas);
+		};
+		img.addEventListener ("load", fct, true);
+		img.src = 'data:image/svg+xml;base64,'+btoa(xml);
+	});
+}
+
 function download() {
 	var zip = new JSZip();
 	var img = zip.folder("images");
@@ -62,89 +108,28 @@ function download() {
 	let ext = types[value] == undefined ? "png": value;
 
 	let activeCases = Array.from(document.getElementsByClassName("active"));
-	console.log(fonts);
-	let activeFonts = activeCases.map(x => x.getAttribute("font-name")).filter(unique).map(f => {
-		return fonts.filter(x => x.name == f)[0];
-	});
-	//let httpquery = require("@pdulvp/httpquery");
-
-	
-	let promises = activeFonts.map(x => {
-		return new Promise((resolve, reject) => {
-			var request = new XMLHttpRequest();
-			request.open('GET', x.fontUrl, true);
-			request.responseType = 'blob';
-			request.onload = function() {
-				var reader = new FileReader();
-				reader.readAsDataURL(request.response);
-				reader.addEventListener("load", function () {
-					let mime = {
-						"truetype": "font/ttf",
-						"otf": "font/otf",
-						"woff": "font/woff",
-						"woff2": "font/woff2"
-					}
-					resolve({ font: x, base64: reader.result.replace("application/octet-stream", mime[x.fontType]) });
-				}, false);
-			};
-			request.send();
-		});
-	});
-	Promise.all(promises).then(fonts2 => {
-		//httpquery.get(x.fontUrl))).then(fonts => {
-		let fontByNames = {};
-		activeFonts.forEach(e => fontByNames[e.name] = fonts2[activeFonts.indexOf(e)]);
-		return Promise.resolve(fontByNames);
-  
-	}).then(fontByNames => {
-
-		activeCases.map(e => {
+	Promise.resolve(true).then(n => {
+		let promises = activeCases.map(svg => {
+			let svgCopy = flatSVG(svg);
 			if (value == "svg") {
-				let svg = (e.getElementsByTagName("svg").length == 1) ? e.getElementsByTagName("svg")[0] : null;
-				if (svg == null) {
-					var wrap = document.createElement('div');
-					svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-					let defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
-					let style = document.createElementNS("http://www.w3.org/2000/svg", "style");
-					svg.appendChild(defs);
-					defs.appendChild(style);
-					style.setAttribute("type", "text/css");
-					let selectedFont = fontByNames[e.getAttribute("font-name")];
-					let family = e.getAttribute("font-family");
-					let base64 = selectedFont.base64;
-					style.textContent = `@font-face { font-family: '${family}'; src: url('${base64}') format('woff2'); font-style: normal; font-weight: ${e.getAttribute("font-weight")} }`;
-		
-					svg.appendChild(document.getElementById("filterMatrix").cloneNode(true));
-					wrap.appendChild(svg);
-					svg.setAttribute("width", e.width);
-					svg.setAttribute("height", e.height);
-		
-					let text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-					let x = Math.floor(e.width / 2);
-					let y = Math.floor(e.height / 2);
-					text.setAttribute("x", x);
-					text.setAttribute("y", y);
-					text.setAttribute("dy", ".18em"); //magic centering number 
-					text.setAttribute("font-family", e.getAttribute("font-family"));
-					text.setAttribute("font-weight", e.getAttribute("font-weight"));
-					text.setAttribute("font-size", e.getAttribute("font-size"));
-					text.setAttribute("text-anchor", "middle");
-					text.setAttribute("dominant-baseline", "middle");
-					text.setAttribute("fill", mainColor);
-					text.setAttribute("filter", "url(#filterMatrix)");
-					text.textContent = e.getAttribute("font-character");
-					svg.appendChild(text);
-				}
+				return new Promise((resolve, reject) => {
+					let res = b64EncodeUnicode(new XMLSerializer().serializeToString(svgCopy));
+					img.file(svg.getAttribute("title") + "." + ext, (res), { base64: true });
+					resolve(true);
+				});
 
-				let res = b64EncodeUnicode(new XMLSerializer().serializeToString(svg));
-				img.file(e.getAttribute("title") + "." + ext, (res), { base64: true });
-				
 			} else {
-				let url2 = e.toDataURL(type);
-				img.file(e.getAttribute("title") + "." + ext, url2.split(",")[1], { base64: true });
+				return drawSVG(svgCopy, translucentBackground).then(canvas => {
+					return new Promise((resolve, reject) => {
+						let url2 = canvas.toDataURL(type);
+						img.file(svg.getAttribute("title") + "." + ext, url2.split(",")[1], { base64: true });
+						resolve(true);
+					});
+				});
 			}
 		});
-		return Promise.resolve(true);
+		return Promise.all(promises);
+
 	}).then(e => {
 		return zip.generateAsync( {type: "blob"} );
 
@@ -686,54 +671,30 @@ function updateImages(clean) {
 
 	function loadSVGFont(f) {
 		let httpquery = require("@pdulvp/httpquery");
-		if (f.cssUrl != null) {
-			return getCss2(f.cssUrl).then(css => {
-				console.log("Loaded css: "+css.url);
-				//fonts.filter(x => x.name == f.name)[0].items = css.items;
-				f.items = css.items;
-				console.log(f);
-				return Promise.resolve(f);
-			});
-		}
-/*
 		return httpquery.get(f.fontUrl).then(e => {
-			e = e.replace("</svg>", "");
-			e = e.substring(e.indexOf(">", e.indexOf("<svg")+5)+1);
-			let svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-			svg.innerHTML = e;
-			return Promise.resolve(svg);
+			let div = document.createElement("div");
+			div.innerHTML = e;
+			return Promise.resolve(div);
 			
-		}).then(svg => {
-			let symbols = svg.getElementsByTagName("symbol");
+		}).then(svgDiv => {
+			let symbols = svgDiv.children[0].getElementsByTagName("svg");
+			svgDiv.style.display = "none";
 			f.items = [];
 			for (let s of symbols) {
+				s.removeAttribute("x");
+				s.removeAttribute("y");
+				s.removeAttribute("width");
+				s.removeAttribute("height");
+				
 				f.items.push({
 					"name": s.getAttribute("id")
 				});
 			}
-			f.svg = svg;
-			console.log(f);
+			f.svg = svgDiv.children[0];
+			document.body.appendChild(svgDiv);
 			return Promise.resolve(f);
 
-		}).then(f => {
-			return new Promise((resolve, reject) => {
-				f.img = document.createElement("img");
-				var xml = new XMLSerializer().serializeToString(f.svg);
-				var svg64 = btoa(xml);
-				f.img.setAttribute("loaded", "false");
-				f.img.width=300;
-				f.img.height=300;
-				f.img.onload = function() {
-					f.img.setAttribute("loaded", "true");
-					f.loaded = true;
-					resolve(f);
-				};
-				f.img.onerror = function(e) {
-					console.log(e);
-				};
-				f.img.src = 'data:image/svg+xml;base64,'+svg64;
-			});
-		});*/
+		});
 	}
 
 	function loadFontFace(f) {
@@ -1130,29 +1091,18 @@ function createsImage(element, color, font, rootContainer) {
 
 	let img = document.getElementById(id);
 	if (document.getElementById(id) == undefined) {
-		img = document.createElement("div");
+		img = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 		img.setAttribute("id", id);
 		img.setAttribute("title", element.name);
-		img.setAttribute("style", `width: ${fontSize}; height: ${fontSize};`);
 		addClass(img, "canvases");
 		addClass(img, element.name);
 
-		/*if (Math.random(0)<0.2) {
-			img.src=font.fontUrl+"#svgView(viewBox(0, 0, 132, 132))";
-		} else if (Math.random(0)<0.4) {
-			img.src=font.fontUrl+"#svgView(viewBox(132, 0, 132, 132))";
-		} else if (Math.random(0)<0.6) {
-			img.src=font.fontUrl+"#svgView(viewBox(0, 132, 132, 132))";
-		} else {
-			img.src=font.fontUrl+"#svgView(viewBox(132, 132, 132, 132))";
-		}*/
-
-		//img.src=font.fontUrl+"#"+element.name.substring(4); //bad perfo
-		img.width = 32;
-		img.height = 32;
-		//addClass(img, element.name);
-		//addClass(img, element.name+"-dims");
-
+		let uses = document.createElementNS("http://www.w3.org/2000/svg", "use");
+		uses.setAttributeNS("http://www.w3.org/1999/xlink", "href", `#${element.name}`);
+		uses.setAttribute("fill", mainColor);
+		uses.setAttribute("style", `filter: url(#filterMatrix);`);
+		img.appendChild(uses);
+		
 		let container = document.createElement("div");
 		addClass(container, "canvases-container");
 		
@@ -1162,136 +1112,23 @@ function createsImage(element, color, font, rootContainer) {
 		dirty = true;
 	}
 
-
-	let temporary = document.createElement("img");
-	temporary.width = fontSize;
-	temporary.height = fontSize;
-	/*
-	let tctx = temporary.getContext("2d");
-	tctx.imageSmoothingEnabled = false;
-	tctx.textBaseline = "middle";
-	tctx.textAlign = 'center';
-
-	if (font.fontType != "svg") {
-		let fontS = fontSize - padding * 2;
-		tctx.font = `${font.weight} ${fontS}px "${font.family}"`;
-		
-		let invalid = tctx.measureText("\uFFFF");
-		let b = tctx.measureText(element.character);
-		if ((invalid.width == b.width && invalid.actualBoundingBoxAscent == b.actualBoundingBoxAscent && invalid.actualBoundingBoxDescent == b.actualBoundingBoxDescent && invalid.actualBoundingBoxLeft == b.actualBoundingBoxLeft && invalid.actualBoundingBoxRight == b.actualBoundingBoxRight)) {
-			return;
-		}
-	}
-
-	let dirty = false;
-	let canvas = document.getElementById(id);
-	if (document.getElementById(id) == undefined) {
-		canvas = document.createElement("canvas");
-		canvas.setAttribute("id", id);
-		canvas.setAttribute("title", element.name);
-		addClass(canvas, "canvases");
-
-		let container = document.createElement("div");
-		addClass(container, "canvases-container");
-		
-		rootContainer.appendChild(container);
-		container.appendChild(canvas);
-		canvas.onclick = totototo;
+	if (img.getAttribute("infpad") != padding) {
+		img.setAttribute("infpad", padding);
+		img.firstChild.setAttribute("x", padding);
+		img.firstChild.setAttribute("y", padding);
 		dirty = true;
 	}
-	if (canvas.getAttribute("translucent-background") !== translucentBackground) {
-		canvas.setAttribute("translucent-background", translucentBackground);
+	if (img.width != fontSize) {
+		img.setAttribute("width", fontSize);
+		img.firstChild.setAttribute("width", fontSize - 2 * padding);
 		dirty = true;
 	}
-	if (canvas.getAttribute("font-color") != color) {
-		canvas.setAttribute("font-color", color);
-		dirty = true;
-	}
-	if (canvas.getAttribute("font-character") != element.character) {
-		canvas.setAttribute("font-character", element.character);
-		dirty = true;
-	}
-	
-	canvas.setAttribute("font-type", font.fontType);
-
-	if (font.fontType != "svg") {
-		let fontS = fontSize - padding * 2;
-		tctx.font = `${font.weight} ${fontS}px "${font.family}"`;
-		
-		let invalid = tctx.measureText("\uFFFF");
-		let b = tctx.measureText(element.character);
-		if ((invalid.width == b.width && invalid.actualBoundingBoxAscent == b.actualBoundingBoxAscent && invalid.actualBoundingBoxDescent == b.actualBoundingBoxDescent && invalid.actualBoundingBoxLeft == b.actualBoundingBoxLeft && invalid.actualBoundingBoxRight == b.actualBoundingBoxRight)) {
-			return;
-		}
-
-		while (fontS > 0 && b.width > temporary.width - padding * 2) {
-			fontS--;
-			tctx.font = `${font.weight} ${fontS}px "${font.family}"`;
-			b = tctx.measureText(element.character);
-		}
-
-		if (canvas.getAttribute("font") != tctx.font) {
-			canvas.setAttribute("font", tctx.font);
-			canvas.setAttribute("font-weight", font.weight);
-			canvas.setAttribute("font-size", fontS);
-			canvas.setAttribute("font-family", font.family);
-			canvas.setAttribute("font-name", font.name);
-			dirty = true;
-		}
-	} else {
-		canvas.setAttribute("style", color);
-		canvas.setAttribute("font-name", font.name);
-		canvas.setAttribute("font-sprite", element.name);
-		dirty = true;
-
-			let temporary = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-			let defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
-			let font2 = fonts.filter(x => x.name == canvas.getAttribute("font-name"))[0];
-			let spriteId = canvas.getAttribute("font-sprite");
-			let element2 = font2.svg.getElementById(spriteId);
-			let uses = document.createElementNS("http://www.w3.org/2000/svg", "use");
-			uses.setAttributeNS("http://www.w3.org/1999/xlink", "href", `#${element2.id}`);
-			temporary.appendChild(element2.cloneNode(true));
-			temporary.appendChild(defs);
-			temporary.appendChild(uses);
-			defs.appendChild(document.getElementById("filterMatrix").cloneNode(true));
-			while (canvas.firstChild != undefined) {
-				canvas.removeChild(canvas.firstChild);
-			}
-			canvas.appendChild(temporary);
-			
-			let img = document.createElement("img");
-			canvas.appendChild(img);
-	
-			temporary.setAttribute("viewBox", element2.getAttribute("viewBox"));
-			temporary.setAttribute("height", canvas.height - padding * 2);
-			temporary.setAttribute("width", canvas.width - padding * 2);
-			uses.setAttribute("fill", mainColor);
-			uses.setAttribute("style", "filter: url(#filterMatrix);");
-			//<use xlink:href="#refresh" width="24" height="24" x="303" y="303"/>
-	
-			var xml = new XMLSerializer().serializeToString(temporary);
-			var svg64 = btoa(xml);
-			img.setAttribute("loaded", "false");
-			img.onload = function() {
-				img.setAttribute("loaded", "true");
-				canvas.setAttribute("dirty", "true");
-			};
-			img.src = 'data:image/svg+xml;base64,'+svg64;
-		
-	}
-
-	if (canvas.width != fontSize) {
-		canvas.width = fontSize;
-		canvas.style.width = fontSize; //Edge compatibility
-		dirty = true;
-	}
-	if (canvas.height != fontSize) {
-		canvas.height = fontSize;
-		canvas.style.height = fontSize; //Edge compatibility
+	if (img.height != fontSize) {
+		img.setAttribute("height", fontSize);
+		img.firstChild.setAttribute("height", fontSize - 2 * padding);
 		dirty = true;
 	}
 	if (dirty) {
-		canvas.setAttribute("dirty", "true");
-	}*/
+		img.setAttribute("dirty", "true");
+	}
 }
