@@ -23,7 +23,7 @@
         "fontUrl" : "https://raw.githubusercontent.com/pdulvp/font2image.app/master/webfonts/css/fxemoji.svg",
         "preview" : "/webfonts/css/fxemoji-preview.svg",
         "fontType" : "svg",
-        "color" : true,
+        "showAtStartup" : false,
         "weight" : "normal", "style" : "normal",
         "meta": {
             "licenseLink" : "https://github.com/mozilla/fxemoji/blob/master/LICENSE.md", "license" : "icons(CC BY 4.0)",
@@ -46,6 +46,7 @@
         "fontUrl" : "https://raw.githubusercontent.com/pdulvp/font2image.app/master/webfonts/css/noto-emoji.svg",
         "preview" : "/webfonts/css/noto-emoji-preview.svg",
         "fontType" : "svg",
+        "showAtStartup" : false,
         "meta": {
             "licenseLink" : "https://github.com/googlefonts/noto-emoji/blob/master/LICENSE", "license" : "Apache License 2.0",
             "mainPage" : "google.com/get/noto/help/emoji", "mainPageLink" : "https://www.google.com/get/noto/help/emoji/",

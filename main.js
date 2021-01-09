@@ -257,7 +257,8 @@ function getFonts() {
 			fonts = JSON.parse(e);
 			fonts.forEach(f => f.family = f.name.replace(/ /g, ""));
 			fonts.forEach(f => f.visible = false);
-			random(0, fonts.length - 1, 2).forEach(x => fonts[x].visible = true);
+			let toSelect = fonts.filter(x => x.showAtStartup == undefined || x.showAtStartup === true);
+			random(0, toSelect.length - 1, 2).forEach(x => toSelect[x].visible = true);
 			console.log(fonts);
 			Promise.resolve();
 		});
