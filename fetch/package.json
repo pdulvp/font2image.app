@@ -9,6 +9,7 @@
   "author": "pdulvp",
   "license": "CC-BY-NC-ND-4.0",
   "dependencies": {
+    "@pdulvp/promiseh": "^1.0.0",
     "svg-sprite": "^1.5.0"
   }
 }

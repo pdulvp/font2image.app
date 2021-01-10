@@ -8,11 +8,7 @@
  @author: pdulvp@laposte.net
 */
 const fs = require('fs')
-const fsq = require('./fsq')
-const url = require('url');
-const httpq = require('./httpq')
-const cacheq = require('./cacheq')
-const promiseq = require('./promiseq')
+const promiseh = require('@pdulvp/promiseh')
 const path = require('path')
 const File = require('vinyl');
 
@@ -145,7 +141,7 @@ function exportSprites(folders, filename, exportSvg = true) {
     let fetchs = folders.map(x => getAll(x, "svg"));
     let fontName = folders[0].split("/")[0];
     return Promise.all(fetchs)
-        .then(filesPerFolder => Promise.resolve(promiseq.flat(filesPerFolder)))
+        .then(filesPerFolder => Promise.resolve(promiseh.flat(filesPerFolder)))
         .then(files => {
             return new Promise(function(resolve, reject) {
                 toSprite(files, fontName, "").then(full => {
