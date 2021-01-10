@@ -92,11 +92,7 @@ function toSprite(files, id, kind) {
                 if (error) {
                     reject(error);
                 } else {
-                    console.log("result");
-                    console.log(result);
-                    console.log("data");
-                    console.log(data);
-                    resolve(result);
+                    resolve({ result: result, data: data });
                 }
             });
         });
@@ -151,14 +147,14 @@ function exportSprites(folders, filename, exportSvg = true) {
     return Promise.all(fetchs)
         .then(filesPerFolder => Promise.resolve(promiseq.flat(filesPerFolder)))
         .then(files => {
-            
             return new Promise(function(resolve, reject) {
                 toSprite(files, fontName, "").then(full => {
                     shuffleArray(files);
                     files = files.slice(0, 16);
                     console.log(files);
                     toSprite(files, fontName, "small").then(small => {
-                        resolve({full: full, small: small});
+                        let fontItems = full.data.css.shapes.map(s => s.name);
+                        resolve({items: fontItems, full: full.result, small: small.result});
                     });
                 });
             });
@@ -175,6 +171,9 @@ function exportSprites(folders, filename, exportSvg = true) {
             fs.writeFileSync(sprites.small.css.sprite.path, contents);
             return Promise.resolve(sprites);
 
+        }).then(sprites => {
+            
+            return Promise.resolve(sprites);
         }).then(sprites => {
             return Promise.resolve(sprites);
         });
