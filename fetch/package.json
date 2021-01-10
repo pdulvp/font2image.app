@@ -9,7 +9,8 @@
   "author": "pdulvp",
   "license": "CC-BY-NC-ND-4.0",
   "dependencies": {
-    "@pdulvp/promiseh": "^1.0.0",
+    "@pdulvp/arrayh": "^1.0.0",
+    "@pdulvp/fsh": "^1.1.2",
     "svg-sprite": "^1.5.0"
   }
 }

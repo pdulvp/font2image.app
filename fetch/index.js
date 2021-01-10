@@ -8,26 +8,13 @@
  @author: pdulvp@laposte.net
 */
 const fs = require('fs')
-const promiseh = require('@pdulvp/promiseh')
+const arrayh = require('@pdulvp/arrayh')
+const fsh = require('@pdulvp/fsh')
 const path = require('path')
 const File = require('vinyl');
 
-function getFiles(folder) {
-    return new Promise(function(resolve, reject) {
-        fs.readdir(folder, (err, subdirs) => {
-            Promise.all(subdirs.map(subdir => {
-                const res = path.join(folder, subdir);
-                return (fs.statSync(res)).isDirectory() ? getFiles(res) : res;
-
-            })).then(files => {
-                resolve(files.reduce((a, f) => a.concat(f), []));
-            })
-        });
-    });
-}
-
 function getAll(folder, extension) {
-    return getFiles(folder).then(files => {
+    return fsh.getFiles(folder).then(files => {
         let filteredFiles = files.filter(x => x.endsWith("."+extension));
         filteredFiles = filteredFiles.filter(x => !x.includes(".layer"));
         return Promise.resolve(filteredFiles);
@@ -141,7 +128,7 @@ function exportSprites(folders, filename, exportSvg = true) {
     let fetchs = folders.map(x => getAll(x, "svg"));
     let fontName = folders[0].split("/")[0];
     return Promise.all(fetchs)
-        .then(filesPerFolder => Promise.resolve(promiseh.flat(filesPerFolder)))
+        .then(filesPerFolder => Promise.resolve(arrayh.flat(filesPerFolder)))
         .then(files => {
             return new Promise(function(resolve, reject) {
                 toSprite(files, fontName, "").then(full => {
