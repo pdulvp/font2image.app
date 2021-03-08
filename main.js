@@ -139,10 +139,11 @@ function download() {
 }
 
 function totototo(event) {
-	if (hasClass(event.target, "active")) {
-		removeClass(event.target, "active");
+	let item = event.target.closest("svg");
+	if (hasClass(item, "active")) {
+		removeClass(item, "active");
 	} else {
-		addClass(event.target, "active");
+		addClass(item, "active");
 	}
 	console.log(Array.from(document.getElementsByClassName("active")).map(x => x.id));
 }
@@ -244,7 +245,6 @@ document.getElementById("canvases-preview").ondblclick = function(event) {
 	easter = !easter;
 	updateSize();
 }
-
 
 function getFonts() {
 	if (fonts != undefined) {
@@ -1078,8 +1078,6 @@ function drawVisibleCanvas() {
 		}
 	}
 	toDraw = toDraw.slice(firstVisible, lastVisible);
-	console.log("f="+firstVisible);
-	console.log("l="+lastVisible);
 	visibles = toDraw;
 
 	visibles.forEach(canvas => {
