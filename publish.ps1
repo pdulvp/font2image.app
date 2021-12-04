@@ -60,7 +60,7 @@ function SaveCache {
 	}
 }
 
-$filePath = Get-ChildItem -Recurse . | Where { ! $_.PSIsContainer }
+$filePath = Get-ChildItem . -exclude node_modules,fetch,publish-config.json  | Get-ChildItem -Recurse | Where { ! $_.PSIsContainer }
 $filePath | CreateSiteMap | out-file -encoding utf8 sitemap.xml
 
 $md5values = LoadCache
@@ -76,24 +76,20 @@ ForEach($i in $filePath) {
 	$dir = $dir.replace("\","/")
 	$name = $name.replace("\","/")
 	
-	If(! ($name.Contains("fetch"))) {
-	If(! ($name.Contains("publish-config.json"))) {
-		$add = $FALSE
-		$md5 = Get-FileHash $name -Algorithm MD5
-		if (! ($md5values.ContainsKey($name))) {
-			$md5values += @{$name = $md5.Hash}
-			$add = $TRUE;
-		} elseif (! ($md5values[$name] -eq $md5.Hash)) {
-			$md5values[$name] = $md5.Hash
-			$add = $TRUE;
-		} elseif ($extensions -contains $i.extension) {
-			$add = $TRUE;
-		}
-		if ($add) {
-			Write-Host $name
-			curl -s -u $credentials --create-dirs --ftp-create-dirs -T "$name" "$ftpUrl/$dir"
-		}
+	$add = $FALSE
+	$md5 = Get-FileHash $name -Algorithm MD5
+	if (! ($md5values.ContainsKey($name))) {
+		$md5values += @{$name = $md5.Hash}
+		$add = $TRUE;
+	} elseif (! ($md5values[$name] -eq $md5.Hash)) {
+		$md5values[$name] = $md5.Hash
+		$add = $TRUE;
+	} elseif ($extensions -contains $i.extension) {
+		$add = $TRUE;
 	}
+	if ($add) {
+		Write-Host $name
+		curl -s -u $credentials --create-dirs --ftp-create-dirs -T "$name" "$ftpUrl/$dir"
 	}
 }
 
