@@ -11,6 +11,6 @@
   "dependencies": {
     "@pdulvp/arrayh": "^1.0.0",
     "@pdulvp/fsh": "^1.1.2",
-    "svg-sprite": "^1.5.0"
+    "svg-sprite": "^2.0.4"
   }
 }
